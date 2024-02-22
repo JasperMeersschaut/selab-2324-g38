@@ -8,13 +8,13 @@ Het doel van deze opdrachten is om vertrouwd te raken met concepten zoals Linux,
 
 Lijst alle teamleden op met hun GitHub gebruikersnaam:
 
-| Name      | GitHub username                         |
-| :-------- | :-------------------------------------- |
-| Student 1 | [Kjellvdb](https://github.com/Kjellvdb) |
-| Student 2 | [username](https://github.com/username) |
-| Student 3 | [username](https://github.com/username) |
-| Student 4 | [username](https://github.com/username) |
-| Student 5 | [username](https://github.com/username) |
+| Name                  | GitHub username                         |
+| :-------------------- | :-------------------------------------- |
+| Kjell Van Den Bossche | [Kjellvdb](https://github.com/Kjellvdb) |
+| Student 2             | [username](https://github.com/username) |
+| Student 3             | [username](https://github.com/username) |
+| Student 4             | [username](https://github.com/username) |
+| Student 5             | [username](https://github.com/username) |
 
 ## Inhoudstafel
 

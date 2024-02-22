@@ -20,16 +20,21 @@ Hier beschrijf je het antwoord op de vraag. Voeg eventueel een screenshot, code 
 
 ### Vraag 3 - In welke map is het script bewaard in de screenshot in Figuur 10?
 
-Hier beschrijf je het antwoord op de vraag. Voeg eventueel een screenshot, code snippets, enz. toe om je antwoord te ondersteunen. Als je veel code hebt, kun je linken naar een apart bestand in jullie repository (of ergens anders).
+| ![uitvoer-script](./img/package-manager/uitvoer-script.png) |
+| :---------------------------------------------------------: |
+| Figuur 10. Resultaat van het uitvoeren van het script.      |
+
+Het script is bewaard in de map SELab dat deel uitmaakt van de map HoGent.
 
 ## Evaluatiecriteria
 
 - [x] Je hebt een package manager voor jouw besturingssysteem geïnstalleerd.
 - [x] Je hebt een script (PowerShell of Bash, afhankelijk van je besturingssysteem) geschreven en gebruikt om de opgesomde applicaties te installeren.
-- [ ] Je toont inzicht in de werking van een package manager en kan deze vlot kan gebruiken om basistaken uit te voeren.
+- [x] Je toont inzicht in de werking van een package manager en kan deze vlot kan gebruiken om basistaken uit te voeren.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
+  - Wordt nog aan gewerkt.
 - [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
-  - Nog niet gedaan.
+  - Nog niet iedereen heeft deze taak volbracht.
 
 ## Problemen en oplossingen
 
@@ -47,6 +52,9 @@ Wat was moeilijk? Wat was eenvoudig? Wat hebben jullie geleerd van de opdracht? 
 
 Als jullie nog andere opmerkingen hebben over de opdracht hebben, voel je vrij om ze te delen.
 
-## :scroll: Bronnen
+## Bronnen
 
-Maak een lijst van alle bronnen die jullie hebben gebruikt tijdens het uitvoeren van de opdracht: boeken, handleidingen, HOWTO's, blog posts, enz.
+- https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/read-host?view=powershell-7.4
+- https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-if?view=powershell-7.4
+- https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/09-functions?view=powershell-7.4#a-simple-function
+- https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-7.4
