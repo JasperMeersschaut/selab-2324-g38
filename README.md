@@ -8,13 +8,13 @@ Het doel van deze opdrachten is om vertrouwd te raken met concepten zoals Linux,
 
 Lijst alle teamleden op met hun GitHub gebruikersnaam:
 
-| Name                  | GitHub username                         |
-| :-------------------- | :-------------------------------------- |
-| Kjell Van Den Bossche | [Kjellvdb](https://github.com/Kjellvdb) |
-| Student 2             | [username](https://github.com/username) |
-| Student 3             | [username](https://github.com/username) |
-| Student 4             | [username](https://github.com/username) |
-| Student 5             | [username](https://github.com/username) |
+| Name                  | GitHub username                                           |
+| :-------------------- | :-------------------------------------------------------- |
+| Kjell Van Den Bossche | [Kjellvdb](https://github.com/Kjellvdb)                   |
+| Jasper Meersschaut    | [JasperMeersschaut](https://github.com/JasperMeersschaut) |
+| Student 3             | [username](https://github.com/username)                   |
+| Student 4             | [username](https://github.com/username)                   |
+| Student 5             | [username](https://github.com/username)                   |
 
 ## Inhoudstafel
 
@@ -25,7 +25,7 @@ Lijst alle teamleden op met hun GitHub gebruikersnaam:
 
 ## Help, ik heb een mac
 
-De nieuwe Apple Silicon processoren zorgen tijdens de opdrachten van System Engineering Lab  wel eens voor problemen aangezien deze gebruik maken van de ARM-architectuur. De virtuele machines die o.a. voor dit OLOD gebruikt worden, gebruiken deze architectuur niet. Hierdoor is het iets meer werk om de virtuele machines aan te maken, maar het is wel mogelijk.
+De nieuwe Apple Silicon processoren zorgen tijdens de opdrachten van System Engineering Lab wel eens voor problemen aangezien deze gebruik maken van de ARM-architectuur. De virtuele machines die o.a. voor dit OLOD gebruikt worden, gebruiken deze architectuur niet. Hierdoor is het iets meer werk om de virtuele machines aan te maken, maar het is wel mogelijk.
 
 Er zijn drie opties om virtuele machines aan te maken op macbooks met Apple Silicon:
 
