@@ -1,37 +1,34 @@
 #!/bin/bash
 # Automatiseren software-installatie
 
+#Functions
+print_header() {
+    echo -e "\e[1;33m*************************************************"
+    echo -e "$1"
+    echo -e "*************************************************\e[0m"
+}
+
 # Bijwerken van de lijst met beschikbare applicaties
-echo -e "\e[1;33m*************************************************"
-echo -e "Bijwerken lijst beschikbare applicaties"
-echo -e "*************************************************\e[0m"
+print_header "Bijwerken lijst beschikbare applicaties"
 sudo apt -y update
 
 # Algemene applicaties installeren
-echo -e "\e[1;33m*************************************************"
-echo -e "Algemene applicaties"
-echo -e "*************************************************\e[0m"
+print_header "Algemene applicaties"
 sudo apt -y install git
 
 # Applicaties voor verschillende vakken
-echo -e "\e[1;33m*************************************************"
-echo -e "Software voor System Engineering Lab"
-echo -e "*************************************************\e[0m"
+print_header "Software voor System Engineering Lab"
 sudo apt -y install filezilla virtualbox
 sudo snap install mysql-workbench-community
 
 # Applicaties die niet beschikbaar zijn via apt maar via snap
-echo -e "\e[1;33m*************************************************"
-echo -e "Extra applicaties (via Snap)"
-echo -e "*************************************************\e[0m"
+print_header "Extra applicaties (via Snap)"
 echo "Installeer Visual Studio Code en GitKraken via snap:"
 sudo snap install --classic code
 sudo snap install --classic gitkraken
 
 # Optionele applicaties
-echo -e "\e[1;33m*************************************************"
-echo -e "Optionele applicaties"
-echo -e "*************************************************\e[0m"
+print_header "Optionele applicaties"
 read -p "Wil je de optionele applicaties installeren? (ja/nee): " choice
 if [ "$choice" = "ja" ]; then
     sudo apt -y install htop # Voor systeemmonitoring
