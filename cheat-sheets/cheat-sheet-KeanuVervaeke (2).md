@@ -4,7 +4,7 @@
 
 ## Cheat sheets
 
-### PowerShell ISE
+### PowerShell 
 
 | Task                          | Command      |
 | :---------------------------- | :----------- |
