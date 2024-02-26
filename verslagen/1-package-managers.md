@@ -14,15 +14,15 @@ Beschrijf de opdracht in eigen woorden. Wat werd er van jullie verwacht? Wat was
 
 **1. De PowerShell-prompt toont de map waar we ons nu bevinden. Wat is de naam van deze directory?**<br>
 
-De naam van de directory waar we ons in bevinden is `system32`. Dat kunnen we afleiden uit het meegegeven pad dat er als volgt uit ziet:
+We bevinden ons in de systeemmap `system32`. Dat kunnen we afleiden uit het meegegeven pad dat er als volgt uit ziet: 
 
-```powershell
+```
 PS C:\WINDOWS\system32>
 ```
 
 **2. In welke map heb je het script bewaard?**<br>
 
-Antwoord nog aan te vullen.
+In het mapje System Engineering Lab dat deel uitmaakt van de map HOGENT.
 
 **3. In welke map is het script bewaard in de screenshot?**<br>
 
@@ -188,10 +188,8 @@ read -p "Druk op Enter om af te sluiten"
 - [x] Je hebt een package manager voor jouw besturingssysteem geïnstalleerd.
 - [x] Je hebt een script (PowerShell of Bash, afhankelijk van je besturingssysteem) geschreven en gebruikt om de opgesomde applicaties te installeren.
 - [x] Je toont inzicht in de werking van een package manager en kan deze vlot kan gebruiken om basistaken uit te voeren.
-- [ ] Je hebt een verslag gemaakt op basis van het template.
-  - Wordt nog aan gewerkt.
-- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
-  - Nog niet iedereen heeft deze taak volbracht.
+- [x] Je hebt een verslag gemaakt op basis van het template.
+- [x] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
 ## Problemen en oplossingen
 
