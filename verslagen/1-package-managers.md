@@ -95,29 +95,29 @@ Function InstallAll {
     InstallSystemEngineeringLab
 }
 Function InstallAlgemeneApplicaties {
-    Write-Host "`n`n`nInstallatie algemene applicaties"
-    Write-Host "--------------------------------"
-    Write-Host "`n- Git installeren"
+    Write-Host "`n`n`nInstallatie algemene applicaties" -ForegroundColor Red -BackgroundColor Yellow
+    Write-Host "--------------------------------" -ForegroundColor Red -BackgroundColor Yellow
+    Write-Host "`n- Git installeren" -ForegroundColor Green
     choco install -y git
-    Write-Host "`n- Adobe Acrobat Reader installeren"
+    Write-Host "`n- Adobe Acrobat Reader installeren"-ForegroundColor Magenta
     choco install -y adobereader
-    Write-Host "`n- Firefox installeren"
+    Write-Host "`n- Firefox installeren" -ForegroundColor Green
     choco install -y firefoxdownloadsview
-    Write-Host "`n- GitHub Desktop installeren"
+    Write-Host "`n- GitHub Desktop installeren" -ForegroundColor Magenta
     choco install -y github
-    Write-Host "`n- Visual Studio Code installeren"
+    Write-Host "`n- Visual Studio Code installeren" -ForegroundColor Green
     choco install -y vscode
-    Write-Host "`n- VLC Media Player installeren"
+    Write-Host "`n- VLC Media Player installeren" -ForegroundColor Magenta
     choco install -y vlc
 }
 Function InstallSystemEngineeringLab {
-    Write-Host "`n`n`nInstallatie System Engineering Lab"
-    Write-Host "------------------------------------"
-    Write-Host "`n- FileZilla installeren"
+    Write-Host "`n`n`nInstallatie System Engineering Lab" -ForegroundColor Red -BackgroundColor Yellow
+    Write-Host "------------------------------------" -ForegroundColor Red -BackgroundColor Yellow
+    Write-Host "`n- FileZilla installeren" -ForegroundColor Green
     choco install -y filezilla
-    Write-Host "`n- VirtualBox installeren"
+    Write-Host "`n- VirtualBox installeren" -ForegroundColor Magenta
     choco install -y virtualbox
-    Write-Host "`n- MySQL Workbench installeren"
+    Write-Host "`n- MySQL Workbench installeren" -ForegroundColor Green
     choco install -y mysql.workbench
 }
 
@@ -131,7 +131,7 @@ if ('A' -eq $choice) {
     }
 }
 if ('B' -eq $choice) {
-    choco upgrade all
+    choco upgrade -y all
 }
 if ('C' -eq $choice) {
     $app = Read-Host -Prompt 'What package do you want to delete?'
@@ -247,11 +247,7 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 
 ## Reflecties
 
-<!-- Wat was moeilijk? Wat was eenvoudig? Wat hebben jullie geleerd van de opdracht? Wat zouden jullie anders doen als jullie het opnieuw moesten doen?
-
-Als jullie nog andere opmerkingen hebben over de opdracht hebben, voel je vrij om ze te delen. -->
-
-Deze opdracht was tamelijk simpel, het was vooral een stappenplan volgen en zelf niet op veel code komen.
+Deze opdracht was tamelijk simpel, het was vooral een stappenplan volgen en we moesten zelf niet veel extra code opzoeken.
 
 #### Wat hebben we geleerd?
 
@@ -278,6 +274,7 @@ Markdown was even wennen, maar na een tijdje ging het vlot. Het is een handige m
 - https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-if?view=powershell-7.4
 - https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/09-functions?view=powershell-7.4#a-simple-function
 - https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-7.4
+- https://evotec.xyz/powershell-how-to-format-powershell-write-host-with-multiple-colors/
 
 #### Linux
 

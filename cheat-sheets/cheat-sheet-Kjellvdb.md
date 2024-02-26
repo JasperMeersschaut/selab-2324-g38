@@ -6,11 +6,13 @@
 
 ### PowerShell ISE
 
-| Task                          | Command      |
-| :---------------------------- | :----------- |
-| Commentaarregel schrijven     | `#`          |
-| Tekst afdrukken op de console | `Write-Host` |
-| Script runnen                 | `Fn + F5`    |
+| Task                          | Command                     |
+| :---------------------------- | :-------------------------- |
+| Commentaarregel schrijven     | `#`                         |
+| Tekst afdrukken op de console | `Write-Host`                |
+| Script runnen                 | `Fn + F5`                   |
+| Textkleur aanpassen           | `-ForegroundColor <Color>`  |
+| achtergrondkleur aanpassen    | ` -BackgroundColor <Color>` |
 
 ### Chocolatey package manager
 
