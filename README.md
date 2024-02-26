@@ -12,9 +12,9 @@ Lijst alle teamleden op met hun GitHub gebruikersnaam:
 | :-------------------- | :-------------------------------------------------------- |
 | Kjell Van Den Bossche | [Kjellvdb](https://github.com/Kjellvdb)                   |
 | Jasper Meersschaut    | [JasperMeersschaut](https://github.com/JasperMeersschaut) |
-| Emiel Vandenberghe    | [EmielVandenberghe](https://github.com/EmielVandenberghe)                   |
-| Student 4             | [username](https://github.com/username)                   |
-| Student 5             | [username](https://github.com/username)                   |
+| Emiel Vandenberghe    | [EmielVandenberghe](https://github.com/EmielVandenberghe) |
+| Sam Ramaswami         | [SamInTheMainframe](https://github.com/SamInTheMainframe) |
+| Keanu Vervaeke        | [Keanu-Vervaeke](https://github.com/Keanu-Vervaeke)       |
 
 ## Inhoudstafel
 
