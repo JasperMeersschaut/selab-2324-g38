@@ -1,6 +1,6 @@
 # Verslag: Package manager & Markdown
 
-> Naam verslaggever:
+> Naam verslaggevers:
 >
 > - Kjell Van Den Bossche,
 > - Jasper Meersschaut,
@@ -10,7 +10,7 @@
 
 ## Beschrijving
 
-Beschrijf de opdracht in eigen woorden. Wat werd er van jullie verwacht? Wat was het doel van de opdracht?
+We hebben geleerd om scripts te schrijven in windows of Linux. Daarbij hebben we ook geleerd hoe we een package manager moeten gebruiken. Die twee delen hebben we samen moeten toepassen om een script te schrijven waarmee we schoolvakken kunnen installeren of updaten.
 
 ## Antwoorden op de vragen in de opdracht
 
