@@ -251,7 +251,7 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 
 Als jullie nog andere opmerkingen hebben over de opdracht hebben, voel je vrij om ze te delen. -->
 
-Deze opdracht was nog tamelijk simpel. Het was vooral een stappenplan volgen en zelf niet met veel code opkomen.
+Deze opdracht was tamelijk simpel, het was vooral een stappenplan volgen en zelf niet op veel code komen.
 
 #### Wat hebben we geleerd?
 
@@ -259,12 +259,12 @@ We vonden het een goede oefening om te leren werken met scripting en de package 
 
 #### Problemen?
 
-We zijn niet tegen problemen gelopen die ons veel tijd hebben gekost.
+We hebben geen problemen tegengekomen die ons veel tijd kostten.
 Om zo een volledig mogelijk verslag te hebben, hebben we het script in Powershell en Linux geschreven en deze beide in het verslag gezet.
 
 #### Wat zouden we anders doen?
 
-Ik denk dat we volgende keer hetzelfde zouden doen, aangezien het soepel verliep en we geen problemen hadden.
+We denken dat we volgende keer hetzelfde zouden doen, aangezien het soepel verliep en we geen problemen hadden.
 
 #### Markdown
 
