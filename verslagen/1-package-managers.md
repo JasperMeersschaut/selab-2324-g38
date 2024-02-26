@@ -1,6 +1,12 @@
 # Verslag: Package manager & Markdown
 
-> Naam verslaggever: NAME
+> Naam verslaggever:
+>
+> - Kjell Van Den Bossche,
+> - Jasper Meersschaut,
+> - Emiel Vandenberghe,
+> - Sam Ramaswami,
+> - w²Keanu Vervaeke
 
 ## Beschrijving
 
@@ -79,7 +85,7 @@ Als je onderstaand script uitvoert, krijg je de keuze of je software wilt instal
 - Bij het kiezen van 'Instal' ga je de vraag krijgen of je alle software, of enkel software voor 1 vak wilt downloaden. Nadien gaat het script de software installeren afhankelijk van je keuze.
 - Bij het kiezen van 'Update' gaat het script alle software updaten.
 
-- Bij het kiezen van 'Delete' ga je moeten invullen welke software je wilt verwijderen. Nadien verwijderd het script deze software.
+- Bij het kiezen van 'Delete' ga je moeten invullen welke software je wilt verwijderen. Nadien verwijdert het script deze software.
 
 ```PowerShell
 #Automatiseren software-installatie
@@ -229,6 +235,8 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 
 | Task                                                                    | Command                          |
 | :---------------------------------------------------------------------- | :------------------------------- |
+| Standaard extensie voor bash scripts                                    | `.sh`                            |
+| Eerste regel van script (shebang)                                       | `#!`                             |
 | Commentaarregel schrijven                                               | `#`                              |
 | Tekst afdrukken op de console                                           | `echo`                           |
 | Commando runnen als super user                                          | `sudo`                           |
@@ -239,9 +247,28 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 
 ## Reflecties
 
-Wat was moeilijk? Wat was eenvoudig? Wat hebben jullie geleerd van de opdracht? Wat zouden jullie anders doen als jullie het opnieuw moesten doen?
+<!-- Wat was moeilijk? Wat was eenvoudig? Wat hebben jullie geleerd van de opdracht? Wat zouden jullie anders doen als jullie het opnieuw moesten doen?
 
-Als jullie nog andere opmerkingen hebben over de opdracht hebben, voel je vrij om ze te delen.
+Als jullie nog andere opmerkingen hebben over de opdracht hebben, voel je vrij om ze te delen. -->
+
+Deze opdracht was nog tamelijk simpel. Het was vooral een stappenplan volgen en zelf niet met veel code opkomen.
+
+#### Wat hebben we geleerd?
+
+We vonden het een goede oefening om te leren werken met scripting en de package manager. We hebben geleerd hoe we een script kunnen structureren en hoe we een script kunnen laten vragen naar input van de gebruiker. Git was geen deel van deze oefening, maar aangezien we dit toch voor de eerste keer in groep gebruikten, was dit ook een goede oefening.
+
+#### Problemen?
+
+We zijn niet tegen problemen gelopen die ons veel tijd hebben gekost.
+Om zo een volledig mogelijk verslag te hebben, hebben we het script in Powershell en Linux geschreven en deze beide in het verslag gezet.
+
+#### Wat zouden we anders doen?
+
+Ik denk dat we volgende keer hetzelfde zouden doen, aangezien het soepel verliep en we geen problemen hadden.
+
+#### Markdown
+
+Markdown was even wennen, maar na een tijdje ging het vlot. Het is een handige manier om een verslag te maken. Het is een simpel concept dat toch veel mogelijkheden biedt.
 
 ## Bronnen
 
