@@ -6,7 +6,7 @@
 > - Jasper Meersschaut,
 > - Emiel Vandenberghe,
 > - Sam Ramaswami,
-> - w²Keanu Vervaeke
+> - Keanu Vervaeke
 
 ## Beschrijving
 
