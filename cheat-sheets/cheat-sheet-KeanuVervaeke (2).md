@@ -1,6 +1,6 @@
 # Cheat sheets en checklists
 
-> Student: Kjell Van Den Bossche ([Kjellvdb](https://github.com/Kjellvdb))
+> Student: Keanu Vervaeke
 
 ## Cheat sheets
 
