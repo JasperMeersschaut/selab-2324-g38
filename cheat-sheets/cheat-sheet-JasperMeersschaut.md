@@ -4,28 +4,43 @@
 
 ## 1-package-manager-markdown
 
-### Bash Scripting
-
-| Uitleg                               | Commando |
-| :----------------------------------- | :------- |
-| Standaard extensie voor bash scripts | `.sh`    |
-| Eerste regel van script (shebang)    | `#!`     |
-| Commentaar in bash scripts           | `#`      |
-
 ## De apt package manager
 
-<!-- Simpele git workflow voor projecten met een enkele branch en zonder contributors.
+### Powershell
 
-| Task                                                               | Command                   |
-| :----------------------------------------------------------------- | :------------------------ |
-| Status van het huidige project                                     | `git status`              |
-| Selecteer te committen bestanden                                   | `git add FILE...`         |
-| Commit alle wijzigingen naar de lokale repository                  | `git commit -m 'MESSAGE'` |
-| Push lokale wijzigingen naar de remote repository                  | `git push`                |
-| Haal alle wijzigingen van de remote repository binnen in de lokale | `git pull`                |
+| Task                                                                         | Command                          |
+| :--------------------------------------------------------------------------- | :------------------------------- |
+| Commentaarregel schrijven                                                    | `#`                              |
+| Tekst afdrukken op de console                                                | `Write-Host`                     |
+| Script runnen                                                                | `Fn + F5`                        |
+| Overzicht van alle opties en parameters bruikbaar met het commando **choco** | `choco -?`                       |
+| Applicatie installeren                                                       | `choco install -y <packagename>` |
+| Een lijst tonen van de software die nu geïnstalleerd is via apt              | `choco list`                     |
+| Alle packages die nu geïnstalleerd zijn bijwerken tot de laatste versie      | `choco upgrade all`              |
+| Via de console een package opzoeken                                          | `choco search <packagename>`     |
+| Een geïnstalleerde applicatie verwijderen                                    | `choco uninstall <packagename>`  |
 
-## Checklist netwerkconfiguratie
+### Linux
 
-1. Is het IP-adres correct? `ip a`
-2. Is de router/default gateway correct? `ip r -n`
-3. Is een DNS-server ingesteld? `cat /etc/resolv.conf` -->
+| Task                                                                    | Command                          |
+| :---------------------------------------------------------------------- | :------------------------------- |
+| Standaard extensie voor bash scripts                                    | `.sh`                            |
+| Eerste regel van script (shebang)                                       | `#!`                             |
+| Commentaarregel schrijven                                               | `#`                              |
+| Tekst afdrukken op de console                                           | `echo`                           |
+| Commando runnen als super user                                          | `sudo`                           |
+| Een lijst tonen van de software die nu geïnstalleerd is via apt         | `apt list --installed`           |
+| Alle packages die nu geïnstalleerd zijn bijwerken tot de laatste versie | `sudo apt update`                |
+| Via de console een package opzoeken                                     | `apt search <package_name>`      |
+| Een geïnstalleerde applicatie verwijderen                               | `sudo apt remove <package_name>` |
+
+## Markdown
+
+| Task                         | Command                     |
+| :--------------------------- | :-------------------------- |
+| Header 1, Header 2, Header 3 | `#Hallo, ##Hallo, ###Hallo` |
+| Bold                         | `**Hallo**`                 |
+| Commentaarregel schrijven    | `<!--Hallo-->`              |
+| Bash code schrijven          | ` \`\`\` bash \`\`\` `                |
+| Hyperlink                 |      |
+<!-- | Tabel row maken          |                   | -->
