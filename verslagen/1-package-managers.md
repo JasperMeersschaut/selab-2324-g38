@@ -183,9 +183,6 @@ else
 fi
 
 read -p "Druk op Enter om af te sluiten"
-
-
-
 ```
 
 ## Evaluatiecriteria
@@ -208,11 +205,10 @@ Voor een mooiere opmaak te hebben in het linux script, hebben we de herhalende c
 
 ## Voorbereiding demo
 
-Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welke bestanden, commando's, enz. je zal gebruiken tijdens de demo.
-
 ### Bestanden voor de demo
 
-- Voorbeeld van het [Installatie.ps1](./demo's/demo-1/Installatie.ps1) script.
+- Voorbeeld van het [PowerShell](./demo's/demo-1/Installatie.ps1) script.
+- Voorbeeld van het [Linux](./demo's/demo-1/Installatie.ps1) script.
 
 ### Commando's voor de demo
 
