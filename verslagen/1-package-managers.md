@@ -154,7 +154,7 @@ print_header() {
 
 # Bijwerken van de lijst met beschikbare applicaties
 print_header "Bijwerken lijst beschikbare applicaties"
-sudo apt -y update
+sudo apt -y upgrade
 
 # Algemene applicaties installeren
 print_header "Algemene applicaties"
