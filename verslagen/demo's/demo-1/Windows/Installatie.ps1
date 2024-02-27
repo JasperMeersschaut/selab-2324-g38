@@ -31,9 +31,9 @@ Function InstallSystemEngineeringLab {
     choco install -y mysql.workbench
 }
 
-$choice = Read-Host -Prompt 'Instal [A] - Update [B] - Delete [C]'
+$choice = Read-Host -Prompt 'Install [A] - Update [B] - Delete [C]'
 if ('A' -eq $choice) {
-    $type = Read-Host -Prompt 'Instal all [A] - Install `Algemene applicaties` [B] - Install `System Engineering Lab` [C]'
+    $type = Read-Host -Prompt 'Install all [A] - Install `Algemene applicaties` [B] - Install `System Engineering Lab` [C]'
     switch ($type) {
         'A' {InstallAll}
         'B' {InstallAlgemeneApplicaties}
