@@ -1,4 +1,4 @@
-# Verslag: Package manager & Markdown
+# Verslag 1: Package manager & Markdown
 
 > Naam verslaggevers:
 >
@@ -34,9 +34,9 @@ In het mapje System Engineering Lab dat deel uitmaakt van de map HOGENT.
 
 Het script is bewaard in de map SELab dat deel uitmaakt van de map HoGent. Dat halen we uit het pad meegegeven in de screenshot.
 
-| ![Meegegeven screenshot](./img/package-manager/uitvoer-script-windows.png) |
-| :------------------------------------------------------------------------: |
-|         Figuur 1. Resultaat van het uitgevoerde Powershell script.         |
+| ![Meegegeven screenshot](./img/1-package-manager/uitvoer-script-windows.png) |
+| :--------------------------------------------------------------------------: |
+|          Figuur 1. Resultaat van het uitgevoerde Powershell script.          |
 
 #### Linux
 
@@ -52,9 +52,9 @@ In de directory /Desktop.
 
 In de directory /Documents.
 
-| ![Meegegeven screenshot](./img/package-manager/uitvoer-script-linux.png) |
-| :----------------------------------------------------------------------: |
-|          Figuur 2. Resultaat van het uitgevoerde Linux script.           |
+| ![Meegegeven screenshot](./img/1-package-manager/uitvoer-script-linux.png) |
+| :------------------------------------------------------------------------: |
+|           Figuur 2. Resultaat van het uitgevoerde Linux script.            |
 
 ### Vraag 2 - Zoek op welke commando's je nodig hebt voor de hieronder opgesomde taken.
 
@@ -199,9 +199,9 @@ read -p "Druk op Enter om af te sluiten"
 
 Voor een mooiere opmaak te hebben in het linux script, hebben we de herhalende code in functies gestoken. Dit zorgt voor een beter overzicht en een betere leesbaarheid van het script. Hoe ik dit moest doen heb ik gevonden op [Shellscript](https://www.shellscript.sh/functions.html).
 
-| ![Meegegeven screenshot](./img/package-manager/script-linux-functions-before.png) | ![Meegegeven screenshot](./img/package-manager/script-linux-functions-after.png) |
-| :-------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
-|                     Figuur 3. Voor het gebruik van functions                      |                      Figuur 4. Na het gebruik van functions                      |
+| ![Meegegeven screenshot](./img/1-package-manager/script-linux-functions-before.png) | ![Meegegeven screenshot](./img/1-package-manager/script-linux-functions-after.png) |
+| :---------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
+|                      Figuur 3. Voor het gebruik van functions                       |                       Figuur 4. Na het gebruik van functions                       |
 
 ## Voorbereiding demo
 
