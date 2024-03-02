@@ -14,11 +14,11 @@ Het IP-adres 127.0.0.1 is toegekend aan de loopback interface, we zien hier dat 
 
  <!-- Kan iemand hier screenshot zetten van de output voor de bind-address veranderd was naar 0.0.0.0? Ik krijg da nie meer teruggezet. -->
 
-**Zorg ervoor dat MySQL luistert naar alle netwerkinterfaces door het bestand `/etc/mysql/mysql.conf.d/mysqld.cnf` aan te passen. Zoek in dit bestand naar de regel die het **bind-address** instelt op **127.0.0.1** en verander dit naar **0.0.0.0**. Waarom `0.0.0.0` en niet het ip adres `192.168.56.20`?**	
+**Zorg ervoor dat MySQL luistert naar alle netwerkinterfaces door het bestand `/etc/mysql/mysql.conf.d/mysqld.cnf` aan te passen. Zoek in dit bestand naar de regel die het **bind-address** instelt op **127.0.0.1** en verander dit naar **0.0.0.0**. Waarom `0.0.0.0` en niet het ip adres `192.168.56.20`?**
 
 De parameter **bind-address** bepaalt welke netwerkinterfaces MySQL gebruikt om inkomende verbindingen te accepteren. Indien dit wordt ingesteld op het loopback-adres `127.0.0.1`, zal MySQL alleen verbindingen accepteren die afkomstig zijn van de VM (dezelfde machine waarop de server draait). We stellen **bind-address** in op `0.0.0.0` omdat MySQL dan verbindingen accepteert van elk IP-adres (dus ook onze lokale machine). Het adres `192.168.56.20` is van de VM, dus dan zouden we geen connectie kunnen maken vanuit onze lokale machine.
 
- **Controleer met `ss -tlnp` of de wijziging effect had. Waaraan zie je dit? Wat is het verschil met de vorige uitvoer van dit commando?**
+**Controleer met `ss -tlnp` of de wijziging effect had. Waaraan zie je dit? Wat is het verschil met de vorige uitvoer van dit commando?**
 
 We zien dat het adres bij poort `3306` veranderd is van `127.0.0.1` naar `0.0.0.0`. MySQL luistert dus nu naar alle beschikbare netwerk interfaces.
 ![Output van de luisterence TCP sockets na aanpassen bind-address.](./img/2-databankserver/listening-sockets.png)
@@ -27,11 +27,37 @@ We zien dat het adres bij poort `3306` veranderd is van `127.0.0.1` naar `0.0.0.
 
 #### 1. Schakel de screen lock uit.
 
-#### 2. Laat de gebruiker osboxes.org automatisch inloggen.
+1. Open de instellingen in Ubuntu.
+2. Ga naar Privacy > Screen Lock.
+3. Schakel de screen lock uit.
+   | ![Screenshot VM instellingen](./img/2-databankserver/ScreenBlankNever.png) |
+   | :----------------------------------------------------------------------: |
+   | Figuur 2. Automatic screen lock = off. |
 
+#### 2. Laat de gebruiker osboxes.org automatisch inloggen.
+1. Open de instellingen in Ubuntu.
+2. Ga naar Users.
+3. Schakel Automatic Login in.
+   | ![Screenshot VM instellingen](./img/2-databankserver/AutomaticLogin.png) |
+   | :----------------------------------------------------------------------: |
+   | Figuur 3. Automatic login = on. |
 #### 3. Installeer handige applicaties zoals Visual Studio Code.
+1. Open ubuntu software.
+2. Zoek naar Visual Studio Code.
+3. Installeer Visual Studio Code.
+   | ![Screenshot VM instellingen](./img/2-databankserver/VisualStudioCode.png) |
+   | :----------------------------------------------------------------------: |
+   | Figuur 4. Visual Studio Code geïnstalleerd. |
+
 
 #### 4. Pas het wachtwoord van de gebruiker osboxes aan. Schrijf dit wachtwoord zeker op in de beschrijving van de VM via Settings > General > Description.
+1. Open instellingen in Ubuntu.
+2. Ga naar Users.
+3. Klik op Password.
+4. Vul het nieuwe wachtwoord in.
+   | ![Screenshot VM instellingen](./img/2-databankserver/ChangePassword.png) |
+   | :----------------------------------------------------------------------: |
+   | Figuur 5. Wachtwoord veranderen. |
 
 #### 5. Probeer of je met FileZilla/Cyberduck bestanden van/naar de VM kan kopiëren. Dit zal extra configuratie vereisen.
 
@@ -76,13 +102,13 @@ sudo systemctl restart vsftpd
 
 5. Bij een succesvolle verbinding zou je bestanden van/naar de VM moeten kunnen kopiëren. En zou je response 230 moeten krijgen zoals in figuur 3.
 
-  | ![Succesvolle verbinding](./img/2-databankserver/Filezilla/FileZillaStap5.1.png) |
-  | :----------------------------------------------------------------------: |
-  | Figuur 3. Succesvolle verbinding. |
+| ![Succesvolle verbinding](./img/2-databankserver/Filezilla/FileZillaStap5.1.png) |
+| :------------------------------------------------------------------------------: |
+|                        Figuur 3. Succesvolle verbinding.                         |
 
 > Nu kan je succesvol bestanden van/naar de VM kopiëren.
-#### 6. Configureer de VM zodat je via SSH kan inloggen vanop je fysieke systeem (via een wachtwoord en/of public/private keypair).
 
+#### 6. Configureer de VM zodat je via SSH kan inloggen vanop je fysieke systeem (via een wachtwoord en/of public/private keypair).
 
 ## Evaluatiecriteria
 
