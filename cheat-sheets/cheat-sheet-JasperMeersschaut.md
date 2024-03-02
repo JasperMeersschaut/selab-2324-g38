@@ -4,9 +4,9 @@
 
 ## 1-package-manager-markdown
 
-## De apt package manager
+### De apt package manager
 
-### Powershell
+#### Powershell
 
 | Task                                                                         | Command                          |
 | :--------------------------------------------------------------------------- | :------------------------------- |
@@ -20,7 +20,7 @@
 | Via de console een package opzoeken                                          | `choco search <packagename>`     |
 | Een geïnstalleerde applicatie verwijderen                                    | `choco uninstall <packagename>`  |
 
-### Linux
+#### Linux
 
 | Task                                                                    | Command                          |
 | :---------------------------------------------------------------------- | :------------------------------- |
@@ -34,13 +34,14 @@
 | Via de console een package opzoeken                                     | `apt search <package_name>`      |
 | Een geïnstalleerde applicatie verwijderen                               | `sudo apt remove <package_name>` |
 
-## Markdown
+### Markdown
 
-| Task                         | Command                     |
-| :--------------------------- | :-------------------------- |
-| Header 1, Header 2, Header 3 | `#Hallo, ##Hallo, ###Hallo` |
-| Bold                         | `**Hallo**`                 |
-| Commentaarregel schrijven    | `<!--Hallo-->`              |
-| Bash code schrijven          | ` \`\`\` bash \`\`\` `                |
-| Hyperlink                 |      |
-<!-- | Tabel row maken          |                   | -->
+| Task                         | Command                          |
+| :--------------------------- | :------------------------------- |
+| Header 1, Header 2, Header 3 | `#Hallo, ##Hallo, ###Hallo`      |
+| Bold                         | `**Hallo**`                      |
+| Commentaarregel schrijven    | `<!--Hallo-->`                   |
+| Bash code schrijven          | \`\`\` bash \`\`\`               |
+| Hyperlink                    | `\[Tekst](https://www.Link.com)` |
+
+## 2-databankserver
