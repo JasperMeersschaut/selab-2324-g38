@@ -52,7 +52,7 @@ We zien dat het adres bij poort `3306` veranderd is van `127.0.0.1` naar `0.0.0.
 
    | ![Screenshot VM instellingen](./img/2-databankserver/AutomaticLogin.png) |
    | :----------------------------------------------------------------------: |
-   |                     Figuur 3. Automatic login = on.                      |
+   |                     Figuur 5. Automatic login = on.                      |
 
 #### 3. Installeer handige applicaties zoals Visual Studio Code.
 
@@ -62,7 +62,7 @@ We zien dat het adres bij poort `3306` veranderd is van `127.0.0.1` naar `0.0.0.
 
    | ![Screenshot VM instellingen](./img/2-databankserver/VisualStudioCode.png) |
    | :------------------------------------------------------------------------: |
-   |                Figuur 5. Visual Studio Code geïnstalleerd.                 |
+   |                Figuur 6. Visual Studio Code geïnstalleerd.                 |
 
 #### 4. Pas het wachtwoord van de gebruiker osboxes aan. Schrijf dit wachtwoord zeker op in de beschrijving van de VM via Settings > General > Description.
 
@@ -73,7 +73,7 @@ We zien dat het adres bij poort `3306` veranderd is van `127.0.0.1` naar `0.0.0.
 
    | ![Screenshot VM instellingen](./img/2-databankserver/ChangePassword.png) |
    | :----------------------------------------------------------------------: |
-   |                     Figuur 6. Wachtwoord veranderen.                     |
+   |                     Figuur 7. Wachtwoord veranderen.                     |
 
 #### 5. Probeer of je met FileZilla/Cyberduck bestanden van/naar de VM kan kopiëren. Dit zal extra configuratie vereisen.
 
@@ -111,19 +111,19 @@ sudo systemctl restart vsftpd
 
   | ![Locatie site manager](./img/2-databankserver/Filezilla/FileZillaStap4.1.png) |
   | :----------------------------------------------------------------------------: |
-  |                        Figuur 7. Locatie site manager.                         |
+  |                        Figuur 8. Locatie site manager.                         |
 
 - Vul het IP-adres, de gebruikersnaam en het wachtwoord in zoals in figuur 8.
 
   | ![Gegevens site manager](./img/2-databankserver/Filezilla/FileZillaStap4.2.png) |
   | :-----------------------------------------------------------------------------: |
-  |                        Figuur 8. Gegevens site manager.                         |
+  |                        Figuur 9. Gegevens site manager.                         |
 
 - Bij een succesvolle verbinding zou je bestanden van/naar de VM moeten kunnen kopiëren. En zou je response 230 moeten krijgen zoals in figuur 9.
 
   | ![Succesvolle verbinding](./img/2-databankserver/Filezilla/FileZillaStap5.1.png) |
   | :------------------------------------------------------------------------------: |
-  |                        Figuur 9. Succesvolle verbinding.                         |
+  |                        Figuur 10. Succesvolle verbinding.                        |
 
   > Nu kan je succesvol bestanden van/naar de VM kopiëren.
 
@@ -159,10 +159,11 @@ sudo systemctl restart ssh
 
 - Breng je public key over via FileZilla naar je VM.
 - Voeg je public key toe aan `~/.ssh/authorized_keys`.
+
   - Indien `authorized_keys` nog niet bestaat, maak je eerst een nieuw tekstbestand aan met die naam.
 
   > Nu kan je via de terminal inloggen op je virtuele machine via
-  >`ssh osboxes@192.168.56.20`
+  > `ssh osboxes@192.168.56.20`
 
 ## Evaluatiecriteria
 
