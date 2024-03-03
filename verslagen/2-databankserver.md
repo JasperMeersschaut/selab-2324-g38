@@ -192,8 +192,13 @@ Geen problemen ondervonden.
 #### De VM heeft een host-only adapter en een NAT adapter met de correcte instellingen.
 
 Settings > Network
-![Host-only adapter](./img/2-databankserver/host-only-adapter.png)
-![NAT interface](./img/2-databankserver/NAT-interface.png)
+| ![Host-only adapter](./img/2-databankserver/host-only-adapter.png) |
+| :------------------------------------------------------------------------------: |
+| Figuur 11. Host-only adapter. |
+
+| ![NAT interface](./img/2-databankserver/NAT-interface.png) |
+| :--------------------------------------------------------: |
+|                 Figuur 12. NAT interface.                  |
 
 #### Pingen vanop fysieke systeem naar de host-only adapter van de VM.
 
@@ -201,10 +206,14 @@ Settings > Network
 
 #### Aantonen dat MySQL actief is op de VM en luistert op alle interfaces.
 
-Aantonen dat MySQL actief is: `systemctl status mysql`.
-![Status MySQL](./img/2-databankserver/mysql-status.png)
-Aantonen dat MySQL luistert op alle interfaces: `ss -tlnp` en constateren dat het adres `0.0.0.0` is bij poort 3306.
-![ss -tnlp check](./img/2-databankserver/ss-tnlp.png)
+- Aantonen dat MySQL actief is: `systemctl status mysql`.
+  | ![Status MySQL](./img/2-databankserver/mysql-status.png) |
+  | :------------------------------------------------------------------------------: |
+  | Figuur 13. Status MySQL. |
+- Aantonen dat MySQL luistert op alle interfaces: `ss -tlnp` en constateren dat het adres `0.0.0.0` is bij poort 3306.
+  | ![ss -tnlp check](./img/2-databankserver/ss-tnlp.png) |
+  | :------------------------------------------------------------------------------: |
+  | Figuur 14. ss -tnlp check. |
 
 ### MySQL Workbench gebruiken om een connectie aan te maken met de databankserver:
 
@@ -212,8 +221,14 @@ Aantonen dat MySQL luistert op alle interfaces: `ss -tlnp` en constateren dat he
 
 Connections testen met rechtermuisknop op de connecties > Edit Connection... > Test Connection
 
-![Admin connection success](./img/2-databankserver/admin-connection-success.png)
-![Appusr connection success](./img/2-databankserver/appusr-connection-success.png)
+- Admin:
+  | ![Admin connection success](./img/2-databankserver/admin-connection-success.png) |
+  | :--------------------------------------------------------------------------------: |
+  | Figuur 15. Succesvolle admin connectie. |
+- Appusr:
+  | ![Appusr connection success](./img/2-databankserver/appusr-connection-success.png) |
+  | :------------------------------------------------------------------------------: |
+  | Figuur 16. Succesvolle appusr connectie. |
 
 ## Reflecties
 
