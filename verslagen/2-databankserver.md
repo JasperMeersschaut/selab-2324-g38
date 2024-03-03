@@ -54,8 +54,6 @@ We zien dat het adres bij poort `3306` veranderd is van `127.0.0.1` naar `0.0.0.
    | :----------------------------------------------------------------------: |
    |                     Figuur 5. Automatic login = on.                      |
 
-   | Figuur 3. Automatic login = on. |
-
 #### 3. Installeer handige applicaties zoals Visual Studio Code.
 
 1. Open ubuntu software.
