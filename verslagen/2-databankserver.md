@@ -54,6 +54,8 @@ We zien dat het adres bij poort `3306` veranderd is van `127.0.0.1` naar `0.0.0.
    | :----------------------------------------------------------------------: |
    |                     Figuur 5. Automatic login = on.                      |
 
+   | Figuur 3. Automatic login = on. |
+
 #### 3. Installeer handige applicaties zoals Visual Studio Code.
 
 1. Open ubuntu software.
@@ -175,30 +177,54 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
   - [x] Je kan aantonen dat MySQL actief is op de VM en luistert op alle interfaces.
 - [x] Je kan MySQL Workbench gebruiken om een connectie aan te maken met de databankserver:
   - [x] Je hebt een **werkende** connectie voor de admin-gebruiker
-  - [ ] Je hebt een **werkende** connectie voor de applicatie-gebruiker
+  - [x] Je hebt een **werkende** connectie voor de applicatie-gebruiker
 - [x] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
 ## Problemen en oplossingen
 
-Beschrijf hieronder eventuele problemen die jullie zijn tegengekomen tijdens het uitvoeren van de opdracht, met een korte beschrijving van wat er mis ging en hoe jullie het hebben opgelost (als het jullie gelukt is om het op te lossen). Als het niet gelukt is om het op te lossen, beschrijf dan hoe ver jullie zijn gekomen en wat jullie tegenhield om verder te gaan. Voeg eventuele foutmeldingen, screenshots, enz. toe.
-
-Als jullie geen problemen zijn tegengekomen, schrijf dan "geen problemen ondervonden".
-
-### Probleem 1 - Korte beschrijving van het probleem
-
-Beschrijf hier het probleem uitgebreid met screenshots, code snippets, enz. en de oplossing die jullie al dan niet hebben gevonden.
+Geen problemen ondervonden.
 
 ## Voorbereiding demo
 
-Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welke bestanden, commando's, enz. je zal gebruiken tijdens de demo.
+### Na opstart VM en in te loggen:
+
+#### De VM heeft een host-only adapter en een NAT adapter met de correcte instellingen.
+
+Settings > Network
+![Host-only adapter](./img/2-databankserver/host-only-adapter.png)
+![NAT interface](./img/2-databankserver/NAT-interface.png)
+
+#### Pingen vanop fysieke systeem naar de host-only adapter van de VM.
+
+`ping 192.168.56.20` in CLI fysieke systeem wanneer VM draait.
+
+#### Aantonen dat MySQL actief is op de VM en luistert op alle interfaces.
+
+Aantonen dat MySQL actief is: `systemctl status mysql`.
+![Status MySQL](./img/2-databankserver/mysql-status.png)
+Aantonen dat MySQL luistert op alle interfaces: `ss -tlnp` en constateren dat het adres `0.0.0.0` is bij poort 3306.
+![ss -tnlp check](./img/2-databankserver/ss-tnlp.png)
+
+### MySQL Workbench gebruiken om een connectie aan te maken met de databankserver:
+
+#### Werkende connectie voor de admin-gebruiker en de applicatie-gebruiker.
+
+Connections testen met rechtermuisknop op de connecties > Edit Connection...
+![Admin connection](./img/2-databankserver/admin-connection.png)
+![Appusr connection](./img/2-databankserver/appusr-connection.png)
+
+![Admin connection success](./img/2-databankserver/admin-connection-success.png)
+![Appusr connection success](./img/2-databankserver/appusr-connection-success.png)
 
 ## Reflecties
 
-Wat was moeilijk? Wat was eenvoudig? Wat hebben jullie geleerd van de opdracht? Wat zouden jullie anders doen als jullie het opnieuw moesten doen?
-
-Als jullie nog andere opmerkingen hebben over de opdracht hebben, voel je vrij om ze te delen.
+De meeste stappen waren vrij eenvoudig om te volgen. Soms moesten we wel wat opzoekwerk doen om de juiste commando's te vinden en te begrijpen wat sommige termen betekenen.
 
 ## Bronnen
 
-Maak een lijst van alle bronnen die jullie hebben gebruikt tijdens het uitvoeren van de opdracht: boeken, handleidingen, HOWTO's, blog posts, enz.
+https://www.sciencedirect.com/topics/computer-science/loopback-address#:~:text=The%20loopback%20address%2C%20also%20called,01.
+
+https://tecadmin.net/mysql-allow-remote-connections/#:~:text=If%20the%20bind%2Daddress%20parameter,only%20listening%20on%20the%20localhost.&text=Change%20the%20bind%2Daddress%20value,listen%20on%20all%20network%20interfaces.
+
+https://www.linux.com/topic/networking/introduction-ss-command/
