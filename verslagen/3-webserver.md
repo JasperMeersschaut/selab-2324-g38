@@ -4,7 +4,7 @@
 
 ## :speech_balloon: Beschrijving
 
-<!-- Beschrijf de opdracht in eigen woorden. Wat werd er van jullie verwacht? Wat was het doel van de opdracht? -->
+In deze opdracht ga je een webserver opzetten op je VM. Je zal een statische website publiceren op de webserver. Je zal ook de firewall configureren om de webserver te beveiligen. Ten slotte ga je fail2ban installeren en configureren om aanvallen op de webserver te detecteren en te blokkeren. Je zal ook een whitelist aanmaken om je eigen IP-adres toe te voegen.
 
 ## :thinking: Antwoorden op de vragen in de opdracht
 
@@ -36,6 +36,22 @@
 
 **Als je op de VM een website wil publiceren, dan moet je de HTML- en andere bestanden in de zogenaamde Document Root zetten. Wat is het pad naar deze map?**
 `/var/www/html/`
+**Met welke twee commando's kan je controleren of de SSH server draait, en op welke poort?**
+
+- Om te controleren of de SSH server draait, kan je het volgende commando gebruiken:
+  ```bash
+  sudo systemctl status ssh
+  ```
+  Dit commando zal de status van de SSH service tonen.
+  | ![Screenshot terminal](./img/3-webserver/sshStatus.png) |
+  | :-----------------------------------------------------: |
+  | Figuur 3. De status van de SSH service |
+- Om te controleren op welke poort de SSH server draait, kan je het volgende commando gebruiken:
+  ```bash
+  cat /etc/ssh/sshd_config
+  ```
+  Hierin kan je de configuratie van de SSH server zien. De standaardpoort is 22.
+
 ## :memo: Evaluatiecriteria
 
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
@@ -68,7 +84,9 @@ Beschrijf hier het probleem uitgebreid met screenshots, code snippets, enz. en d
 ## :information_desk_person: Voorbereiding demo
 
 Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welke bestanden, commando's, enz. je zal gebruiken tijdens de demo.
+
 ### Stap 1 - installatie
+
 - `sudo apt install apache2` installeert de apache webserver
 - `sudo systemctl status apache2` toont de status van de apache webserver
 - `sudo systemctl is-enabled apache2` toont of de apache webserver opstart bij het booten van de VM
@@ -76,6 +94,19 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 - `/var/www/html/` is de map waarin de websitebestanden moeten geplaatst worden
 
 ### Stap 2 - Een statische website publiceren
+
+> Filezilla zou al geïnstalleerd en geconfigureerd moeten zijn.
+
+- `sudo usermod -aG www-data osboxes` voegt de gebruiker osboxes toe aan de groep www-data
+- `sudo chgrp -R www-data /pad/naar/document/root` verandert de groep van de document root naar www-data
+- sudo chmod -R g+w /pad/naar/document/root` geeft de groep www-data schrijfrechten op de document root
+- Verbind via filezilla met de VM en kopieer de websitebestanden naar de document root
+  | ![Screenshot filezilla](./img/3-webserver/FileZillaHeeftConnectie.png) |
+  | :-----------------------------------------------------: |
+  | Figuur 4. Connectie via FileZilla |
+  | ![Screenshot Webbrowser](./img/3-webserver/WebsiteBereikbaarFysiekeComputer.png) |
+  | :-----------------------------------------------------: |
+  | Figuur 5. Website bereikbaar via fysieke computer |
 
 ## Reflecties
 
