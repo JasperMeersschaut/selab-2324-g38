@@ -52,7 +52,7 @@
 | SQL databank afsluiten                            | `exit;`                                                                                      |
 | De root configureren                              | `mysql alter user 'root'@'localhost' identified with mysql_native_password by '<password>';` |
 | Een admin configureren                            | `create user 'admin'@'%' identified by '<password>';`                                        |
-| Alle rechten aan een user geven                   | ` grant all privileges on *.* to '<user>'@'%' with grant option;`                            |
+| Alle rechten aan een admin geven                  | `grant all privileges on *.* to 'admin'@'%' with grant option;`                              |
 | Alle rechten van alle gebruikers updaten          | `flush privileges;`                                                                          |
 | De beveiligingsopties van een databank instellen  | `sudo mysql_secure_installation`                                                             |
 
@@ -62,7 +62,7 @@
 | :------------------------------------------------------- | :----------------------------------------------------- |
 | Een database maken                                       | `create database naam`                                 |
 | Een user configureren                                    | `create user '<naam>'@'%' identified by '<password>';` |
-| Alle rechten (behalve `GRANT OPTION`) aan een user geven | ` grant all privileges on *.* to '<user>'@'%';`        |
+| Alle rechten (behalve `GRANT OPTION`) aan een user geven | `grant all privileges on *.* to '<user>'@'%';`         |
 | Alle rechten van alle gebruikers updaten                 | `flush privileges;`                                    |
 
 ## Checklists
