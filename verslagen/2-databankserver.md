@@ -32,9 +32,9 @@ We zien dat het adres bij poort `3306` veranderd is van `127.0.0.1` naar `0.0.0.
 | :------------------------------------------------------------------------------------------------------------: |
 |                Figuur 3. Output van de luisterende TCP sockets na aanpassen van het bind-adres                 |
 
-### Uitbreidingen
+## Uitbreidingen
 
-#### 1. Schakel de screen lock uit.
+### 1. Schakel de screen lock uit.
 
 1. Open de instellingen in Ubuntu.
 2. Ga naar Privacy > Screen Lock.
@@ -44,7 +44,7 @@ We zien dat het adres bij poort `3306` veranderd is van `127.0.0.1` naar `0.0.0.
    | :------------------------------------------------------------------------: |
    |                   Figuur 4. Automatic screen lock = off.                   |
 
-#### 2. Laat de gebruiker osboxes.org automatisch inloggen.
+### 2. Laat de gebruiker osboxes.org automatisch inloggen.
 
 1. Open de instellingen in Ubuntu.
 2. Ga naar Users.
@@ -54,7 +54,7 @@ We zien dat het adres bij poort `3306` veranderd is van `127.0.0.1` naar `0.0.0.
    | :----------------------------------------------------------------------: |
    |                     Figuur 5. Automatic login = on.                      |
 
-#### 3. Installeer handige applicaties zoals Visual Studio Code.
+### 3. Installeer handige applicaties zoals Visual Studio Code.
 
 1. Open ubuntu software.
 2. Zoek naar Visual Studio Code.
@@ -64,7 +64,7 @@ We zien dat het adres bij poort `3306` veranderd is van `127.0.0.1` naar `0.0.0.
    | :------------------------------------------------------------------------: |
    |                Figuur 6. Visual Studio Code geïnstalleerd.                 |
 
-#### 4. Pas het wachtwoord van de gebruiker osboxes aan. Schrijf dit wachtwoord zeker op in de beschrijving van de VM via Settings > General > Description.
+### 4. Pas het wachtwoord van de gebruiker osboxes aan. Schrijf dit wachtwoord zeker op in de beschrijving van de VM via Settings > General > Description.
 
 1. Open instellingen in Ubuntu.
 2. Ga naar Users.
@@ -75,7 +75,7 @@ We zien dat het adres bij poort `3306` veranderd is van `127.0.0.1` naar `0.0.0.
    | :----------------------------------------------------------------------: |
    |                     Figuur 7. Wachtwoord veranderen.                     |
 
-#### 5. Probeer of je met FileZilla/Cyberduck bestanden van/naar de VM kan kopiëren. Dit zal extra configuratie vereisen.
+### 5. Probeer of je met FileZilla/Cyberduck bestanden van/naar de VM kan kopiëren. Dit zal extra configuratie vereisen.
 
 1. Installeer een FTP-server op de VM.
 
@@ -127,7 +127,7 @@ sudo systemctl restart vsftpd
 
   > Nu kan je succesvol bestanden van/naar de VM kopiëren.
 
-#### 6. Configureer de VM zodat je via SSH kan inloggen vanop je fysieke systeem (via een wachtwoord en/of public/private keypair).
+### 6. Configureer de VM zodat je via SSH kan inloggen vanop je fysieke systeem (via een wachtwoord en/of public/private keypair).
 
 1. Installeer een SSH-server op de VM.
 
@@ -229,8 +229,10 @@ Connections testen met rechtermuisknop op de connecties > Edit Connection... > T
   | Figuur 16. Succesvolle appusr connectie. |
 
 ## Reflecties
-
-De meeste stappen waren vrij eenvoudig om te volgen. Soms moesten we wel wat opzoekwerk doen om de juiste commando's te vinden en te begrijpen wat sommige termen betekenen.
+De opdracht was vrij eenvoudig om uit te voeren. We hebben de stappen gevolgd die in de opdracht stonden en hebben geen problemen ondervonden. 
+#### Uitbreidingen
+De eerst 4 uitbreidingen waren ook vrij eenvoudig om uit te voeren. 
+De 5e en 6e uitbreiding waren iets moeilijker omdat we niet wisten hoe we een FTP-server en een ssh-server moesten installeren en configureren. Maar na wat opzoekwerk hebben we dit toch kunnen uitvoeren.
 
 ## Bronnen
 
