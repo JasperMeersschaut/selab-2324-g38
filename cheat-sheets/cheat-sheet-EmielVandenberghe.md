@@ -31,6 +31,7 @@
 | Taak                                                   | Commando                         |
 | :----------------------------------------------------- | :------------------------------- |
 | Testen of je kan verbinden met een applicatie| `ping <adres>`|
+|Een geïnstalleerde applicatie verwijderen| `sudo apt remove <package_name>`|
 
 
 ## Linux
