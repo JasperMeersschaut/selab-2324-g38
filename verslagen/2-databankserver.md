@@ -210,9 +210,7 @@ Aantonen dat MySQL luistert op alle interfaces: `ss -tlnp` en constateren dat he
 
 #### Werkende connectie voor de admin-gebruiker en de applicatie-gebruiker.
 
-Connections testen met rechtermuisknop op de connecties > Edit Connection...
-![Admin connection](./img/2-databankserver/admin-connection.png)
-![Appusr connection](./img/2-databankserver/appusr-connection.png)
+Connections testen met rechtermuisknop op de connecties > Edit Connection... > Test Connection
 
 ![Admin connection success](./img/2-databankserver/admin-connection-success.png)
 ![Appusr connection success](./img/2-databankserver/appusr-connection-success.png)
