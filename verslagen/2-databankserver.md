@@ -177,7 +177,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
   - [x] Je hebt een **werkende** connectie voor de admin-gebruiker
   - [x] Je hebt een **werkende** connectie voor de applicatie-gebruiker
 - [x] Je hebt een verslag gemaakt op basis van het template.
-- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
+- [x] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
 ## Problemen en oplossingen
 
