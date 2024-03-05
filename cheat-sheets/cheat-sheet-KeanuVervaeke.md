@@ -4,7 +4,7 @@
 
 ## Cheat sheets
 
-### PowerShell 
+### PowerShell
 
 | Task                          | Command      |
 | :---------------------------- | :----------- |
@@ -23,24 +23,22 @@
 | Via de console een package opzoeken                                                                        | `choco search <packagename>`     |
 | Een geïnstalleerde applicatie verwijderen                                                                  | `choco uninstall <packagename>`  |
 
-
 ### Linux
 
-| Task                                                                                                       | Command                                |
-| :--------------------------------------------------------------------------------------------------------- | :-------------------------------       |
-| Applicatie installeren                                                                                     | `sudo apt install -y <packagename>`    |
-| Lijst van software die nu geïnstalleerd is                                                                 | `sudo apt list --Installed`            |
-| Via de console een package opzoeken                                                                        | `sudo apt search <packagename>`        |
-| Alle packages die nu geïnstalleerd zijn bijwerken tot de laatste versie                                    | `sudo apt upgrade all`                 |
-| Alle netwerk configuraties tonen                                                                           | `ip a`                                 |
-| Een geïnstalleerde applicatie verwijderen                                                                  | `sudo apt remove <packagename>`        |
-| Controleren of de service draait                                                                           | `systemctl status <packagename>`       |
-| Een service opnieuw opstarten                                                                              | `sudo systemctl restart <packagename>` |
-| Alle netwerkpoorten die in gebruik zijn tonen                                                              | `sudo ss -tlnp`                        |
-| Machine afsluiten                                                                                          | `sudo poweroff`                        |
+| Task                                                                    | Command                                |
+| :---------------------------------------------------------------------- | :------------------------------------- |
+| Applicatie installeren                                                  | `sudo apt install -y <packagename>`    |
+| Lijst van software die nu geïnstalleerd is                              | `sudo apt list --Installed`            |
+| Via de console een package opzoeken                                     | `sudo apt search <packagename>`        |
+| Alle packages die nu geïnstalleerd zijn bijwerken tot de laatste versie | `sudo apt upgrade all`                 |
+| Alle netwerk configuraties tonen                                        | `ip a`                                 |
+| Een geïnstalleerde applicatie verwijderen                               | `sudo apt remove <packagename>`        |
+| Controleren of de service draait                                        | `systemctl status <packagename>`       |
+| Een service opnieuw opstarten                                           | `sudo systemctl restart <packagename>` |
+| Alle netwerkpoorten die in gebruik zijn tonen                           | `sudo ss -tlnp`                        |
+| Machine afsluiten                                                       | `sudo poweroff`                        |
 
-
-### Databank configuratie 
+### Databank configuratie
 
 | Task                                              | Command                                                                                      |
 | :------------------------------------------------ | :------------------------------------------------------------------------------------------- |

@@ -31,7 +31,7 @@
 | Taak                                                   | Commando                         |
 | :----------------------------------------------------- | :------------------------------- |
 | Testen of je kan verbinden met een applicatie| `ping <adres>`|
-|Een geïnstalleerde applicatie verwijderen| `sudo apt remove <package_name>`|
+|Script runnen | `F5`|
 
 
 ## Linux
@@ -45,6 +45,26 @@
 | MySQL openen om op locaal apparaat te werken | `mysql -u root -p`|
 | Virtuele machine afsluiten | `sudo poweroff`|
 | aantonen dat MySQL actief is| `systemctl status mysql`| 
+|Een geïnstalleerde applicatie verwijderen| `sudo apt remove <package_name>`|
+| SQL databank starten voor de eerste keer | `sudo mysql `|
+| SQL databank gebruiken  | ` use mysql ` |     
+| De root configureren                              | `mysql alter user 'root'@'localhost' identified with mysql_native_password by '<password>';` |
+| Een admin configureren                            | `create user 'admin'@'%' identified by '<password>';`                                        |
+| Alle rechten aan een admin geven                  | `grant all privileges on *.* to 'admin'@'%' with grant option;`                              |
+| Alle rechten van alle gebruikers updaten          | `flush privileges;`   |
+| SQL databank starten met wachtwoord    | `sudo mysql -u root -p `|
+| De beveiligingsopties van een databank instellen  | `sudo mysql_secure_installation`                                                             |
+| SQL databank afsluiten                            | `exit;`  |
+
+
+## MySQL Workbench
+
+| Taak                                                   | Commando                         |
+| :----------------------------------------------------- | :------------------------------- |
+|een user aanmaken/configureren | `create user '<naam>'@'%' identified by '<password>';`|
+|alle rechten behalve WITH GRANT OPTION aan een user geven | `grant all privileges on *.* to '<user>'@'%'; `|
+| De rechten effectief toekennen/updaten | `flush privileges`|
+
 
 
 
