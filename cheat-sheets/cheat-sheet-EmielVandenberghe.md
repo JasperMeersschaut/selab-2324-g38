@@ -42,20 +42,24 @@
 | Alle netwerkpoorten die in gebruik zijn tonen | `sudo ss -tlnp` |
 | Controleren of de service draait | `systemctl status <packagename>`|
 | een applicatie installeren | ` sudo apt install -y <packagenaam> ` |
-| MySQL openen om op locaal apparaat te werken | `mysql -u root -p`|
 | Virtuele machine afsluiten | `sudo poweroff`|
-| aantonen dat MySQL actief is| `systemctl status mysql`| 
 |Een geïnstalleerde applicatie verwijderen| `sudo apt remove <package_name>`|
-| SQL databank starten voor de eerste keer | `sudo mysql `|
-| SQL databank gebruiken  | ` use mysql ` |     
+| Alle netwerk configuraties tonen                                        | `ip a`                                 |
+
+
+### Databank configureren in Linux
+
+| Task                                              | Command                                                                                      |
+| :------------------------------------------------ | :------------------------------------------------------------------------------------------- |
+| SQL databank starten als root (zonder wachtwoord) | `sudo mysql`                                                                                 |
+| SQL databank starten als root (met wachtwoord)    | `sudo mysql -u root -p`                                                                      |
+| SQL databank gebruiken                            | `use mysql`                                                                                  |
+| SQL databank afsluiten                            | `exit;`                                                                                      |
 | De root configureren                              | `mysql alter user 'root'@'localhost' identified with mysql_native_password by '<password>';` |
 | Een admin configureren                            | `create user 'admin'@'%' identified by '<password>';`                                        |
 | Alle rechten aan een admin geven                  | `grant all privileges on *.* to 'admin'@'%' with grant option;`                              |
-| Alle rechten van alle gebruikers updaten          | `flush privileges;`   |
-| SQL databank starten met wachtwoord    | `sudo mysql -u root -p `|
+| Alle rechten van alle gebruikers updaten          | `flush privileges;`                                                                          |
 | De beveiligingsopties van een databank instellen  | `sudo mysql_secure_installation`                                                             |
-| SQL databank afsluiten                            | `exit;`  |
-
 
 ## MySQL Workbench
 
@@ -66,6 +70,13 @@
 | De rechten effectief toekennen/updaten | `flush privileges`|
 
 
+## Linux en Appache
+
+| Taak                                                   | Commando                         |
+| :----------------------------------------------------- | :------------------------------- |
+|kijken welke netwerkpoort gebruikt wordt voor hhtps | `grep 'https' /etc/services`|
+|ervoor zorgen dat fqil2ban start bij opstart vm | `sudo systemctl start fail2ban`|
+|ervoor zorgen dat fail2ban 'aan' staat | `sudo systemctl enable fail2ban`|
 
 
 
