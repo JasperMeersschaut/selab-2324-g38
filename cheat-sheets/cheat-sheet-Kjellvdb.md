@@ -28,41 +28,62 @@
 
 ### Linux
 
-| Task                                                                    | Command                                |
-| :---------------------------------------------------------------------- | :------------------------------------- |
-| Machine afsluiten                                                       | `sudo poweroff`                        |
-| Applicatie installeren                                                  | `sudo apt install -y <packagename>`    |
-| Een lijst tonen van de software die nu geïnstalleerd is                 | `sudo apt list --installed`            |
-| Van alle applicaties de laatste versie bijwerken                        | `sudo apt update`                      |
-| Alle packages die nu geïnstalleerd zijn bijwerken tot de laatste versie | `sudo apt upgrade all`                 |
-| Via de console een package opzoeken                                     | `sudo apt search <packagename>`        |
-| Een geïnstalleerde applicatie verwijderen                               | `sudo apt remove <packagename>`        |
-| Alle netwerk configuraties tonen                                        | `ip a`                                 |
-| Controleren of de service draait                                        | `systemctl status <packagename>`       |
-| Een service opnieuw opstarten                                           | `sudo systemctl restart <packagename>` |
-| Alle netwerkpoorten die in gebruik zijn tonen                           | `sudo ss -tlnp`                        |
+| Task                                                                    | Command                                   |
+| :---------------------------------------------------------------------- | :---------------------------------------- |
+| Machine afsluiten                                                       | `sudo poweroff`                           |
+| Applicatie installeren                                                  | `sudo apt install -y <packagename>`       |
+| Een lijst tonen van de software die nu geïnstalleerd is                 | `sudo apt list --installed`               |
+| Van alle applicaties de laatste versie bijwerken                        | `sudo apt update`                         |
+| Alle packages die nu geïnstalleerd zijn bijwerken tot de laatste versie | `sudo apt upgrade all`                    |
+| Via de console een package opzoeken                                     | `sudo apt search <packagename>`           |
+| Een geïnstalleerde applicatie verwijderen                               | `sudo apt remove <packagename>`           |
+| Alle netwerk configuraties tonen                                        | `ip a`                                    |
+| Controleren of de service draait                                        | `systemctl status <packagename>`          |
+| Een service opnieuw opstarten                                           | `sudo systemctl restart <packagename>`    |
+| Een applicatie laten opstarten bij opstarten Virtuele Machine           | `sudo systemctl enable <packagename>`     |
+| Alle netwerkpoorten die in gebruik zijn tonen                           | `sudo ss -tlnp`                           |
+| Een user lid maken van een groep                                        | `sudo usermod -aG <groep> <user>`         |
+| Een document eigendom maken van een groep                               | `sudo chgrp -R <groep> <document>`        |
+| Alle leden van een groep rechten geven tot een document                 | `sudo chmod -R g+<type_recht> <document>` |
+| Een bestand lezen en aanpassen                                          | `sudo nano <bestand>`                     |
 
-### Databank configureren in Linux
+### MySQL
 
-| Task                                              | Command                                                                                      |
-| :------------------------------------------------ | :------------------------------------------------------------------------------------------- |
-| SQL databank starten als root (zonder wachtwoord) | `sudo mysql`                                                                                 |
-| SQL databank starten als root (met wachtwoord)    | `sudo mysql -u root -p`                                                                      |
-| SQL databank gebruiken                            | `use mysql`                                                                                  |
-| SQL databank afsluiten                            | `exit;`                                                                                      |
-| De root configureren                              | `mysql alter user 'root'@'localhost' identified with mysql_native_password by '<password>';` |
-| Een admin configureren                            | `create user 'admin'@'%' identified by '<password>';`                                        |
-| Alle rechten aan een admin geven                  | `grant all privileges on *.* to 'admin'@'%' with grant option;`                              |
-| Alle rechten van alle gebruikers updaten          | `flush privileges;`                                                                          |
-| De beveiligingsopties van een databank instellen  | `sudo mysql_secure_installation`                                                             |
+| Task                                                                 | Command                                                                                      |
+| :------------------------------------------------------------------- | :------------------------------------------------------------------------------------------- |
+| SQL databank starten als root (zonder wachtwoord)                    | `sudo mysql`                                                                                 |
+| SQL databank starten als root (met wachtwoord)                       | `sudo mysql -u root -p`                                                                      |
+| SQL databank gebruiken                                               | `use mysql`                                                                                  |
+| De root configureren                                                 | `mysql alter user 'root'@'localhost' identified with mysql_native_password by '<password>';` |
+| Een admin configureren                                               | `create user 'admin'@'%' identified by '<password>';`                                        |
+| Alle rechten aan een admin geven                                     | `grant all privileges on *.* to 'admin'@'%' with grant option;`                              |
+| Alle rechten van alle gebruikers updaten                             | `flush privileges;`                                                                          |
+| SQL databank afsluiten                                               | `exit;`                                                                                      |
+| De beveiligingsopties van een databank instellen (in linux terminal) | `sudo mysql_secure_installation`                                                             |
+| Een database maken                                                   | `create database naam`                                                                       |
+| Een user configureren                                                | `create user '<naam>'@'%' identified by '<password>';`                                       |
+| Alle rechten (behalve `GRANT OPTION`) aan een user geven             | `grant all privileges on *.* to '<user>'@'%';`                                               |
+| Alle rechten van alle gebruikers updaten                             | `flush privileges;`                                                                          |
 
-### MySQL Workbench
+### Apache
 
-| Task                                                     | Command                                                |
-| :------------------------------------------------------- | :----------------------------------------------------- |
-| Een database maken                                       | `create database naam`                                 |
-| Een user configureren                                    | `create user '<naam>'@'%' identified by '<password>';` |
-| Alle rechten (behalve `GRANT OPTION`) aan een user geven | `grant all privileges on *.* to '<user>'@'%';`         |
-| Alle rechten van alle gebruikers updaten                 | `flush privileges;`                                    |
+| Task                                                                        | Command                                                                      |
+| :-------------------------------------------------------------------------- | :--------------------------------------------------------------------------- |
+| Apache root map                                                             | `/var/www/html`                                                              |
+| Zorgen dat mensen met de Apache-server kunnen verbinden met SSL/TLs (https) | `sudo a2enmod ssl; sudo a2ensite default-ssl; sudo systemctl reload apache2` |
+
+### Linux Firewall
+
+| Task                                                    | Command                                                    |
+| :------------------------------------------------------ | :--------------------------------------------------------- |
+| Firewall aanzetten                                      | `sudo ufw enable`                                          |
+| Verkeer toelaten om een bepaalde applicatie te bereiken | `sudo ufw allow <poortnummer>`                             |
+| Tonen op welke poorten verkeer toegelaten wordt         | `sudo ufw status`                                          |
+| Tonen bij welke applicaties er connecties gebaned zijn  | `sudo fail2ban-client status`                              |
+| Uitgebreide informatie over alle banned connecties      | `sudo fail2ban-client status <packagename>`                |
+| De findtime van een applicatie tonen                    | `sudo fail2ban-client get <packagename> findtime`          |
+| De maxretry van een applicatie tonen                    | `sudo fail2ban-client get <packagename> maxretry`          |
+| De bantime van een applicatie tonen                     | `sudo fail2ban-client get <packagename> bantime`           |
+| Een connectie unbannen                                  | `sudo fail2ban-client set <packagename> unbanip <ipadres>` |
 
 ## Checklists
