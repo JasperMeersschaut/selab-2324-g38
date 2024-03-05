@@ -7,11 +7,6 @@
 In deze opdracht ga je een webserver opzetten op je VM. Je zal een statische website publiceren op de webserver. Je zal ook de firewall configureren om de webserver te beveiligen. Ten slotte ga je fail2ban installeren en configureren om aanvallen op de webserver te detecteren en te blokkeren. Je zal ook een whitelist aanmaken om je eigen IP-adres toe te voegen.
 
 ## :thinking: Antwoorden op de vragen in de opdracht
-
-<!-- Voeg hieronder de antwoorden op de vragen in de opdracht toe. Gebruik voor elke vraag een aparte sectie. -->
-
-### Vraag 1 -
-
 **Luistert de Apache netwerkservice enkel naar de loopback-interface zoals MySQL? Of is de service meteen ook van buitenaf toegankelijk? Hoe controleer je dit?**
 
 - Ga naar de Apache-configuratiemap. De hoofdconfiguratie zich in `/etc/apache2/ports.conf`. Open dit bestand met een teksteditor. Bijvoorbeeld met nano:
@@ -42,16 +37,31 @@ In deze opdracht ga je een webserver opzetten op je VM. Je zal een statische web
   ```bash
   sudo systemctl status ssh
   ```
-  Dit commando zal de status van de SSH service tonen.
   | ![Screenshot terminal](./img/3-webserver/sshStatus.png) |
   | :-----------------------------------------------------: |
-  | Figuur 3. De status van de SSH service |
-- Om te controleren op welke poort de SSH server draait, kan je het volgende commando gebruiken:
-  ```bash
-  cat /etc/ssh/sshd_config
-  ```
-  Hierin kan je de configuratie van de SSH server zien. De standaardpoort is 22.
+  |         Figuur 3. De status van de SSH service          |
+  > Op dit scherm kan je zien dat de service draait en welke poort deze naar luister.
 
+**Welke netwerkpoort wordt gebruikt voor HTTPS? Met welk commando kan je dit opzoeken?**
+
+- Je kan dit vinden in `/etc/apache2/sites-available/default-ssl.conf`
+  Dus met het commando:
+  ```bash
+  cat /etc/apache2/sites-available/default-ssl.conf
+  ```
+  | ![Screenshot terminal](./img/3-webserver/httpsPoort.png) |
+  | :------------------------------------------------------: |
+  |   Figuur 4. De poort waarop de HTTPS service luistert    |
+
+**Gebruik systemctl om fail2ban op te starten bij het starten van de VM. Hoe kan je opzoeken of dit correct gebeurd is?**
+Je kan zorgen dat fail2ban opstart bij het starten van de VM met het commando:
+```bash	
+sudo systemctl enable fail2ban
+```
+Je kan controleren of dit correct gebeurd is met het commando:
+```bash
+sudo systemctl is-enabled fail2ban
+```
 ## :memo: Evaluatiecriteria
 
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
@@ -105,7 +115,6 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
   | :-----------------------------------------------------: |
   | Figuur 4. Connectie via FileZilla |
   | ![Screenshot Webbrowser](./img/3-webserver/WebsiteBereikbaarFysiekeComputer.png) |
-  | :-----------------------------------------------------: |
   | Figuur 5. Website bereikbaar via fysieke computer |
 
 ## Reflecties
