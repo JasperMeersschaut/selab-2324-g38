@@ -4,7 +4,7 @@
 
 ## :speech_balloon: Beschrijving
 
-In deze opdracht ga je een webserver opzetten op je VM. Je zal een statische website publiceren op de webserver. Je zal ook de firewall configureren om de webserver te beveiligen. Ten slotte ga je fail2ban installeren en configureren om aanvallen op de webserver te detecteren en te blokkeren. Je zal ook een whitelist aanmaken om je eigen IP-adres toe te voegen. 
+In deze opdracht ga je een webserver opzetten op je VM. Je zal een statische website publiceren op de webserver. Je zal ook de firewall configureren om de webserver te beveiligen. Ten slotte ga je fail2ban installeren en configureren om aanvallen op de webserver te detecteren en te blokkeren. Je zal ook een whitelist aanmaken om je eigen IP-adres toe te voegen.
 
 ## :thinking: Antwoorden op de vragen in de opdracht
 
@@ -81,8 +81,8 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [x] Je kan aantonen dat fail2ban actief is.
 - [x] Je kan de inhoud van het **jail.local** bestand tonen en toelichten.
 - [ ] Je kan met de **fail2ban** command line client aantonen dat de **findtime**, **maxretry** en **bantime** juist zijn ingesteld. Je kan deze begrippen toelichten.
-- [ ] Je kan aantonen dat je via SSH kan inloggen op de VM vanop jouw fysiek toestel en dat fail2ban jouw IP-adres blokkeert als je te veel foutieve inlogpogingen doet.
-- [ ] Je kan aantonen dat een IP-adres op de whitelist niet wordt geblokkeerd.
+- [x] Je kan aantonen dat je via SSH kan inloggen op de VM vanop jouw fysiek toestel en dat fail2ban jouw IP-adres blokkeert als je te veel foutieve inlogpogingen doet.
+- [x] Je kan aantonen dat een IP-adres op de whitelist niet wordt geblokkeerd.
 - [x] Je hebt een verslag gemaakt op basis van het template.
 - [x] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
@@ -100,19 +100,19 @@ Beschrijf hier het probleem uitgebreid met screenshots, code snippets, enz. en d
 
 > [818]: ERROR Failed during configuration: While reading from 'etc/fail2ban/jail.local' [line 6]: option 'logpath' in section 'sshd' already exists
 
-- **Oorzaak**: De logpath voor de sshd service stond dubbel in het bestand **jail.local** (figuur 5).
-- **Oplossing**: De dubbele regel verwijderen uit het bestand **jail.local** (figuur 6).
+- **Oorzaak**: De logpath voor de sshd service stond dubbel in het bestand **jail.local** (figuur 6).
+- **Oplossing**: De dubbele regel verwijderen uit het bestand **jail.local** (figuur 7).
   | ![Screenshot terminal](./img/3-webserver/Fail2BanStatusFailed.png) |
   | :---------------------------------------------------------------: |
   | Figuur 5. fail2ban error |
 
   | ![Screenshot terminal](./img/3-webserver/jail.localBefore.png) |
   | :------------------------------------------------------------: |
-  |           Figuur 5. De foutieve **jail.local** file            |
+  |           Figuur 6. De foutieve **jail.local** file            |
 
   | ![Screenshot terminal](./img/3-webserver/jail.localAfter.png) |
   | :-----------------------------------------------------------: |
-  |          Figuur 6. De aangepaste **jail.local** file          |
+  |          Figuur 7. De aangepaste **jail.local** file          |
 
 ## :information_desk_person: Voorbereiding demo
 
@@ -130,7 +130,7 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 - Kopieer de websitebestanden naar de document root.
   | ![Screenshot filezilla](./img/3-webserver/FileZillaHeeftConnectie.png) |
   | :-----------------------------------------------------: |
-  | Figuur 4. Connectie via FileZilla |
+  | Figuur 8. Connectie via FileZilla |
 
 ### De website is te zien in een webbrowser op het fysieke systeem via URL <https://192.168.56.20>.
 
@@ -138,7 +138,7 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 
 | ![Screenshot Webbrowser](./img/3-webserver/WebsiteBereikbaarFysiekeComputer.png) |
 | :------------------------------------------------------------------------------: |
-|                Figuur 5. Website bereikbaar via fysieke computer                 |
+|                Figuur 9. Website bereikbaar via fysieke computer                 |
 
 ### Je kan aantonen dat de firewall actief is en dat de juiste poorten toegelaten zijn in de firewall:
 
@@ -148,7 +148,7 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
   ```
   | ![Screenshot terminal](./img/3-webserver/FireWallActiefEnPoortenToegelaten.png) |
   | :-----------------------------------------------------------------------------: |
-  |                       Figuur 6. De status van de firewall                       |
+  |                      Figuur 10. De status van de firewall                       |
 
 #### Je kan aantonen dat je nog steeds kan verbinden via SSH of SFTP.
 
@@ -188,7 +188,32 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 
 ### Je kan aantonen dat je via SSH kan inloggen op de VM vanop jouw fysiek toestel en dat fail2ban jouw IP-adres blokkeert als je te veel foutieve inlogpogingen doet.
 
+- Open een terminal en verbind met de VM via SSH met het volgende commando:
+  ```bash
+  ssh osboxes@192.168.56.20
+  ```
+- Voer een aantal keer een foutief wachtwoord in.
+- Je zal zien dat je geblokkeerd wordt.
+
 ### Je kan aantonen dat een IP-adres op de whitelist niet wordt geblokkeerd.
+
+- Open de 2de vm en probeer in te loggen op de eerste vm met een foutief wachtwoord. Je zal zien dat je niet geblokkeerd wordt omdat je op de whitelist staat.
+
+## Mogelijke uitbreidingen
+
+### Hydra
+
+Wil je eens kijken hoe fail2ban zich gedraagt met een aanvalstool? Zorgt fail2ban voor voldoende beveiliging? Je kan de tool Hydra loslaten op jouw VM om dit te valideren. Enkele tutorials vind je op:
+
+- <https://www.linuxfordevices.com/tutorials/linux/hydra-brute-force-ssh>
+- <https://linuxconfig.org/ssh-password-testing-with-hydra-on-kali-linux>
+- En nog veel meer op YouTube, Google, ... . Gebruik de zoektermen "ssh", "hydra", "brute force", ...
+
+Er is zelfs nog een betere manier om brute force tools en bots totaal geen kans te geven. Weet je welke manier? Hoe kan je dit instellen?
+
+### Awesome selfhosted
+
+Je kan ook proberen om een applicatie van de [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) lijst op te zetten op jouw virtuele machine. Dit is een lijst van open-source software die je zelf kan hosten. Je kan bijvoorbeeld een blog, een wiki, een chatapplicatie, een CI/CD tool... opzetten. Zoek een applicatie die je interessant vindt en probeer deze op te zetten op jouw VM
 
 ## Reflecties
 
