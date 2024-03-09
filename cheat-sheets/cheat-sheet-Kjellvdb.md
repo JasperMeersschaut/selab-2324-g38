@@ -86,4 +86,10 @@
 | De bantime van een applicatie tonen                     | `sudo fail2ban-client get <packagename> bantime`           |
 | Een connectie unbannen                                  | `sudo fail2ban-client set <packagename> unbanip <ipadres>` |
 
+### Hydra
+
+| Task                                                   | Command                                                                                    |
+| :----------------------------------------------------- | :----------------------------------------------------------------------------------------- |
+| Wachtwoord kraken met een gegeven username en ip-adres | `hydra -l <username> -P /usr/share/wordlists/rockyou.txt 192.168.56.20 -t 4 ssh -V -e nsr` |
+
 ## Checklists
