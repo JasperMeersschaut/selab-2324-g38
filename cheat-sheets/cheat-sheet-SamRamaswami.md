@@ -53,19 +53,20 @@
 
 ### Linux Firewall
 
-| Task                                                    | Command                                             |
-| :------------------------------------------------------ | :-------------------------------------------------- |
-| Firewall aanzetten                                      | `sudo ufw enable`                                   |
-| Verkeer toelaten om een bepaalde applicatie te bereiken | `sudo ufw allow <port_number>`                      |
-| Tonen op welke poorten verkeer toegelaten wordt         | `sudo ufw status`                                   |
-| Tonen welke jails geconfigureerd zijn                   | `sudo fail2ban-client status`                       |
-| Tonen welke IP-adressen geblokkeerd zijn                | `sudo fail2ban-client status <jail_name>`           |
-| De findtime van een jail tonen                          | `sudo fail2ban-client get <jail_name> findtime`     |
-| De maxretry van een jail tonen                          | `sudo fail2ban-client get <jail_name> maxretry`     |
-| De bantime van een jail tonen                           | `sudo fail2ban-client get <jail_name> bantime`      |
-| IP-adres vrijmaken voordat blokkeertijd is verlopen     | `sudo fail2ban-client set <jail_name> unbanip <ip>` |
-| Applicatie laten opstarten bij booten VM                | `sudo systemctl enable <package_name>`              |
-| Controleren of service opstart bij booten VM            | `systemctl is-enabled <package_name>`               |
+| Task                                                                                         | Command                                             |
+| :------------------------------------------------------------------------------------------- | :-------------------------------------------------- |
+| Firewall aanzetten                                                                           | `sudo ufw enable`                                   |
+| Verkeer toelaten om een bepaalde applicatie te bereiken                                      | `sudo ufw allow <port_number>`                      |
+| Tonen op welke poorten verkeer toegelaten wordt                                              | `sudo ufw status`                                   |
+| Tonen welke jails geconfigureerd zijn                                                        | `sudo fail2ban-client status`                       |
+| Tonen welke IP-adressen geblokkeerd zijn                                                     | `sudo fail2ban-client status <jail_name>`           |
+| De findtime van een jail tonen                                                               | `sudo fail2ban-client get <jail_name> findtime`     |
+| De maxretry van een jail tonen                                                               | `sudo fail2ban-client get <jail_name> maxretry`     |
+| De bantime van een jail tonen                                                                | `sudo fail2ban-client get <jail_name> bantime`      |
+| IP-adres vrijmaken voordat blokkeertijd is verlopen                                          | `sudo fail2ban-client set <jail_name> unbanip <ip>` |
+| Applicatie laten opstarten bij booten VM                                                     | `sudo systemctl enable <package_name>`              |
+| Controleren of service opstart bij booten VM                                                 | `systemctl is-enabled <package_name>`               |
+| Man page van jail.conf waar o.a. uitleg staat over de parameters findtime, maxretry, bantime | `man jail.conf`                                     |
 
 ### Shell
 
