@@ -203,13 +203,23 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 
 ### Hydra
 
-Wil je eens kijken hoe fail2ban zich gedraagt met een aanvalstool? Zorgt fail2ban voor voldoende beveiliging? Je kan de tool Hydra loslaten op jouw VM om dit te valideren. Enkele tutorials vind je op:
+Wil je eens kijken hoe fail2ban zich gedraagt met een aanvalstool? Zorgt fail2ban voor voldoende beveiliging? Je kan de tool Hydra loslaten op jouw VM om dit te valideren.
 
-- <https://www.linuxfordevices.com/tutorials/linux/hydra-brute-force-ssh>
-- <https://linuxconfig.org/ssh-password-testing-with-hydra-on-kali-linux>
-- En nog veel meer op YouTube, Google, ... . Gebruik de zoektermen "ssh", "hydra", "brute force", ...
+- Met het commando `sudo apt install hydra` kan je Hydra installeren.
+- Je kan dan een wachtwoordenlijst downloaden op het internet.
+- Met het commando `hydra -l osboxes -P /usr/share/wordlists/rockyou.txt 192.168.56.20 -t 4 ssh -V -e nsr` kan je de bruteforce-aanval starten.
+- We zien in onze webserver dat de aanval is geblokeerd.
 
 Er is zelfs nog een betere manier om brute force tools en bots totaal geen kans te geven. Weet je welke manier? Hoe kan je dit instellen?
+
+- Je kan de bantime voor een aanvaller steeds verhogen naar mate van het aantal keer de aanvaller al gebanned is.
+- Dat doe je door volgende lijnen in het bestand jail.local toe te voegen:
+
+  `bantime.increment = true`
+
+  `bantime.factor = 2`
+
+  `bantime.formula = ban.Time * (1<<(ban.Count if ban.Count<20 else 20)) * banFactor`
 
 ### Awesome selfhosted
 
