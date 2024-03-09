@@ -2,17 +2,18 @@
 
 > Student: Jasper Meersschaut
 
-## 1-package-manager-markdown
+## Powershell
 
-### De apt package manager
+| Task                          | Command      |
+| :---------------------------- | :----------- |
+| Commentaarregel schrijven     | `#`          |
+| Tekst afdrukken op de console | `Write-Host` |
+| Script runnen                 | `Fn + F5`    |
 
-#### Powershell
+## chocolatey package manager
 
 | Task                                                                         | Command                          |
 | :--------------------------------------------------------------------------- | :------------------------------- |
-| Commentaarregel schrijven                                                    | `#`                              |
-| Tekst afdrukken op de console                                                | `Write-Host`                     |
-| Script runnen                                                                | `Fn + F5`                        |
 | Overzicht van alle opties en parameters bruikbaar met het commando **choco** | `choco -?`                       |
 | Applicatie installeren                                                       | `choco install -y <packagename>` |
 | Een lijst tonen van de software die nu geïnstalleerd is via apt              | `choco list`                     |
@@ -20,7 +21,7 @@
 | Via de console een package opzoeken                                          | `choco search <packagename>`     |
 | Een geïnstalleerde applicatie verwijderen                                    | `choco uninstall <packagename>`  |
 
-#### Linux
+## Linux: bash scripting
 
 | Task                                                                    | Command                          |
 | :---------------------------------------------------------------------- | :------------------------------- |
@@ -34,37 +35,42 @@
 | Via de console een package opzoeken                                     | `apt search <package_name>`      |
 | Een geïnstalleerde applicatie verwijderen                               | `sudo apt remove <package_name>` |
 
-### Markdown
+## Markdown
 
-| Task                         | Command                          |
-| :--------------------------- | :------------------------------- |
-| Header 1, Header 2, Header 3 | `#Hallo, ##Hallo, ###Hallo`      |
-| Bold                         | `**Hallo**`                      |
-| Commentaarregel schrijven    | `<!--Hallo-->`                   |
-| Bash code schrijven          | \`\`\` bash \`\`\`               |
+| Task                         | Command                         |
+| :--------------------------- | :------------------------------ |
+| Header 1, Header 2, Header 3 | `#Hallo, ##Hallo, ###Hallo`     |
+| Bold                         | `**Hallo**`                     |
+| Commentaarregel schrijven    | `<!--Hallo-->`                  |
+| Bash code schrijven          | \`\`\` bash \`\`\`              |
 | Hyperlink                    | `[Tekst](https://www.Link.com)` |
 
-## 2-databankserver
-### HoofdOpdracht
-#### VM installatie
-- Via `enp0s8` is de VM verbonden met de host. De host heeft een vast IP-adres 
 - `ip a` toont de netwerkinterfaces
-#### Configuratie van de databankserver
-- `sudo apt update` om de package lijst te updaten
-- `sudo apt install mysql-server` om de MySQL server te installeren
-- `sudo status mysql` om te controleren of de MySQL server actief is
-- `sudo ss -tlnp` om te controleren of de MySQL server luistert op poort 3306
-- `sudo systemctl restart mysql` om de MySQL server te herstarten
-- `sudo systemctl status mysql` om te controleren of de MySQL server actief is
-#### Configuratie van de databank
-- `sudo mysql` om in de MySQL shell te komen
-- use mysql; om de mysql databank te selecteren
-- `alter user 'root'@'localhost' identified with mysql_native_password by 'letmein';` om het wachtwoord van de root gebruiker te wijzigen naar 'letmein'
-- `create user 'admin'@'%' identified by 'letmein';` om een nieuwe gebruiker aan te maken
-- `grant all privileges on *.* to 'admin'@'%' with grant option;` om alle rechten toe te kennen aan de nieuwe gebruiker
-- `flush privileges;` om de privileges te herladen
-- `exit` om de MySQL shell te verlaten 
-- `sudo mysql_secure_installation` om de MySQL server te beveiligen
+
+## Linux: Configuratie van de databankserver
+
+| Task                                                  | Command                         |
+| :---------------------------------------------------- | :------------------------------ |
+| De package lijst updaten                              | `sudo apt update`               |
+| De packages upgraden                                  | `sudo apt upgrade`              |
+| De MySQL server installeren                           | `sudo apt install mysql-server` |
+| Controleren of de MySQL server actief is              | `sudo status mysql`             |
+| Controleren of de MySQL server luistert op poort 3306 | `sudo ss -tlnp`                 |
+| De MySQL server herstarten                            | `sudo systemctl restart mysql`  |
+
+## Linux: Configuratie van de databank
+
+| Task                                           | Command                                                                             |
+| :--------------------------------------------- | :---------------------------------------------------------------------------------- |
+| De MySQL shell starten                         | `sudo mysql`                                                                        |
+| De mysql databank selecteren                   | `use mysql;`                                                                        |
+| Het wachtwoord wijzegin van de root            | `alter user 'root'@'localhost' identified with mysql_native_password by 'letmein';` |
+| Een nieuwe gebruiker aanmaken                  | `create user 'admin'@'%' identified by 'letmein';`                                  |
+| Alle rechten toekennen aan de nieuwe gebruiker | `grant all privileges on *.* to 'admin'@'%' with grant option;`                     |
+| De privileges herladen                         | `flush privileges;`                                                                 |
+| De MySQL shell verlaten                        | `exit`                                                                              |
+| De MySQL server beveiligen                     | `sudo mysql_secure_installation`                                                    |
+
 ```
 Validate Password activeren? NEE
 Wachtwoord voor root aanpassen? NEE
@@ -73,31 +79,28 @@ Disallow root login remotely? JA
 Remove test database? JA
 Reload Privileges table? JA
 ```
-#### Mysql workbench
-Test nu of je vanop je fysieke systeem via MySQL Workbench kan verbinden met MySQL in je VM. Start MySQL Workbench op en doe het volgende:
-- Maak een nieuwe verbinding aan.
-- Kies een naam voor de verbinding (bv. UbuntuVM-admin).
-- Hostnaam: 192.168.56.20
-- Username: admin
-- Test eerst de verbinding en sla het wachtwoord op in de "vault".
-### Uitbreiding
-#### FileZilla
-> Probeer of je met FileZilla/Cyberduck bestanden van/naar de VM kan kopiëren. Dit zal extra configuratie vereisen.
-##### Ubuntu
+
+## Linux: Configuratie van FileZilla FTP server
+
 - `sudo apt install vsftpd` om de FTP server te installeren
 - `sudo nano /etc/vsftpd.conf` om de configuratie van de FTP server aan te passen
+
 ```
 anonymous_enable=NO
 local_enable=YES
 write_enable=YES
 local_umask=022
 ```
+
 - `sudo systemctl restart vsftpd` om de FTP server te herstarten
-##### Windows
+
+## Windows: Configuratie van FileZilla FTP server
+
 - Open FileZilla
 - Ga naar `Bestand` > `Sitebeheer`
 - Klik op `Nieuwe site`
 - Vul de volgende gegevens in:
+
 ```
 Host: 192.168.56.20
 Type: FTP
@@ -105,19 +108,27 @@ Poort: leeg laten
 Gebruikersnaam: osboxes
 Wachtwoord: osboxes.org
 ```
+
 - Klik op `Verbinden`
 - Nu kan je bestanden van/naar de VM kopiëren
-#### SSH
-> Configureer de VM zodat je via SSH kan inloggen vanop je fysieke systeem (via een wachtwoord en/of public/private keypair).
-##### Ubuntu
-- `sudo apt install openssh-server` om de SSH server te installeren
-- `sudo nano /etc/ssh/sshd_config` om de configuratie van de SSH server aan te passen
+
+## Linux: SSH
+
+| Task                                        | Command                           |
+| :------------------------------------------ | :-------------------------------- |
+| De SSH server installeren                   | `sudo apt install openssh-server` |
+| De configuratie van de SSH server aanpassen | `sudo nano /etc/ssh/sshd_config`  |
+| De SSH server herstarten                    | `sudo systemctl restart ssh`      |
+
+In de file **sshd_config** de volgende regels aanpassen:
+
 ```
 passwordauthentication YES
 pubkeyauthentication YES
 ```
-- `sudo systemctl restart ssh` om de SSH server te herstarten
-##### Windows
+
+## Windows: SSH
+
 - Breng je public key over via FileZilla naar je VM.
 - Voeg je public key toe aan `~/.ssh/authorized_keys`.
 
@@ -127,18 +138,61 @@ pubkeyauthentication YES
   > `ssh osboxes@192.168.56.20`
 
 # TODO: fix cheatsheet
+
 Activeer de firewall met het ufw-commando. Dit kan met het volgende commando in de terminal:
-```bash	
+
+```bash
 sudo ufw enable
-```	
+```
 
 Laat verkeer op de poorten uit stap 1 toe door de firewall. Dit kan met het volgende commando voor elke poort:
-```bash	
+
+```bash
 sudo ufw allow <poortnummer>/tcp
 
-```	
+```
+
 - `sudo apt install apache2` installeert de apache webserver
 - `sudo systemctl status apache2` toont de status van de apache webserver
 - `sudo systemctl is-enabled apache2` toont of de apache webserver opstart bij het booten van de VM
 - `sudo nano /etc/apache2/ports.conf` toont de configuratie van de apache webserver
 - `/var/www/html/` is de map waarin de websitebestanden moeten geplaatst worden
+
+## Webserver: apache2
+
+| Task                                                                       | Command                                |
+| :------------------------------------------------------------------------- | :------------------------------------- |
+| Installeer apache2                                                         | `sudo apt install apache2`             |
+| Controleer of apache2 actief is                                            | `sudo systemctl status apache2`        |
+| Controleer of apache2 opstart bij het booten van de VM                     | `sudo systemctl is-enabled apache2`    |
+| Pad naar de root map van apache2                                           | `/var/www/html`                        |
+| Maak de gebruiker lid van de groep www-data                                | `sudo usermod -aG www-data osboxes`    |
+| Maak de root map van apache2 eigendom van de groep www-data                | `sudo chgrp -R www-data /var/www/html` |
+| Geef de groep www-data lees- en schrijfrechten tot de root map van apache2 | `sudo chmod -R g+rw /var/www/html`     |
+
+## Webserver: SSL/HTTPS
+
+| Task                         | Command                                                                      |
+| :--------------------------- | :--------------------------------------------------------------------------- |
+| Activeer SSL/HTTPS           | `sudo a2enmod ssl; sudo a2ensite default-ssl; sudo systemctl reload apache2` |
+| Het nieuwe ip van de website | `https://192.168.56.20`                                                      |
+
+## Webserver: Firewall
+
+| Task                                                    | Command                        |
+| :------------------------------------------------------ | :----------------------------- |
+| Firewall aanzetten                                      | `sudo ufw enable`              |
+| Verkeer toelaten om een bepaalde applicatie te bereiken | `sudo ufw allow <poortnummer>` |
+| Tonen op welke poorten verkeer toegelaten wordt         | `sudo ufw status`              |
+
+## Webserver: Fail2Ban
+
+| Task                                            | Command                              |
+| :---------------------------------------------- | :----------------------------------- |
+| Fail2Ban installeren                            | `sudo apt install fail2ban`          |
+| Fail2Ban activeren                              | `sudo systemctl enable fail2ban`     |
+| Fail2Ban herstarten                             | `sudo systemctl restart fail2ban`    |
+| Fail2Ban configuratie aanpassen                 | `sudo nano /etc/fail2ban/jail.local` |
+| Hoe ver terug Fail2Ban kijkt                    | `findtime`                           |
+| Hoeveel keer een IP-adres mag proberen inloggen | `maxretry`                           |
+| Hoe lang een IP-adres geblokkeerd blijft        | `bantime`                            |
