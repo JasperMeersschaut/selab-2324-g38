@@ -4,9 +4,10 @@
 
 ## :speech_balloon: Beschrijving
 
-In deze opdracht ga je een webserver opzetten op je VM. Je zal een statische website publiceren op de webserver. Je zal ook de firewall configureren om de webserver te beveiligen. Ten slotte ga je fail2ban installeren en configureren om aanvallen op de webserver te detecteren en te blokkeren. Je zal ook een whitelist aanmaken om je eigen IP-adres toe te voegen.
+In deze opdracht ga je een webserver opzetten op je VM. Je zal een statische website publiceren op de webserver. Je zal ook de firewall configureren om de webserver te beveiligen. Ten slotte ga je fail2ban installeren en configureren om aanvallen op de webserver te detecteren en te blokkeren. Je zal ook een whitelist aanmaken om je eigen IP-adres toe te voegen. 
 
 ## :thinking: Antwoorden op de vragen in de opdracht
+
 **Luistert de Apache netwerkservice enkel naar de loopback-interface zoals MySQL? Of is de service meteen ook van buitenaf toegankelijk? Hoe controleer je dit?**
 
 - Ga naar de Apache-configuratiemap. De hoofdconfiguratie zich in `/etc/apache2/ports.conf`. Open dit bestand met een teksteditor. Bijvoorbeeld met nano:
@@ -55,31 +56,35 @@ In deze opdracht ga je een webserver opzetten op je VM. Je zal een statische web
 
 **Gebruik systemctl om fail2ban op te starten bij het starten van de VM. Hoe kan je opzoeken of dit correct gebeurd is?**
 Je kan zorgen dat fail2ban opstart bij het starten van de VM met het commando:
-```bash	
+
+```bash
 sudo systemctl enable fail2ban
 ```
+
 Je kan controleren of dit correct gebeurd is met het commando:
+
 ```bash
 sudo systemctl is-enabled fail2ban
 ```
+
 ## :memo: Evaluatiecriteria
 
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
-- [ ] Je kan de VM opstarten.
-- [ ] Je kan met FileZilla (of een gelijkaardige applicatie) bestanden naar de Document Root van de webserver kopiëren.
-- [ ] De website is te zien in een webbrowser op het fysieke systeem via URL <https://192.168.56.20>.
-- [ ] Je kan aantonen dat de firewall actief is en dat de juiste poorten toegelaten zijn in de firewall:
-  - [ ] Je kan aantonen dat je nog steeds kan verbinden via SSH of SFTP.
-  - [ ] Je kan aantonen dat de MySQL Workbench nog steeds kan verbinden met de VM.
-  - [ ] Je kan aantonen dat je website nog steeds bereikbaar is.
-- [ ] Je kan aantonen dat fail2ban actief is.
-- [ ] Je kan de inhoud van het **jail.local** bestand tonen en toelichten.
+- [x] Je kan de VM opstarten.
+- [x] Je kan met FileZilla (of een gelijkaardige applicatie) bestanden naar de Document Root van de webserver kopiëren.
+- [x] De website is te zien in een webbrowser op het fysieke systeem via URL <https://192.168.56.20>.
+- [x] Je kan aantonen dat de firewall actief is en dat de juiste poorten toegelaten zijn in de firewall:
+  - [x] Je kan aantonen dat je nog steeds kan verbinden via SSH of SFTP.
+  - [x] Je kan aantonen dat de MySQL Workbench nog steeds kan verbinden met de VM.
+  - [x] Je kan aantonen dat je website nog steeds bereikbaar is.
+- [x] Je kan aantonen dat fail2ban actief is.
+- [x] Je kan de inhoud van het **jail.local** bestand tonen en toelichten.
 - [ ] Je kan met de **fail2ban** command line client aantonen dat de **findtime**, **maxretry** en **bantime** juist zijn ingesteld. Je kan deze begrippen toelichten.
 - [ ] Je kan aantonen dat je via SSH kan inloggen op de VM vanop jouw fysiek toestel en dat fail2ban jouw IP-adres blokkeert als je te veel foutieve inlogpogingen doet.
 - [ ] Je kan aantonen dat een IP-adres op de whitelist niet wordt geblokkeerd.
-- [ ] Je hebt een verslag gemaakt op basis van het template.
-- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
+- [x] Je hebt een verslag gemaakt op basis van het template.
+- [x] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
 ## :question: Problemen en oplossingen
 
@@ -91,31 +96,99 @@ Als jullie geen problemen zijn tegengekomen, schrijf dan "geen problemen ondervo
 
 Beschrijf hier het probleem uitgebreid met screenshots, code snippets, enz. en de oplossing die jullie al dan niet hebben gevonden. -->
 
+### Probleem 1: Fail2ban active: failed
+
+> [818]: ERROR Failed during configuration: While reading from 'etc/fail2ban/jail.local' [line 6]: option 'logpath' in section 'sshd' already exists
+
+- **Oorzaak**: De logpath voor de sshd service stond dubbel in het bestand **jail.local** (figuur 5).
+- **Oplossing**: De dubbele regel verwijderen uit het bestand **jail.local** (figuur 6).
+  | ![Screenshot terminal](./img/3-webserver/Fail2BanStatusFailed.png) |
+  | :---------------------------------------------------------------: |
+  | Figuur 5. fail2ban error |
+
+  | ![Screenshot terminal](./img/3-webserver/jail.localBefore.png) |
+  | :------------------------------------------------------------: |
+  |           Figuur 5. De foutieve **jail.local** file            |
+
+  | ![Screenshot terminal](./img/3-webserver/jail.localAfter.png) |
+  | :-----------------------------------------------------------: |
+  |          Figuur 6. De aangepaste **jail.local** file          |
+
 ## :information_desk_person: Voorbereiding demo
 
 Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welke bestanden, commando's, enz. je zal gebruiken tijdens de demo.
 
-### Stap 1 - installatie
+### Je kan met FileZilla (of een gelijkaardige applicatie) bestanden naar de Document Root van de webserver kopiëren.
 
-- `sudo apt install apache2` installeert de apache webserver
-- `sudo systemctl status apache2` toont de status van de apache webserver
-- `sudo systemctl is-enabled apache2` toont of de apache webserver opstart bij het booten van de VM
-- `sudo nano /etc/apache2/ports.conf` toont de configuratie van de apache webserver
-- `/var/www/html/` is de map waarin de websitebestanden moeten geplaatst worden
-
-### Stap 2 - Een statische website publiceren
-
-> Filezilla zou al geïnstalleerd en geconfigureerd moeten zijn.
-
-- `sudo usermod -aG www-data osboxes` voegt de gebruiker osboxes toe aan de groep www-data
-- `sudo chgrp -R www-data /pad/naar/document/root` verandert de groep van de document root naar www-data
-- sudo chmod -R g+w /pad/naar/document/root` geeft de groep www-data schrijfrechten op de document root
-- Verbind via filezilla met de VM en kopieer de websitebestanden naar de document root
+- Start FileZilla op.
+- Maak een nieuwe verbinding aan met de volgende gegevens:
+  - Host: 192.168.56.20
+  - Gebruikersnaam: osboxes
+  - Wachtwoord: osboxes.org
+  - Poort: 22
+- Verbind met de VM.
+- Kopieer de websitebestanden naar de document root.
   | ![Screenshot filezilla](./img/3-webserver/FileZillaHeeftConnectie.png) |
   | :-----------------------------------------------------: |
   | Figuur 4. Connectie via FileZilla |
-  | ![Screenshot Webbrowser](./img/3-webserver/WebsiteBereikbaarFysiekeComputer.png) |
-  | Figuur 5. Website bereikbaar via fysieke computer |
+
+### De website is te zien in een webbrowser op het fysieke systeem via URL <https://192.168.56.20>.
+
+- Open een webbrowser en ga naar <https://192.168.56.20>.
+
+| ![Screenshot Webbrowser](./img/3-webserver/WebsiteBereikbaarFysiekeComputer.png) |
+| :------------------------------------------------------------------------------: |
+|                Figuur 5. Website bereikbaar via fysieke computer                 |
+
+### Je kan aantonen dat de firewall actief is en dat de juiste poorten toegelaten zijn in de firewall:
+
+- Gebruik dit commando om te controleren de firewall actief is en dat de juiste poorten toegelaten zijn in de firewall:
+  ```bash
+  sudo ufw status
+  ```
+  | ![Screenshot terminal](./img/3-webserver/FireWallActiefEnPoortenToegelaten.png) |
+  | :-----------------------------------------------------------------------------: |
+  |                       Figuur 6. De status van de firewall                       |
+
+#### Je kan aantonen dat je nog steeds kan verbinden via SSH of SFTP.
+
+- Open een terminal en verbind met de VM via SSH met het volgende commando:
+  ```bash
+  ssh osboxes@192.168.56.20
+  ```
+
+#### Je kan aantonen dat de MySQL Workbench nog steeds kan verbinden met de VM.
+
+- Open MySQL Workbench en verbind met de VM.
+
+#### Je kan aantonen dat je website nog steeds bereikbaar is.
+
+- Open een webbrowser en ga naar <https://192.168.56.20>.
+
+### Je kan aantonen dat fail2ban actief is.
+
+- Gebruik dit commando om te controleren of fail2ban actief is:
+  ```bash
+  sudo systemctl status fail2ban
+  ```
+
+### Je kan de inhoud van het **jail.local** bestand tonen en toelichten.
+
+- Gebruik dit commando om de inhoud van het **jail.local** bestand te tonen:
+  ```bash
+  cat /etc/fail2ban/jail.local
+  ```
+
+### Je kan met de **fail2ban** command line client aantonen dat de **findtime**, **maxretry** en **bantime** juist zijn ingesteld. Je kan deze begrippen toelichten.
+
+- Gebruik dit commando om de **findtime**, **maxretry** en **bantime** te tonen:
+  ```bash
+  sudo fail2ban-client get sshd
+  ```
+
+### Je kan aantonen dat je via SSH kan inloggen op de VM vanop jouw fysiek toestel en dat fail2ban jouw IP-adres blokkeert als je te veel foutieve inlogpogingen doet.
+
+### Je kan aantonen dat een IP-adres op de whitelist niet wordt geblokkeerd.
 
 ## Reflecties
 

@@ -126,3 +126,19 @@ pubkeyauthentication YES
   > Nu kan je via de terminal inloggen op je virtuele machine via
   > `ssh osboxes@192.168.56.20`
 
+# TODO: fix cheatsheet
+Activeer de firewall met het ufw-commando. Dit kan met het volgende commando in de terminal:
+```bash	
+sudo ufw enable
+```	
+
+Laat verkeer op de poorten uit stap 1 toe door de firewall. Dit kan met het volgende commando voor elke poort:
+```bash	
+sudo ufw allow <poortnummer>/tcp
+
+```	
+- `sudo apt install apache2` installeert de apache webserver
+- `sudo systemctl status apache2` toont de status van de apache webserver
+- `sudo systemctl is-enabled apache2` toont of de apache webserver opstart bij het booten van de VM
+- `sudo nano /etc/apache2/ports.conf` toont de configuratie van de apache webserver
+- `/var/www/html/` is de map waarin de websitebestanden moeten geplaatst worden
