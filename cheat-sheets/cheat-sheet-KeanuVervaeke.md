@@ -51,3 +51,10 @@
 | De beveiligingsopties van een databank instellen  | `sudo mysql_secure_installation`                                                             |
 | SQL databank gebruiken                            | `use mysql`                                                                                  |
 | SQL databank afsluiten                            | `exit;`                                                                                      |
+
+### Apache
+
+| Task                                                                        | Command                                                                      |
+| :-------------------------------------------------------------------------- | :--------------------------------------------------------------------------- |
+| Apache root map                                                             | `/var/www/html`                                                              |
+| Zorgen dat mensen met de Apache-server kunnen verbinden met SSL/TLs (https) | `sudo a2enmod ssl; sudo a2ensite default-ssl; sudo systemctl reload apache2` |
