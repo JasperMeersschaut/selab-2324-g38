@@ -80,7 +80,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
   - [x] Je kan aantonen dat je website nog steeds bereikbaar is.
 - [x] Je kan aantonen dat fail2ban actief is.
 - [x] Je kan de inhoud van het **jail.local** bestand tonen en toelichten.
-- [ ] Je kan met de **fail2ban** command line client aantonen dat de **findtime**, **maxretry** en **bantime** juist zijn ingesteld. Je kan deze begrippen toelichten.
+- [x] Je kan met de **fail2ban** command line client aantonen dat de **findtime**, **maxretry** en **bantime** juist zijn ingesteld. Je kan deze begrippen toelichten.
 - [x] Je kan aantonen dat je via SSH kan inloggen op de VM vanop jouw fysiek toestel en dat fail2ban jouw IP-adres blokkeert als je te veel foutieve inlogpogingen doet.
 - [x] Je kan aantonen dat een IP-adres op de whitelist niet wordt geblokkeerd.
 - [x] Je hebt een verslag gemaakt op basis van het template.
@@ -223,7 +223,10 @@ Er is zelfs nog een betere manier om brute force tools en bots totaal geen kans 
 
 ### Awesome selfhosted
 
-Je kan ook proberen om een applicatie van de [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) lijst op te zetten op jouw virtuele machine. Dit is een lijst van open-source software die je zelf kan hosten. Je kan bijvoorbeeld een blog, een wiki, een chatapplicatie, een CI/CD tool... opzetten. Zoek een applicatie die je interessant vindt en probeer deze op te zetten op jouw VM
+Download een awesome selfhosted programma van github en installeer het op je webserver.
+| ![Screenshot terminal](./img/3-webserver/AwesomeSelfHostedFileZilla.png) |
+| :--------------------------------------------------------------: |
+| Figuur 11. De website van awesome selfhosted via FileZilla overzetten|
 
 ## Reflecties
 
@@ -231,6 +234,13 @@ Je kan ook proberen om een applicatie van de [awesome-selfhosted](https://github
 
 Als jullie nog andere opmerkingen hebben over de opdracht hebben, voel je vrij om ze te delen. -->
 
+Deze opdracht was opnieuw een leuke uitdaging. Het was interessant om te zien hoe we een webserver konden opzetten en beveiligen.
+Zelf eens een brute force aanval uitvoeren op onze eigen server was ook een leuke ervaring. Het was interessant om te zien hoe fail2ban hiermee omging.
+We waren tegen 1 probleem aangelopen, maar dit was snel opgelost.
+
 ## Bronnen
 
 <!-- Maak een lijst van alle bronnen die jullie hebben gebruikt tijdens het uitvoeren van de opdracht: boeken, handleidingen, HOWTO's, blog posts, enz. -->
+
+- [How to install and configure hydra brute force tool](https://www.linuxfordevices.com/tutorials/linux/hydra-brute-force-ssh)
+- [Awesome selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)
