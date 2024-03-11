@@ -70,14 +70,24 @@
 | De rechten effectief toekennen/updaten | `flush privileges`|
 
 
-## Linux en Appache
+## Een webserver opzetten in linux
 
 | Taak                                                   | Commando                         |
 | :----------------------------------------------------- | :------------------------------- |
 |kijken welke netwerkpoort gebruikt wordt voor hhtps | `grep 'https' /etc/services`|
 |ervoor zorgen dat fqil2ban start bij opstart vm | `sudo systemctl start fail2ban`|
 |ervoor zorgen dat fail2ban 'aan' staat | `sudo systemctl enable fail2ban`|
-
+|Controleren of de apache server draait| `sudo systemctl status apache2`|
+| Alle welke netwerkpoort apache2 gebruikt tonen | `sudo ss -tlnp` |
+| status van de firewall bekijken | `sudo ufw status` |
+| firewall activeren voor een bepaalde service| `sudo ufw allow [poortnummer_programma] `|
+| de firewall actief/inactief stellen| ` sudo ufw enable/disable`|
+| zien welke jails geconfigureerd zijn | ` sudo fail2ban-client status `|
+| zien welke IP adressen geblokkeerd zijn | ` sudo fail2ban-client status [naam] (hier sshd) `|
+| opvragen findtime, maxentry, bantime | ` sudo fail2ban-client get [jailname] findtime/maxentry/bantime `|
+|je IP-adres terug vrijmaken zonder te wachten tot de blokkeertijd verlopen is|`sudo fail2ban-client set <jail-naam> unbanip <ip-adres>`|
+|een adres whitelisten| `/etc/fail2ban/jail.local openen in nano,  ignoreip = 127.0.0.1/8 192.168.56.30 toevoegen op het einde`|
+|wijzigingen fail2ban toepassen| `sudo systemctl restart fail2ban`|
 
 
 
