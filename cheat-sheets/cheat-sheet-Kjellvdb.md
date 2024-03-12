@@ -92,4 +92,22 @@
 | :----------------------------------------------------- | :----------------------------------------------------------------------------------------- |
 | Wachtwoord kraken met een gegeven username en ip-adres | `hydra -l <username> -P /usr/share/wordlists/rockyou.txt 192.168.56.20 -t 4 ssh -V -e nsr` |
 
+### Azure-WordPress machinenamen, accounts en wachtwoorden
+
+| Variabele                        | Inhoud                                            |
+| -------------------------------- | ------------------------------------------------- |
+| Resourcegroep                    | `SELabs-Wordpress`                                |
+| Naam databankserver              | `kvdb-wordpressdb`                                |
+| DNS-naam databankserver          | `kvdb-wordpressdb.mysql.database.azure.com`       |
+| Beheerder databankserver         | `wordpressdb                                `     |
+| Wachtwoord databankserver        | `LetmeIn!`                                        |
+| Naam applicatieserver (Ubuntu)   | `kvdb-wordpressapp`                               |
+| DNS-naam applicatieserver        | `kvdb-wordpressapp.westeurope.cloudapp.azure.com` |
+| Gebruikersnaam applicatieserver  | `wordpressapp                                `    |
+| Wachtwoord applicatieserver      | `LetmeIntheApp!`                                  |
+| WordPress db user                | `wordpress    `                                   |
+| Wachtwoord van WordPress db user | `wordpresspwd`                                    |
+| WordPress user                   | `admin         `                                  |
+| WordPress user password          | `Srro@H%E@1iKllIZUj`                              |
+
 ## Checklists
