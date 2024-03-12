@@ -51,3 +51,34 @@
 | De beveiligingsopties van een databank instellen  | `sudo mysql_secure_installation`                                                             |
 | SQL databank gebruiken                            | `use mysql`                                                                                  |
 | SQL databank afsluiten                            | `exit;`                                                                                      |
+
+### Apache
+
+| Task                                                                        | Command                                                                      |
+| :-------------------------------------------------------------------------- | :--------------------------------------------------------------------------- |
+| Apache root map                                                             | `/var/www/html`                                                              |
+| Zorgen dat mensen met de Apache-server kunnen verbinden met SSL/TLs (https) | `sudo a2enmod ssl; sudo a2ensite default-ssl; sudo systemctl reload apache2` |
+
+### Firewall
+
+| Task                                                                                         | Command                                             |
+| :------------------------------------------------------------------------------------------- | :-------------------------------------------------- |
+| Firewall aanzetten                                                                           | `sudo ufw enable`                                   |
+| Verkeer toelaten op bepaalde poort                                                           | `sudo ufw allow <port_number>`                      |
+| Tonen op welke poorten verkeer toegestaan is                                                 | `sudo ufw status`                                   |
+| Tonen welke jails geconfigureerd zijn                                                        | `sudo fail2ban-client status`                       |
+| Tonen welke IP-adressen geblokkeerd zijn                                                     | `sudo fail2ban-client status <jail_name>`           |
+| De findtime tonen                                                                            | `sudo fail2ban-client get <jail_name> findtime`     |
+| De maxretry tonen                                                                            | `sudo fail2ban-client get <jail_name> maxretry`     |
+| De bantime tonen                                                                             | `sudo fail2ban-client get <jail_name> bantime`      |
+| IP-adres unbannen                                                                            | `sudo fail2ban-client set <jail_name> unbanip <ip>` |
+
+### Hydra
+
+| Task                                                   | Command                                                                       |
+| :----------------------------------------------------- | :---------------------------------------------------------------------------- |
+| Brute-force een passwoord met een gekende username     | `hydra -l <username> -P <path to wordlist> <IP> ssh`                          |
+| Brute-force een username met een gekend passwoord      | `hydra -L <path to wordlist> -p <password> <IP> ssh`                          |
+| Brute-force zonder passwoord of username te weten      | `hydra -L <path to username wordlist> -P <path to password wordlist> <IP> ssh`|
+
+
