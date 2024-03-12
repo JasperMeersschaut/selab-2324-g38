@@ -90,5 +90,24 @@
 |wijzigingen fail2ban toepassen| `sudo systemctl restart fail2ban`|
 
 
+## Azure Wordpress wachtwoorden en gebruikersnamen.
+
+| **Variabele**                    | **Inhoud**                                                                                                                |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Resourcegroep                    | SELabs-Wordpress                                                                                                          |
+| Naam databankserver              | evdb-wordpressdb                                                                           |
+| DNS-naam databankserver          | bv. "or-wordpressdb.mysql.database.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure)       |
+| Beheerder databankserver         | wordpressdb                                                                                                               |
+| Wachtwoord databankserver        | LetmeIn!                                                                                              |
+| Naam applicatieserver (Ubuntu)   | wordpressubu                                                                                                    |
+| DNS-naam applicatieserver        | bv. "or-wordpressapp.westeurope.cloudapp.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure) |
+| Gebruikersnaam applicatieserver  | wordpressapp                                                                                                              |
+| Wachtwoord applicatieserver      | \*\*\*\*\* (bv.  "LetmeIntheApp!")                                                                                        |
+| WordPress db user                | bv. "wordpress"                                                                                                           |
+| Wachtwoord van WordPress db user | bv.  "wordpresspwd"                                                                                                       |
+| WordPress user                   | admin                                                                                                                     |
+| WordPress user password          | Srro@H%E@1iKllIZUj  (gegenereerd)                                                                                         |
+
+
 
 
