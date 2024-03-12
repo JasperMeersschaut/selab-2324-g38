@@ -97,9 +97,11 @@
 
 ### Azure-WordPress machinenamen, accounts en wachtwoorden
 
-| Variabele     | Inhoud             |
-| ------------- | ------------------ |
-| Resourcegroep | `SELabs-Wordpress` |
+| Variabele       | Inhoud                                                                 |
+| --------------- | ---------------------------------------------------------------------- |
+| Resourcegroep   | `SELabs-Wordpress`                                                     |
+| Inloggen op app | `ssh wordpressapp@kvdb-wordpressapp.francecentral.cloudapp.azure.com`  |
+| Inloggen op db  | `mysql -h kvdb-wordpressdb.mysql.database.azure.com -u wordpressdb -p` |
 
 #### Databankserver
 
@@ -112,12 +114,12 @@
 
 #### Applicatieserver
 
-| Variabele                       | Inhoud                                             |
-| ------------------------------- | -------------------------------------------------- |
-| Naam applicatieserver (Ubuntu)  | `kvdb-wordpressapp`                                |
-| DNS applicatieserver            | `kvdb-wordpressapp.northeurope.cloudapp.azure.com` |
-| Gebruikersnaam applicatieserver | `wordpressapp`                                     |
-| Wachtwoord applicatieserver     | `LetmeIntheApp!`                                   |
+| Variabele                       | Inhoud                                               |
+| ------------------------------- | ---------------------------------------------------- |
+| Naam applicatieserver (Ubuntu)  | `kvdb-wordpressapp`                                  |
+| DNS applicatieserver            | `kvdb-wordpressapp.francecentral.cloudapp.azure.com` |
+| Gebruikersnaam applicatieserver | `wordpressapp`                                       |
+| Wachtwoord applicatieserver     | `LetmeIntheApp!`                                     |
 
 #### WordPress
 
