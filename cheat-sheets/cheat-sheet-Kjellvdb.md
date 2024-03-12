@@ -67,10 +67,13 @@
 
 ### Apache
 
-| Task                                                                        | Command                                                                      |
-| :-------------------------------------------------------------------------- | :--------------------------------------------------------------------------- |
-| Apache root map                                                             | `/var/www/html`                                                              |
-| Zorgen dat mensen met de Apache-server kunnen verbinden met SSL/TLs (https) | `sudo a2enmod ssl; sudo a2ensite default-ssl; sudo systemctl reload apache2` |
+| Task                                                                        | Command                                        |
+| :-------------------------------------------------------------------------- | :--------------------------------------------- |
+| Apache root map                                                             | `/var/www/html`                                |
+| Een site activeren                                                          | `sudo a2ensite <website>`                      |
+| Apache toelaten om de URL te herschrijven                                   | `sudo a2enmod rewrite`                         |
+| De default site uitzetten                                                   | `sudo a2dissite 000-default`                   |
+| Zorgen dat mensen met de Apache-server kunnen verbinden met SSL/TLs (https) | `sudo a2enmod ssl; sudo a2ensite default-ssl;` |
 
 ### Linux Firewall
 
@@ -94,20 +97,35 @@
 
 ### Azure-WordPress machinenamen, accounts en wachtwoorden
 
-| Variabele                        | Inhoud                                            |
-| -------------------------------- | ------------------------------------------------- |
-| Resourcegroep                    | `SELabs-Wordpress`                                |
-| Naam databankserver              | `kvdb-wordpressdb`                                |
-| DNS-naam databankserver          | `kvdb-wordpressdb.mysql.database.azure.com`       |
-| Beheerder databankserver         | `wordpressdb                                `     |
-| Wachtwoord databankserver        | `LetmeIn!`                                        |
-| Naam applicatieserver (Ubuntu)   | `kvdb-wordpressapp`                               |
-| DNS-naam applicatieserver        | `kvdb-wordpressapp.westeurope.cloudapp.azure.com` |
-| Gebruikersnaam applicatieserver  | `wordpressapp                                `    |
-| Wachtwoord applicatieserver      | `LetmeIntheApp!`                                  |
-| WordPress db user                | `wordpress    `                                   |
-| Wachtwoord van WordPress db user | `wordpresspwd`                                    |
-| WordPress user                   | `admin         `                                  |
-| WordPress user password          | `Srro@H%E@1iKllIZUj`                              |
+| Variabele     | Inhoud             |
+| ------------- | ------------------ |
+| Resourcegroep | `SELabs-Wordpress` |
+
+#### Databankserver
+
+| Variabele                 | Inhoud                                      |
+| ------------------------- | ------------------------------------------- |
+| Naam databankserver       | `kvdb-wordpressdb`                          |
+| DNS-naam databankserver   | `kvdb-wordpressdb.mysql.database.azure.com` |
+| Beheerder databankserver  | `wordpressdb`                               |
+| Wachtwoord databankserver | `LetmeIn!`                                  |
+
+#### Applicatieserver
+
+| Variabele                       | Inhoud                                             |
+| ------------------------------- | -------------------------------------------------- |
+| Naam applicatieserver (Ubuntu)  | `kvdb-wordpressapp`                                |
+| DNS-naam applicatieserver       | `kvdb-wordpressapp.northeurope.cloudapp.azure.com` |
+| Gebruikersnaam applicatieserver | `wordpressapp`                                     |
+| Wachtwoord applicatieserver     | `LetmeIntheApp!`                                   |
+
+#### WordPress
+
+| Variabele                        | Inhoud               |
+| -------------------------------- | -------------------- |
+| WordPress db user                | `wordpress`          |
+| Wachtwoord van WordPress db user | `wordpresspwd`       |
+| WordPress user                   | `admin`              |
+| WordPress user droppassword      | `Srro@H%E@1iKllIZUj` |
 
 ## Checklists
