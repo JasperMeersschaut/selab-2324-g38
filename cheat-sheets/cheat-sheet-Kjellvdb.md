@@ -67,10 +67,13 @@
 
 ### Apache
 
-| Task                                                                        | Command                                                                      |
-| :-------------------------------------------------------------------------- | :--------------------------------------------------------------------------- |
-| Apache root map                                                             | `/var/www/html`                                                              |
-| Zorgen dat mensen met de Apache-server kunnen verbinden met SSL/TLs (https) | `sudo a2enmod ssl; sudo a2ensite default-ssl; sudo systemctl reload apache2` |
+| Task                                                                        | Command                                        |
+| :-------------------------------------------------------------------------- | :--------------------------------------------- |
+| Apache root map                                                             | `/var/www/html`                                |
+| Een site activeren                                                          | `sudo a2ensite <website>`                      |
+| Apache toelaten om de URL te herschrijven                                   | `sudo a2enmod rewrite`                         |
+| De default site uitzetten                                                   | `sudo a2dissite 000-default`                   |
+| Zorgen dat mensen met de Apache-server kunnen verbinden met SSL/TLs (https) | `sudo a2enmod ssl; sudo a2ensite default-ssl;` |
 
 ### Linux Firewall
 
@@ -91,5 +94,38 @@
 | Task                                                   | Command                                                                                    |
 | :----------------------------------------------------- | :----------------------------------------------------------------------------------------- |
 | Wachtwoord kraken met een gegeven username en ip-adres | `hydra -l <username> -P /usr/share/wordlists/rockyou.txt 192.168.56.20 -t 4 ssh -V -e nsr` |
+
+### Azure-WordPress machinenamen, accounts en wachtwoorden
+
+| Variabele     | Inhoud             |
+| ------------- | ------------------ |
+| Resourcegroep | `SELabs-Wordpress` |
+
+#### Databankserver
+
+| Variabele                           | Inhoud                                      |
+| ----------------------------------- | ------------------------------------------- |
+| Naam databankserver                 | `kvdb-wordpressdb`                          |
+| DNS databankserver                  | `kvdb-wordpressdb.mysql.database.azure.com` |
+| Naam beheerder databankserver       | `wordpressdb`                               |
+| Wachtwoord beheerder databankserver | `LetmeIn!`                                  |
+
+#### Applicatieserver
+
+| Variabele                       | Inhoud                                             |
+| ------------------------------- | -------------------------------------------------- |
+| Naam applicatieserver (Ubuntu)  | `kvdb-wordpressapp`                                |
+| DNS applicatieserver            | `kvdb-wordpressapp.northeurope.cloudapp.azure.com` |
+| Gebruikersnaam applicatieserver | `wordpressapp`                                     |
+| Wachtwoord applicatieserver     | `LetmeIntheApp!`                                   |
+
+#### WordPress
+
+| Variabele                        | Inhoud               |
+| -------------------------------- | -------------------- |
+| WordPress db user                | `wordpress`          |
+| Wachtwoord van WordPress db user | `wordpresspwd`       |
+| WordPress user                   | `admin`              |
+| WordPress user droppassword      | `Srro@H%E@1iKllIZUj` |
 
 ## Checklists
