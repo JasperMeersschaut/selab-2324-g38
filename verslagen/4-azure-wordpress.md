@@ -25,3 +25,14 @@ n deze opdracht zal je proeven van de mogelijkheden binnen de Microsoft Azure cl
 
 ## :information_desk_person: Voorbereiding demo
 
+Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welke bestanden, commando's, enz. je zal gebruiken tijdens de demo.
+
+## Je kan de aangemaakte machines tonen in de Azure omgeving.
+
+- Surf naar https://portal.azure.com/#home
+    - Navigaar naar all resources
+    - Toon de VM en de Azure database
+
+| ![Screenshot Webbrowser](./img/4-azure-wordpress/foto1.png) |
+| :------------------------------------------------------------------------------: |
+|                Figuur 1. Aantonen aangemaakte machines in Azure           |
