@@ -99,14 +99,16 @@
 | DNS-naam databankserver          | bv. "or-wordpressdb.mysql.database.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure)       |
 | Beheerder databankserver         | wordpressdb                                                                                                               |
 | Wachtwoord databankserver        | LetmeIn!                                                                                              |
-| Naam applicatieserver (Ubuntu)   | wordpressubu                                                                                                    |
+| Naam applicatieserver (Ubuntu)   | evdb-wordpressubu                                                                                                    |
+| Naam applicatieserverAdmin (Ubuntu)   | evdb                                                                                                    |
+| Wachtwoord applicatieserverAdmin (Ubuntu)   | LetAdminInNow!                                                                                                    |
 | DNS-naam applicatieserver        | bv. "or-wordpressapp.westeurope.cloudapp.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure) |
 | Gebruikersnaam applicatieserver  | wordpressapp                                                                                                              |
-| Wachtwoord applicatieserver      | \*\*\*\*\* (bv.  "LetmeIntheApp!")                                                                                        |
-| WordPress db user                | bv. "wordpress"                                                                                                           |
-| Wachtwoord van WordPress db user | bv.  "wordpresspwd"                                                                                                       |
-| WordPress user                   | admin                                                                                                                     |
-| WordPress user password          | Srro@H%E@1iKllIZUj  (gegenereerd)                                                                                         |
+| Wachtwoord applicatieserver      | LetmeIntheApp!                                                                                       |
+| WordPress db user                | wordpress                                                                                                           |
+| Wachtwoord van WordPress db user | wordpresspwd                                                                                                       |
+| WordPress user             | emielio                                                                                                                    |
+| WordPress user password          | UutEO8vc1SPO@l#QRl (gegenereerd)                                                                                         |
 
 
 
