@@ -73,3 +73,41 @@
 | Task                      | Command                     |
 | :------------------------ | :-------------------------- |
 | Verbinden met VM over SSH | `ssh osboxes@192.168.56.20` |
+
+### Azure resourcegroep
+
+Resourcegroep: `SELabs-Wordpress`
+
+#### Azure commando's
+
+| Task            | Command                                                                   |
+| --------------- | ------------------------------------------------------------------------- |
+| Inloggen op app | `ssh wordpressubuntu@ubuntu-sel-wordpress.northeurope.cloudapp.azure.com` |
+| Inloggen op db  | `mysql -h sel-wordpress.mysql.database.azure.com -u wordpressdb -p`       |
+
+### Databankserver namen en wachtwoorden
+
+| Variabele                           | Inhoud                                   |
+| ----------------------------------- | ---------------------------------------- |
+| Naam databankserver                 | `sel-wordpress`                          |
+| DNS databankserver                  | `sel-wordpress.mysql.database.azure.com` |
+| Naam beheerder databankserver       | `wordpressdb`                            |
+| Wachtwoord beheerder databankserver | `iqfuboeKQJDEIUBUOIPMLKJH783890`         |
+
+### Applicatieserver namen en wachtwoorden
+
+| Variabele                       | Inhoud                                                |
+| ------------------------------- | ----------------------------------------------------- |
+| Naam applicatieserver (Ubuntu)  | `ubuntu-sel-wordpress`                                |
+| DNS applicatieserver            | `ubuntu-sel-wordpress.northeurope.cloudapp.azure.com` |
+| Gebruikersnaam applicatieserver | `wordpressubuntu`                                     |
+| Wachtwoord applicatieserver     | `IUdojkLSIOHUDIYsjkd3789203E`                         |
+
+### WordPress namen en wachtwoorden
+
+| Variabele                        | Inhoud               |
+| -------------------------------- | -------------------- |
+| WordPress db user                | `wordpress`          |
+| Wachtwoord van WordPress db user | `wordpresspwd`       |
+| WordPress gebruikersnaam         | `xFlyxng`            |
+| WordPress paswoord               | `(i%TJJ6wvcscLh*rCw` |
