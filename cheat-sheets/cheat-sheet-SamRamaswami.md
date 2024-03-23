@@ -105,9 +105,10 @@ Resourcegroep: `SELabs-Wordpress`
 
 ### WordPress namen en wachtwoorden
 
-| Variabele                        | Inhoud               |
-| -------------------------------- | -------------------- |
-| WordPress db user                | `wordpress`          |
-| Wachtwoord van WordPress db user | `wordpresspwd`       |
-| WordPress gebruikersnaam         | `xFlyxng`            |
-| WordPress paswoord               | `(i%TJJ6wvcscLh*rCw` |
+| Variabele                        | Inhoud                                                                     |
+| -------------------------------- | -------------------------------------------------------------------------- |
+| WordPress db user                | `wordpress`                                                                |
+| Wachtwoord van WordPress db user | `wordpresspwd`                                                             |
+| WordPress login scherm           | `https://ubuntu-sel-wordpress.northeurope.cloudapp.azure.com/wp-login.php` |
+| WordPress gebruikersnaam         | `xFlyxng`                                                                  |
+| WordPress paswoord               | `(i%TJJ6wvcscLh*rCw`                                                       |
