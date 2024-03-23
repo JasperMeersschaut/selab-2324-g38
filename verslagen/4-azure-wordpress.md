@@ -74,7 +74,7 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 ## Je kan met HTTPS surfen naar jouw WordPress blog.
 
 - Je configureerd word press volgens de stappen.
-- Surf naar je dns naam op een browser
+- Surf naar je DNS naam op een browser
 
 
 | ![Screenshot Webbrowser](./img/4-azure-wordpress/localhost.png) |
@@ -87,6 +87,14 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 | :------------------------------------------------------------------------------: |
 |                Figuur 7. Succesvol aangemaakte certificaat          |
 
+## Je kan een nieuw bericht posten op jouw WordPress blog.
 
+- Surf naar je DNS naam en typ hieracher ``/wp-admin``
+    - Log in
+- Navigeer naar posts en laat je creativiteit maar gaan!
+
+| ![Screenshot Webbrowser](./img/4-azure-wordpress/wpadmin.png) |
+| :------------------------------------------------------------------------------: |
+|                Figuur 8. Een niewe post maken          |
 ## Mogelijke uitbreidingen
 
