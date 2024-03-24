@@ -193,6 +193,7 @@ pubkeyauthentication YES
 | Wachtwoord van WordPress db user | bv. "wordpresspwd"                             |
 | WordPress user                   | admin                                          |
 | WordPress user password          | 7OS#LJ6()ayO0UHoct                             |
+| DNS naam van de website          | meersschaut.live                               |
 
 ## Gegevens azure
 

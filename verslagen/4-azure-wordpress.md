@@ -23,6 +23,46 @@ In deze opdracht hebben we een virtuele machine opgezet in Azure en hierop een W
 - [x] Je hebt een verslag gemaakt op basis van het template.
 - [x] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
+## :question: Problemen en oplossingen
+
+### Probleem 1: Kan awesome-selfhosted niet bereiken (Jasper)
+
+Ik heb de website in de wordpress folder gestoken maar ik kan de website niet bereiken.
+
+#### Wat heb ik geprobeerd?
+
+- Ik heb de website in de wordpress folder gestoken
+- Ik heb de permisies van de folder aangepast
+- Ik heb de apache server herstart
+- Ik heb in wordpress.conf dit toegevoegd:
+
+```apache
+    <Directory /srv/www/wordpress/folderwithhtmlfiles>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+    </Directory>
+```
+
+Maar dit werkte niet.
+
+- Ik heb de permisies van de folder aangepast zodat apache de folder kan lezen
+
+```bash
+sudo chown -R www-data:www-data /srv/www/wordpress/folderwithhtmlfiles
+```
+
+- Ik ben meerdere troubleshooting sites en forums afgegaan maar ik vond geen oplossing.
+  | ![Screenshot Webbrowser](./img/4-azure-wordpress/Error403Forbidden.png) |
+  | :---------------------------------------------------------: |
+  | Figuur 12. Error 403 Forbidden bij het openen van de website meersschaut.live/awesome-selfhosted |
+
+  | ![Screenshot Filezilla](./img/4-azure-wordpress/FolderTreeWordpress.png) |
+  | :----------------------------------------------------------------------: |
+  |                          Figuur 13. Folder tree                          |
+
+#### Wat was de oplossing?
+
 ## :information_desk_person: Voorbereiding demo
 
 ### Je kan de aangemaakte machines tonen in de Azure omgeving.
@@ -112,7 +152,7 @@ In deze opdracht hebben we een virtuele machine opgezet in Azure en hierop een W
 
 ### Maak een script voor de installatie van de WordPress blog.
 
-Werkt niet niet af, maar zou er zo kunnen uitzien:
+**Werkt niet, niet af, maar zou er zo kunnen uitzien:**
 
 ```bash
 #!/bin/bash
@@ -186,20 +226,24 @@ sudo service apache2 reload
 ### De WordPress blog is bereikbaar via een eigen domeinnaam.
 
 - Claim een domeinnaam bij een provider naar keuze (name.com, namecheap.com, ...)
-- Ga naar de DNS instellingen van je domeinnaam en voeg een A-record toe dat verwijst naar het IP-adres van je Azure VM, geef als hostnaam `@` op.
+- Ga naar de DNS instellingen van je domeinnaam en voeg een A-record toe dat verwijst naar het IP-adres van je Azure VM, geef als hostnaam `@` op. (Zie figuur 10)
 - Wacht enkele uren tot de DNS instellingen zijn doorgevoerd.
 - Ga naar je WordPress dashboard en navigeer naar `Settings` en `General`
-- Vul bij `WordPress Address (URL)` en `Site Address (URL)` je domeinnaam in.
+- Vul bij `WordPress Address (URL)` en `Site Address (URL)` je domeinnaam in. (zie figuur 11)
 - Sla de wijzigingen op en log opnieuw in op je WordPress dashboard.
   | ![Screenshot Webbrowser](./img/4-azure-wordpress/ManageDNSname.com.png) |
   | :------------------------------------------------------------------------------------: |
   | Figuur 10. Een domeinnaam instellen |
+  | ![Screenshot Wordpress Instellingen](./img/4-azure-wordpress/WordpressDomeinnaamInstellen.png) |
+  | :------------------------------------------------------------------------------------: |
+  | Figuur 11. Een domeinnaam instellen |
 
 ### Kies een service van de awesome-selfhosted list en installeer deze op een virtuele machine in Azure.
-
 
 ### Zorg ervoor dat alle services (ook WordPress) bereikbaar zijn via een domeinnaam en dat de verbinding beveiligd is met een certificaat van Let's Encrypt.
 
 ## Reflecties
+
+Deze opdracht was iets moeilijker dan de andere opdrachten, aangezien het toch wel een grote opdracht was waar dingen konden foutlopen. 
 
 ## Bronnen
