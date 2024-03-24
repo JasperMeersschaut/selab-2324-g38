@@ -82,3 +82,21 @@
 | Brute-force zonder passwoord of username te weten      | `hydra -L <path to username wordlist> -P <path to password wordlist> <IP> ssh`|
 
 
+### Overzicht machinenamen, accounts en wachtwoorden
+
+| **Variabele**                    | **Inhoud**                                                                                                                |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Resourcegroep                    | SELabs-Wordpress                                                                                                          |
+| Naam databankserver              | vk-wordpressdb                                                                                                            |
+| DNS-naam databankserver          | bv. "or-wordpressdb.mysql.database.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure)       |
+| Beheerder databankserver         | wordpressdb                                                                                                               |
+| Wachtwoord databankserver        | LetmeIn!                                                                                                                  |
+| Naam applicatieserver (Ubuntu)   | vk-wordpressapp                                                                                                           |
+| DNS-naam applicatieserver        | vk-wordpressapp.northeurope.cloudapp.azure.com                                                                            |
+| Gebruikersnaam applicatieserver  | wordpressapp                                                                                                              |
+| Wachtwoord applicatieserver      | LetmeIntheApp!                                                                                                            |
+| WordPress db user                | wordpress                                                                                                                 |
+| Wachtwoord van WordPress db user | wordpresspwd                                                                                                              |
+| WordPress user                   | admin                                                                                                                     |
+| WordPress user password          | Srro@H%E@1iKllIZUj  (gegenereerd)                                                                                         |
+
