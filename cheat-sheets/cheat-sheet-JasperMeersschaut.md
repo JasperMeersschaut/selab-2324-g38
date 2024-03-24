@@ -175,3 +175,30 @@ pubkeyauthentication YES
 | Hoe ver terug Fail2Ban kijkt                    | `findtime`                           |
 | Hoeveel keer een IP-adres mag proberen inloggen | `maxretry`                           |
 | Hoe lang een IP-adres geblokkeerd blijft        | `bantime`                            |
+
+## Gegevens azure
+
+| **Variabele**                    | **Inhoud**                                     |
+| -------------------------------- | ---------------------------------------------- |
+| Resourcegroep                    | SELabs-Wordpress                               |
+| Naam databankserver              | mj-wordpressdb                                 |
+| DNS-naam databankserver          | mj-wordpressdb.mysql.database.azure.com        |
+| Beheerder databankserver         | jasper                                         |
+| Wachtwoord databankserver        | fhQrWdtjKS@HB6^je3a3                           |
+| Naam applicatieserver (Ubuntu)   | mj-wordpressapp                                |
+| DNS-naam applicatieserver        | mj-wordpressapp.northeurope.cloudapp.azure.com |
+| Gebruikersnaam applicatieserver  | jasper                                         |
+| Wachtwoord applicatieserver      | 776unvHAtu&^2iVm$Z$c                           |
+| WordPress db user                | bv. "wordpress"                                |
+| Wachtwoord van WordPress db user | bv. "wordpresspwd"                             |
+| WordPress user                   | admin                                          |
+| WordPress user password          | 7OS#LJ6()ayO0UHoct                             |
+
+## Gegevens azure
+
+| **Variabele**                                           | **Inhoud**                                                                                    |
+| ------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Login website                                           | [SELabs-Wordpress Login](https://mj-wordpressapp.northeurope.cloudapp.azure.com/wp-login.php) |
+| Gewone website                                          | [SELabs-Wordpress](https://mj-wordpressapp.northeurope.cloudapp.azure.com/)                   |
+| SSH verbinding met applicatie server                    | `ssh jasper@mj-wordpressapp.northeurope.cloudapp.azure.com`                                   |
+| Verbinden met de databankserver vanuit applicatieserver | `mysql -h mj-wordpressdb.mysql.database.azure.com -u jasper -p`                               |
