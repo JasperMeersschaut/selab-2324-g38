@@ -4,7 +4,7 @@
 
 ## :speech_balloon: Beschrijving
 
-n deze opdracht zal je proeven van de mogelijkheden binnen de Microsoft Azure cloudomgeving. Je zal hiervoor een account maken op Azure, een applicatie- en databankserver opzetten en de WordPress webapplicatie installeren en configureren. Uiteraard zorg je ervoor dat de verbindingen tussen de systemen en met de webapplicatie veilig verlopen.
+In deze opdracht hebben we een virtuele machine opgezet in Azure en hierop een WordPress blog geïnstalleerd. We hebben ook een MySQL database opgezet en deze gekoppeld aan de WordPress blog. We hebben ook een SSL certificaat aangevraagd en geïnstalleerd op de virtuele machine. Als uitbreidingen hebben we een domeinnaam aangevraagd en de WordPress blog hieraan gekoppeld. We hebben ook een nieuw thema geïnstalleerd op de WordPress blog.
 
 ## :thinking: Antwoorden op de vragen in de opdracht
 
@@ -25,9 +25,7 @@ n deze opdracht zal je proeven van de mogelijkheden binnen de Microsoft Azure cl
 
 ## :information_desk_person: Voorbereiding demo
 
-Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welke bestanden, commando's, enz. je zal gebruiken tijdens de demo.
-
-## Je kan de aangemaakte machines tonen in de Azure omgeving.
+### Je kan de aangemaakte machines tonen in de Azure omgeving.
 
 - Surf naar https://portal.azure.com/#home
     - Navigaar naar all resources
@@ -37,7 +35,7 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 | :------------------------------------------------------------------------------: |
 |                Figuur 1. Aantonen aangemaakte machines in Azure           |
 
-## Het lukt om een SSH-verbinding op te zetten met de applicatieserver.
+### Het lukt om een SSH-verbinding op te zetten met de applicatieserver.
 
 - Navigeer naar de virtuele machine op azure
     - Kopieer de DNS name
@@ -52,7 +50,7 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 | :------------------------------------------------------------------------------: |
 |                Figuur 3. Aantonen succesvolle SSH verbinding           |
 
-## Het lukt om aan te melden op MySQL op de databankserver vanaf de applicatieserver.
+### Het lukt om aan te melden op MySQL op de databankserver vanaf de applicatieserver.
 
 - Open de reeds gemaakt SSH verbinding met de applicatieserver
 - Haal eerst de laatste informatie van de package repositories op met `sudo apt update `
@@ -71,7 +69,7 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 |                Figuur 5. Met de databankserver verbinden          |
 
 
-## Je kan met HTTPS surfen naar jouw WordPress blog.
+### Je kan met HTTPS surfen naar jouw WordPress blog.
 
 - Je configureerd word press volgens de stappen.
 - Surf naar je DNS naam op een browser
@@ -87,7 +85,7 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 | :------------------------------------------------------------------------------: |
 |                Figuur 7. Succesvol aangemaakte certificaat          |
 
-## Je kan een nieuw bericht posten op jouw WordPress blog.
+### Je kan een nieuw bericht posten op jouw WordPress blog.
 
 - Surf naar je DNS naam en typ hieracher ``/wp-admin``
     - Log in
@@ -97,4 +95,12 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 | :------------------------------------------------------------------------------: |
 |                Figuur 8. Een niewe post maken          |
 ## Mogelijke uitbreidingen
-
+### Configuur de virtuele machine zodat je kan aanmelden met een SSH key.
+### Installeer een ander thema voor je WordPress blog.
+### Maak een script voor de installatie van de WordPress blog.
+### Voer andere veiligheidsmaatregelen door op de virtuele machine (bv. fail2ban).
+### De WordPress blog is bereikbaar via een eigen domeinnaam.en aantal aanbieders.
+### Kies een service van de awesome-selfhosted list en installeer deze op een virtuele machine in Azure.
+### Zorg ervoor dat alle services (ook WordPress) bereikbaar zijn via een domeinnaam en dat de verbinding beveiligd is met een certificaat van Let's Encrypt.
+## Reflecties
+## Bronnen
