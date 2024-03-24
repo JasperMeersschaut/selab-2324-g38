@@ -99,6 +99,8 @@
 
 | Variabele       | Inhoud                                                                 |
 | --------------- | ---------------------------------------------------------------------- |
+| Website         | http://kvdbwordpress.tech/                                             |
+| Website         | https://kvdb-wordpressapp.francecentral.cloudapp.azure.com/            |
 | Resourcegroep   | `SELabs-Wordpress`                                                     |
 | Inloggen op app | `ssh wordpressapp@kvdb-wordpressapp.francecentral.cloudapp.azure.com`  |
 | Inloggen op db  | `mysql -h kvdb-wordpressdb.mysql.database.azure.com -u wordpressdb -p` |
@@ -123,11 +125,11 @@
 
 #### WordPress
 
-| Variabele                        | Inhoud               |
-| -------------------------------- | -------------------- |
-| WordPress db user                | `wordpress`          |
-| Wachtwoord van WordPress db user | `wordpresspwd`       |
-| WordPress user                   | `admin`              |
-| WordPress user droppassword      | `Srro@H%E@1iKllIZUj` |
+| Variabele                    | Inhoud               |
+| ---------------------------- | -------------------- |
+| WordPress db user            | `wordpress`          |
+| WordPress db user wachtwoord | `wordpresspwd`       |
+| WordPress user               | `admin`              |
+| WordPress user password      | `Srro@H%E@1iKllIZUj` |
 
 ## Checklists
