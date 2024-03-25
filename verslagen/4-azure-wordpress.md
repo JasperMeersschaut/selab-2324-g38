@@ -52,16 +52,76 @@ Maar dit werkte niet.
 sudo chown -R www-data:www-data /srv/www/wordpress/folderwithhtmlfiles
 ```
 
-- Ik ben meerdere troubleshooting sites en forums afgegaan maar ik vond geen oplossing.
-  | ![Screenshot Webbrowser](./img/4-azure-wordpress/Error403Forbidden.png) |
-  | :---------------------------------------------------------: |
-  | Figuur 12. Error 403 Forbidden bij het openen van de website meersschaut.live/awesome-selfhosted |
+|             ![Screenshot Webbrowser](./img/4-azure-wordpress/Error403Forbidden.png)              |
+| :----------------------------------------------------------------------------------------------: |
+| Figuur 12. Error 403 Forbidden bij het openen van de website meersschaut.live/awesome-selfhosted |
 
-  | ![Screenshot Filezilla](./img/4-azure-wordpress/FolderTreeWordpress.png) |
-  | :----------------------------------------------------------------------: |
-  |                          Figuur 13. Folder tree                          |
+| ![Screenshot Filezilla](./img/4-azure-wordpress/FolderTreeWordpress.png) |
+| :----------------------------------------------------------------------: |
+|                          Figuur 13. Folder tree                          |
 
 #### Wat was de oplossing?
+
+> Na lang zoeken heb ik een oplossing gevondezn. Ik weet niet of dit de bedoeling was op deze manier maar het werkt wel. En de andere manier werkte niet.
+
+- Ik heb de files in apache gestoken in de folder `/var/www/html` en nu werkt het wel.
+- Ik heb een nieuw conf bestand aangemaakt `/etc/apache2/sites-available/adarkroom-main.conf` met de volgende inhoud:
+
+```apache
+<VirtualHost *:80>
+    ServerName adarkroom.meersschaut.live
+    DocumentRoot /var/www/html/adarkroom-main
+
+    <Directory /var/www/html/adarkroom-main>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
+
+- Ik heb de site enabled met `sudo a2ensite adarkroom-main`
+- Ik heb apache herstart met `sudo systemctl restart apache2`
+- Nu is de site bereikbaar op [adarkroom.meersschaut.live](http://adarkroom.meersschaut.live)
+
+### Probleem 2: Custom dns naam verwijst opeens naar awesome selfhosted website en niet meer naar de wordpress website (Jasper)
+
+> Ik was bezig met de laatste uitbreiding en omdat www.meersschaut.live en meersschaut.live er niet opkwamen bij certbot maar adarkroom.meersschaut.live wel, dacht ik dat ik ook een virtual host moest maken voor meersschaut.live en www.meersschaut.live. Maar nu verwijst meersschaut.live naar de awesome selfhosted website en niet meer naar de wordpress website.
+
+- Ik heb de stappen die ik had uitgevoerd ongedaan gemaakt maar dit werkte niet.
+- Ik heb de stappen nog eens opnieuw uitgevoerd van de setup maar dit werkte ook niet.
+- Ik ga het hierbij laten aangezien ik het niet nog meer wil verpesten.
+
+#### Wat was de oplossing?
+
+> Ik heb het probleem opgelost. Ik heb in de configuratie van de wordpress website de `ServerName` aangepast naar `meersschaut.live` en `www.meersschaut.live` en nu werkt het weer. Maar ik weet niet of dit de bedoeling was.
+
+```apache
+<VirtualHost *:80>
+    ServerName meersschaut.live
+    ServerAlias www.meersschaut.live
+    DocumentRoot /var/www/html/wordpress
+    <Directory /var/www/html/wordpress>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
+
+#### Wat heeft dit nog opgelost?
+
+> Door hierop te troubleshooten heb ik ook het probleem van certbot opgelost. De dns staat nu ook in de lijst van certbot en ik heb een certificaat aangemaakt voor meersschaut.live en www.meersschaut.live.
+
+| ![Screenshot Webbrowser](./img/4-azure-wordpress/CertbotListComplete.png) |
+| :-----------------------------------------------------------------------: |
+|                 Figuur 14. De volledige lijst van certbot                 |
+
+### Probleem 3: De website is nog bereikbaar via het ip adres maar de css is weg (Jasper)
+
+> Na het probleem van de custom dns naam die niet meer werkte, werkte de website nog wel via het originele ip adres maar op deze website is alle css weg.
+
+- Is geen groot probleem in deze situatie dus heb ik niet verder onderzocht.
 
 ## :information_desk_person: Voorbereiding demo
 
@@ -323,6 +383,26 @@ require_once ABSPATH . 'wp-settings.php';' > /srv/www/wordpress/wp-config.php
   | Figuur 11. Een domeinnaam instellen |
 
 ### Kies een service van de awesome-selfhosted list en installeer deze op een virtuele machine in Azure.
+
+- Steek de files in de folder `/var/www/html/site2`
+- Maak een nieuwe conf file aan `/etc/apache2/sites-available/site2.conf` met de volgende inhoud:
+
+```apache
+<VirtualHost *:80>
+    ServerName site2.meersschaut.live
+    DocumentRoot /var/www/html/site2
+
+    <Directory /var/www/html/site2>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
+
+- Enable de site met `sudo a2ensite site2`
+- Herstart apache met `sudo systemctl restart apache2`
+- Nu is de site bereikbaar op [site2.meersschaut.live](http://site2.meersschaut.live)
 
 ### Zorg ervoor dat alle services (ook WordPress) bereikbaar zijn via een domeinnaam en dat de verbinding beveiligd is met een certificaat van Let's Encrypt.
 

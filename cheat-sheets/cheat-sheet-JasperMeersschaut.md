@@ -197,9 +197,10 @@ pubkeyauthentication YES
 
 ## Gegevens azure
 
-| **Variabele**                                           | **Inhoud**                                                                                    |
-| ------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| Login website                                           | [SELabs-Wordpress Login](https://mj-wordpressapp.northeurope.cloudapp.azure.com/wp-login.php) |
-| Gewone website                                          | [SELabs-Wordpress](https://mj-wordpressapp.northeurope.cloudapp.azure.com/)                   |
-| SSH verbinding met applicatie server                    | `ssh jasper@mj-wordpressapp.northeurope.cloudapp.azure.com`                                   |
-| Verbinden met de databankserver vanuit applicatieserver | `mysql -h mj-wordpressdb.mysql.database.azure.com -u jasper -p`                               |
+| **Variabele**                                           | **Inhoud**                                                      |
+| ------------------------------------------------------- | --------------------------------------------------------------- |
+| Login website                                           | [SELabs-Wordpress Login](https://meersschaut.live/wp-login.php) |
+| Gewone website                                          | [SELabs-Wordpress](https://meersschaut.live/)                   |
+| Awesome selfhosted website                              | [adarkroom](https://adarkroom.meersschaut.live/)                |
+| SSH verbinding met applicatie server                    | `ssh jasper@mj-wordpressapp.northeurope.cloudapp.azure.com`     |
+| Verbinden met de databankserver vanuit applicatieserver | `mysql -h mj-wordpressdb.mysql.database.azure.com -u jasper -p` |
