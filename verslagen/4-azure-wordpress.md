@@ -324,10 +324,9 @@ require_once ABSPATH . 'wp-settings.php';' > /srv/www/wordpress/wp-config.php
 - Herstart apache met `sudo systemctl restart apache2`
 - Nu is de site bereikbaar op [site2.meersschaut.live](http://site2.meersschaut.live)
 
-### Zorg ervoor dat alle services (ook WordPress) bereikbaar zijn via een domeinnaam en dat de verbinding beveiligd is met een certificaat van Let's Encrypt.
-
 ## Reflecties
 
-Deze opdracht was iets moeilijker dan de andere opdrachten, aangezien het toch wel een grote opdracht was waar dingen konden foutlopen.
+Deze opdracht was iets moeilijker dan de andere opdrachten, aangezien het toch wel een grote opdracht was waar dingen konden foutlopen. Bij Jasper liepen er toch wel dingen mis en moest hij veel troubleshooten maar dat hoort bij het proces. Bij deze opdracht was ook niet alles super straight forward zoals bij de andere opdrachten. Het was wel eens leuk om een website te maken en deze te hosten. 
 
 ## Bronnen
+[Tutorial: Install and configure WordPress](https://ubuntu.com/tutorials/install-and-configure-wordpress#1-overview)

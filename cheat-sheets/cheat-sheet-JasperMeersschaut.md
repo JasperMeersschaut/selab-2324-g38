@@ -195,8 +195,6 @@ pubkeyauthentication YES
 | WordPress user password          | 7OS#LJ6()ayO0UHoct                             |
 | DNS naam van de website          | meersschaut.live                               |
 
-## Gegevens azure
-
 | **Variabele**                                           | **Inhoud**                                                      |
 | ------------------------------------------------------- | --------------------------------------------------------------- |
 | Login website                                           | [SELabs-Wordpress Login](https://meersschaut.live/wp-login.php) |
@@ -204,3 +202,20 @@ pubkeyauthentication YES
 | Awesome selfhosted website                              | [adarkroom](https://adarkroom.meersschaut.live/)                |
 | SSH verbinding met applicatie server                    | `ssh jasper@mj-wordpressapp.northeurope.cloudapp.azure.com`     |
 | Verbinden met de databankserver vanuit applicatieserver | `mysql -h mj-wordpressdb.mysql.database.azure.com -u jasper -p` |
+
+## Linux: MySQL
+
+| Task                            | Command                                                         |
+| :------------------------------ | :-------------------------------------------------------------- |
+| MYSQL client downloaden         | `sudo apt install mysql-client`                                 |
+| Verbinden met de databankserver | `mysql -h mj-wordpressdb.mysql.database.azure.com -u jasper -p` |
+| MySQL verlaten                  | `exit`                                                          |
+
+## Linux: Wordpress
+
+| Task                                               | Command                                                                                                                                      |
+| :------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| Dependencies installeren die Wordpress nodig heeft | `sudo apt install apache2 ghostscript libapache2-mod-php php php-bcmath php-curl php-imagick php-intl php-json php-mbstring php-xml php-zip` |
+| Wordpress downloaden en uitpakken stap 1           | `sudo mkdir -p /srv/www`                                                                                                                     |
+| Wordpress downloaden en uitpakken stap 2           | `sudo chown www-data: /srv/www`                                                                                                              |
+| Wordpress downloaden en uitpakken stap 3           | `curl https://wordpress.org/latest.tar.gz \| sudo -u www-data tar zx -C /srv/www`                                                            |
