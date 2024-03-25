@@ -212,8 +212,6 @@ sudo chown -R www-data:www-data /srv/www/wordpress/folderwithhtmlfiles
 
 ### Maak een script voor de installatie van de WordPress blog.
 
-**Werkt niet, niet af, maar zou er zo kunnen uitzien:**
-
 ```bash
 #!/bin/bash
 sudo apt update
@@ -252,62 +250,14 @@ sudo a2enmod rewrite
 sudo a2dissite 000-default
 sudo service apache2 reload
 mysql -h kvdb-wordpressdb.mysql.database.azure.com -u wordpressdb -p
-CREATE DATABASE wordpress;
-CREATE USER wordpress@'%' IDENTIFIED BY 'wordpresspwd';
-GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wordpress.* TO wordpress@'%';
-FLUSH PRIVILEGES;
-QUIT;
 sudo -u www-data cp /srv/www/wordpress/wp-config-sample.php /srv/www/wordpress/wp-config.php
 echo '<?php
-/**
- * The base configuration for WordPress
- *
- * The wp-config.php creation script uses this file during the installation.
- * You don't have to use the web site, you can copy this file to "wp-config.php"
- * and fill in the values.
- *
- * This file contains the following configurations:
- *
- * * Database settings
- * * Secret keys
- * * Database table prefix
- * * ABSPATH
- *
- * @link https://wordpress.org/documentation/article/editing-wp-config-php/
- *
- * @package WordPress
- */
-
-// ** Database settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
 define( 'DB_NAME', 'wordpress' );
-
-/** Database username */
 define( 'DB_USER', 'wordpress' );
-
-/** Database password */
 define( 'DB_PASSWORD', 'wordpresspwd' );
-
-/** Database hostname */
 define( 'DB_HOST', 'kvdb-wordpressdb.mysql.database.azure.com' );
-
-/** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
-
-/** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
-
-/**#@+
- * Authentication unique keys and salts.
- *
- * Change these to different unique phrases! You can generate these using
- * the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}.
- *
- * You can change these at any point in time to invalidate all existing cookies.
- * This will force all users to have to log in again.
- *
- * @since 2.6.0
- */
 define('AUTH_KEY',         '6E=a`6+v<EuNIa }%M0YVQo=:}/mZvdojU@et-g?mSIU-7s*|&PM(^|ez&T@+57(');
 define('SECURE_AUTH_KEY',  's(&+*m_-0Wq>*<f9+bk!Yr4}yY`u%Z@b|38^I7@Fv1@Y>fSS?[t-+U`y3Gm#d5LH');
 define('LOGGED_IN_KEY',    '?Z;#wXUjB$NQ<<gk9cgi36FX|y5YQBvgRa@Q6c*17H.3GXuf4*Xq5lYgrL5Q7-iM');
@@ -316,42 +266,12 @@ define('AUTH_SALT',        '0b!,5*i0F`RoV/.jJonCfCnmQyNBSw:PeN+=5Cqz5DAhYBNklC`s
 define('SECURE_AUTH_SALT', 'q&|dJ_7r-ghK[Y8`xeV5J0jV@-?WqW?pO:4I4!07,J$XWYYnCg4m~u,:T<c3?Ce-');
 define('LOGGED_IN_SALT',   'v$tF-EJ6b[J5+l-V@}8$MUNfA%&-X?|_}rw/tu_]5s<k)n*J/f~VzaSg69RwY|_C');
 define('NONCE_SALT',       'xRv0J@j4r{e/|9ou9vGW-?rJ7!MT*S~G<.,s~+YX7H8PM1_N<ngV)?nU `J%Ydk ');
-/**#@-*/
-
-/**
- * WordPress database table prefix.
- *
- * You can have multiple installations in one database if you give each
- * a unique prefix. Only numbers, letters, and underscores please!
- */
 $table_prefix = 'wp_';
-
-/**
- * For developers: WordPress debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- *
- * For information on other constants that can be used for debugging,
- * visit the documentation.
- *
- * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
- */
 define( 'WP_DEBUG', false );
-
-/* Add any custom values between this line and the "stop editing" line. */
-
 define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL);
-
-/* That's all, stop editing! Happy publishing. */
-
-/** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
         define( 'ABSPATH', __DIR__ . '/' );
 }
-
-/** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';' > /srv/www/wordpress/wp-config.php
 ```
 
