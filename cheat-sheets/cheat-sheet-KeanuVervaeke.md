@@ -98,5 +98,5 @@
 | WordPress db user                | wordpress                                                                                                                 |
 | Wachtwoord van WordPress db user | wordpresspwd                                                                                                              |
 | WordPress user                   | admin                                                                                                                     |
-| WordPress user password          | Srro@H%E@1iKllIZUj  (gegenereerd)                                                                                         |
+| WordPress user password          | dgLePdn86E($tFIfhE                                                                                                        |
 
