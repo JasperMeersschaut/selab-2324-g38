@@ -99,7 +99,7 @@
 
 | Variabele       | Inhoud                                                                 |
 | --------------- | ---------------------------------------------------------------------- |
-| Website         | http://kvdbwordpress.tech/                                             |
+| Website         | http://wordpress.kvdbwordpress.tech/                                   |
 | Website         | https://kvdb-wordpressapp.francecentral.cloudapp.azure.com/            |
 | Resourcegroep   | `SELabs-Wordpress`                                                     |
 | Inloggen op app | `ssh wordpressapp@kvdb-wordpressapp.francecentral.cloudapp.azure.com`  |
