@@ -88,7 +88,7 @@
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | Resourcegroep                    | SELabs-Wordpress                                                                                                          |
 | Naam databankserver              | vk-wordpressdb                                                                                                            |
-| DNS-naam databankserver          | bv. "or-wordpressdb.mysql.database.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure)       |
+| DNS-naam databankserver          | vk-wordpressdb.mysql.database.azure.com                                                                                   |
 | Beheerder databankserver         | wordpressdb                                                                                                               |
 | Wachtwoord databankserver        | LetmeIn!                                                                                                                  |
 | Naam applicatieserver (Ubuntu)   | vk-wordpressapp                                                                                                           |
