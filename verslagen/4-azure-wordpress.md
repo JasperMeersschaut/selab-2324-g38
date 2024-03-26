@@ -232,7 +232,8 @@ sudo mkdir -p /srv/www
 sudo chown www-data: /srv/www
 curl https://wordpress.org/latest.tar.gz | sudo -u www-data tar zx -C /srv/www
 touch /etc/apache2/sites-available/wordpress.conf
-echo '<VirtualHost *:80>
+touch << EOF > /etc/apache2/sites-available/wordpress.conf
+<VirtualHost *:80>
     DocumentRoot /srv/www/wordpress
     <Directory /srv/www/wordpress>
         Options FollowSymLinks
@@ -244,14 +245,16 @@ echo '<VirtualHost *:80>
         Options FollowSymLinks
         Require all granted
     </Directory>
-</VirtualHost>' > /etc/apache2/sites-available/wordpress.conf
+</VirtualHost>
+EOF
 sudo a2ensite wordpress
 sudo a2enmod rewrite
 sudo a2dissite 000-default
 sudo service apache2 reload
 mysql -h kvdb-wordpressdb.mysql.database.azure.com -u wordpressdb -p
 sudo -u www-data cp /srv/www/wordpress/wp-config-sample.php /srv/www/wordpress/wp-config.php
-echo '<?php
+touch << EOF > /srv/www/wordpress/wp-config.php
+<?php
 define( 'DB_NAME', 'wordpress' );
 define( 'DB_USER', 'wordpress' );
 define( 'DB_PASSWORD', 'wordpresspwd' );
@@ -272,7 +275,8 @@ define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL);
 if ( ! defined( 'ABSPATH' ) ) {
         define( 'ABSPATH', __DIR__ . '/' );
 }
-require_once ABSPATH . 'wp-settings.php';' > /srv/www/wordpress/wp-config.php
+require_once ABSPATH . 'wp-settings.php';
+EOF
 ```
 
 ### Voer andere veiligheidsmaatregelen door op de virtuele machine (bv. fail2ban).
