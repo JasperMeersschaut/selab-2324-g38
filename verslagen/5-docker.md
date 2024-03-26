@@ -32,7 +32,28 @@ Met het commando: `docker ps`
 Met het commando: `docker ps -a`
 
 **Waarom heeft Vaultwarden HTTPS nodig?**
-Vaultwarden heeft HTTPS nodig omdat het een webapplicatie is die gevoelige informatie bevat. HTTPS zorgt ervoor dat de communicatie tussen de client en de server versleuteld is.   
+Vaultwarden heeft HTTPS nodig omdat het een webapplicatie is die gevoelige informatie bevat. HTTPS zorgt ervoor dat de communicatie tussen de client en de server versleuteld is.
+
+**Welke commando's gebruik je voor portainer te downloaden?**
+
+```bash
+docker volume create portainer_data
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+```
+> Nu is het mogelijk om Portainer te bereiken via <http://192.168.56.20:8000> of <https://192.168.56.20:9443>.
+
+**Inspecteer jouw containers: kan je de Portainer en Vaultwarden containers zien?**
+Ja, ik kan de Portainer en Vaultwarden containers zien.
+| ![Screenshot Webbrowser](./img/5-docker/PortainerVaultwardenContainers.png) |
+| :-----------------------------------------------------: |
+| Figuur 1. Portainer en Vaultwarden containers |
+
+**Kan je de Vaultwarden afsluiten en terug opstarten via Portainer?**
+Ja, als je op een container klikt in Portainer kan je de container stoppen en herstarten.
+| ![Screenshot Webbrowser](./img/5-docker/PortainerVaultwardenRestart.png) |
+| :-----------------------------------------------------: |
+| Figuur 2. Vaultwarden herstarten via Portainer |
+
 ## :memo: Evaluatiecriteria
 
 - [ ] De `docker-compose.yml` bestanden zijn te vinden op de GitHub repository van de groep.
@@ -58,6 +79,37 @@ Als jullie geen problemen zijn tegengekomen, schrijf dan "geen problemen ondervo
 Beschrijf hier het probleem uitgebreid met screenshots, code snippets, enz. en de oplossing die jullie al dan niet hebben gevonden. -->
 
 ## :information_desk_person: Voorbereiding demo
+
+### De `docker-compose.yml` bestanden zijn te vinden op de GitHub repository van de groep.
+
+| ![Screenshot Webbrowser](./img/5-docker/GithubRepoDemo) |
+| :-----------------------------------------------------: |
+|              Figuur 1. Github repo demo's               |
+
+### Je kan alle instructies van Docker en Docker compose uitvoeren zonder `sudo` te gebruiken.
+
+### Je hebt Docker geïnstalleerd en kan dit aantonen met `docker --version`.
+
+### Je hebt Docker Compose geïnstalleerd en kan dit aantonen met `docker compose version`.
+
+### Je kan de command line instructies om een Vaultwarden container op te zetten toelichten.
+
+```bash
+sudo docker run -d --name bitwarden -e ROCKET_TLS='{certs="/ssl/key.crt",key="/ssl/key.pem"}' -v /home/osboxes/Certificates:/ssl -v ~/.files-vaultwarden:/data/ -p 8080:80 vaultwarden/server:latest
+```
+
+### Je kan de command line instructies om een Portainer container op te zetten toelichten.
+
+```bash
+docker volume create portainer_data
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+```
+
+### Je kan een Vaultwarden container opzetten via Docker Compose op de command line. Je kan surfen via HTTPS naar en inloggen op deze container op het fysieke systeem (bv. via <https://192.168.56.20>).
+
+### Je hebt deze ook gekoppeld aan een web browser client op het fysieke systeem.
+
+### Je kan een Portainer container opzetten via Docker Compose op de command line. Je kan surfen naar en inloggen op deze container op het fysieke systeem (bv. via <http://192.168.56.20>). Portainer en Vaultwarden worden op het Portainer dashboard weergegeven met als status "Running".
 
 ## Mogelijke uitbreidingen
 

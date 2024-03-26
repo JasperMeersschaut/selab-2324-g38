@@ -219,3 +219,10 @@ pubkeyauthentication YES
 | Wordpress downloaden en uitpakken stap 1           | `sudo mkdir -p /srv/www`                                                                                                                     |
 | Wordpress downloaden en uitpakken stap 2           | `sudo chown www-data: /srv/www`                                                                                                              |
 | Wordpress downloaden en uitpakken stap 3           | `curl https://wordpress.org/latest.tar.gz \| sudo -u www-data tar zx -C /srv/www`                                                            |
+
+## Linux: Docker
+
+| Task                                  | Command                                                                                                                                                                                                |
+| :------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Commando voor juiste key te genereren | `openssl req -x509 -nodes -newkey rsa:2048 -days 365 -keyout key.pem -out key.crt`                                                                                                                     |
+| Vaultwarden installeren               | `sudo docker run -d --name bitwarden -e ROCKET_TLS='{certs="/ssl/key.crt",key="/ssl/key.pem"}' -v /home/osboxes/Certificates:/ssl -v ~/.files-vaultwarden:/data/ -p 8080:80 vaultwarden/server:latest` |
