@@ -97,11 +97,14 @@
 
 ### Azure-WordPress machinenamen, accounts en wachtwoorden
 
-| Variabele       | Inhoud                                                                 |
-| --------------- | ---------------------------------------------------------------------- |
-| Website         | http://wordpress.kvdbwordpress.tech/                                   |
-| Website         | https://kvdb-wordpressapp.francecentral.cloudapp.azure.com/            |
-| Resourcegroep   | `SELabs-Wordpress`                                                     |
+| Variabele     | Inhoud                                                      |
+| ------------- | ----------------------------------------------------------- |
+| Website       | http://wordpress.kvdbwordpress.tech/                        |
+| Website       | https://kvdb-wordpressapp.francecentral.cloudapp.azure.com/ |
+| Resourcegroep | `SELabs-Wordpress`                                          |
+
+| Task            | Command                                                                |
+| :-------------- | :--------------------------------------------------------------------- |
 | Inloggen op app | `ssh wordpressapp@kvdb-wordpressapp.francecentral.cloudapp.azure.com`  |
 | Inloggen op db  | `mysql -h kvdb-wordpressdb.mysql.database.azure.com -u wordpressdb -p` |
 
@@ -131,5 +134,46 @@
 | WordPress db user wachtwoord | `wordpresspwd`       |
 | WordPress user               | `admin`              |
 | WordPress user password      | `Srro@H%E@1iKllIZUj` |
+
+### Docker
+
+#### Docker commando's
+
+| Task                                | Command                                             |
+| :---------------------------------- | :-------------------------------------------------- |
+| Lijst van draaiende containers      | `docker ps`                                         |
+| Lijst van alle containers           | `docker ps -a`                                      |
+| Container bouwen                    | `docker build -t <image> <pad_naar_dockerfile>`     |
+| Container starten                   | `docker run <image>`                                |
+| Container stoppen                   | `docker stop <image>`                               |
+| Container verwijderen               | `docker rm <container_id>`                          |
+| Volume maken                        | `docker volume create <volume_name>`                |
+| Een volume aan een container hangen | `docker run -v <volume_name>:<pad_naar_dockerfile>` |
+| Start een docker compose            | `docker compose up -d`                              |
+| Stop een docker compose             | `docker compose down`                               |
+| Docker opruimen                     | `docker system prune -f`                            |
+
+#### Gegevens
+
+| Variabele                | Inhoud                                  |
+| ------------------------ | --------------------------------------- |
+| Vaultwarden email        | `Kjell.vandenbossche@student.hogent.be` |
+| Vaultwarden wachtwoord   | `Srro@H%E@1iKllIZUj`                    |
+| Portainer gebruikersnaam | `admin`                                 |
+| Portainer wachtwoord     | `Srro@H%E@1iKllIZUj`                    |
+| Databank naam            | `db`                                    |
+| Databank username        | `user`                                  |
+| Databank wachtwoord      | `letmein`                               |
+| Minetest gebruikersnaam  | `Kjell`                                 |
+| Minetest wachtwoord      | `Srro@H%E@1iKllIZUj`                    |
+
+#### Systemd namen
+
+| Variabele   | Inhoud                |
+| ----------- | --------------------- |
+| Vaultwarden | `vaultwarden.service` |
+| Portainer   | `portainer.service`   |
+| Database    | `sqlserver.service`   |
+| Minetest    | `minetest.service`    |
 
 ## Checklists
