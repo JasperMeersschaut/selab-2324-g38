@@ -62,7 +62,7 @@ sudo chown -R www-data:www-data /srv/www/wordpress/folderwithhtmlfiles
 
 #### Wat was de oplossing?
 
-> Na lang zoeken heb ik een oplossing gevondezn. Ik weet niet of dit de bedoeling was op deze manier maar het werkt wel. En de andere manier werkte niet.
+> Na lang zoeken heb ik een oplossing gevonden. Ik weet niet of dit de bedoeling was op deze manier maar het werkt wel. En de andere manier werkte niet.
 
 - Ik heb de files in apache gestoken in de folder `/var/www/html` en nu werkt het wel.
 - Ik heb een nieuw conf bestand aangemaakt `/etc/apache2/sites-available/adarkroom-main.conf` met de volgende inhoud:
@@ -161,7 +161,7 @@ sudo chown -R www-data:www-data /srv/www/wordpress/folderwithhtmlfiles
 | :------------------------------------------------------------------------------------: |
 |                     Figuur 4. command prompt voorbereiden op mysql                     |
 
-- Verbind met Mysql databankserver met ` mysql -h <host> -u <user> -p
+- Verbind met Mysql databankserver met `mysql -h \<host> -u \<user> -p`
   - Navigeer voor de gegevens naar de databankserver op Azure
   - Als je hier een error krijgt zal je eerst de instellingen van de firewall moeten aanpassen op Azure. Je moet hier je IP adres goed zetten.
 
@@ -326,7 +326,8 @@ require_once ABSPATH . 'wp-settings.php';' > /srv/www/wordpress/wp-config.php
 
 ## Reflecties
 
-Deze opdracht was iets moeilijker dan de andere opdrachten, aangezien het toch wel een grote opdracht was waar dingen konden foutlopen. Bij Jasper liepen er toch wel dingen mis en moest hij veel troubleshooten maar dat hoort bij het proces. Bij deze opdracht was ook niet alles super straight forward zoals bij de andere opdrachten. Het was wel eens leuk om een website te maken en deze te hosten. 
+Deze opdracht was iets moeilijker dan de andere opdrachten, aangezien het toch wel een grote opdracht was waar dingen konden foutlopen. Bij Jasper liepen er toch wel dingen mis en moest hij veel troubleshooten maar dat hoort bij het proces. Bij deze opdracht was ook niet alles super straight forward zoals bij de andere opdrachten. Het was wel eens leuk om een website te maken en deze te hosten.
 
 ## Bronnen
+
 [Tutorial: Install and configure WordPress](https://ubuntu.com/tutorials/install-and-configure-wordpress#1-overview)
