@@ -112,3 +112,24 @@ Resourcegroep: `SELabs-Wordpress`
 | WordPress login scherm           | `https://ubuntu-sel-wordpress.northeurope.cloudapp.azure.com/wp-login.php` |
 | WordPress gebruikersnaam         | `xFlyxng`                                                                  |
 | WordPress paswoord               | `(i%TJJ6wvcscLh*rCw`                                                       |
+
+### Docker
+
+| Task                                      | Command                                             |
+| :---------------------------------------- | :-------------------------------------------------- |
+| Lijst van containers die runnen           | `docker ps`                                         |
+| Lijst van alle containers                 | `docker ps -a`                                      |
+| Container starten                         | `docker run <image>`                                |
+| Container stoppen                         | `docker stop <image>`                               |
+| Container verwijderen (na die gestopt is) | `docker rm <container_id>`                          |
+| Volume maken                              | `docker volume create <volume_name>`                |
+| Een volume aan een container binden       | `docker run -v <volume_name>:<pad_naar_dockerfile>` |
+| Een docker compose starten                | `docker compose up -d`                              |
+| Een docker compose stoppen                | `docker compose down`                               |
+| Docker opruimen                           | `docker system prune --all --volumes`               |
+
+### Scp
+
+| Task                                                     | Command                         |
+| :------------------------------------------------------- | :------------------------------ |
+| Kopiëren van een file van VM naar lokale machine met scp | `scp naam@ip:pad_VM pad_lokaal` |
