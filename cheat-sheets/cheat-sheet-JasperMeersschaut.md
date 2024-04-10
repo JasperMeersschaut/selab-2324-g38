@@ -226,3 +226,10 @@ pubkeyauthentication YES
 | :------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Commando voor juiste key te genereren | `openssl req -x509 -nodes -newkey rsa:2048 -days 365 -keyout key.pem -out key.crt`                                                                                                                     |
 | Vaultwarden installeren               | `sudo docker run -d --name bitwarden -e ROCKET_TLS='{certs="/ssl/key.crt",key="/ssl/key.pem"}' -v /home/osboxes/Certificates:/ssl -v ~/.files-vaultwarden:/data/ -p 8080:80 vaultwarden/server:latest` |
+
+## Gegevens:Docker
+
+| **Variabele**        | **Inhoud**     |
+| -------------------- | -------------- |
+| Naam portainer       | admin          |
+| Wachtwoord portainer | (Bitwarden ww) |
