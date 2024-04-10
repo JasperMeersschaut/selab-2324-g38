@@ -6,14 +6,14 @@
 
 ### PowerShell ISE | PowerShell Terminal
 
-| Task                                          | Command                     |
-| :-------------------------------------------- | :-------------------------- |
-| Commentaarregel schrijven                     | `#`                         |
-| Tekst afdrukken op de console                 | `Write-Host`                |
-| Script runnen                                 | `Fn + F5`                   |
-| Textkleur aanpassen                           | `-ForegroundColor <Color>`  |
-| achtergrondkleur aanpassen                    | ` -BackgroundColor <Color>` |
-| Testen of je kan verbinden met een applicatie | `ping <adres>`              |
+| Task                                          | Command                    |
+| :-------------------------------------------- | :------------------------- |
+| Commentaarregel schrijven                     | `#`                        |
+| Tekst afdrukken op de console                 | `Write-Host`               |
+| Script runnen                                 | `Fn + F5`                  |
+| Textkleur aanpassen                           | `-ForegroundColor <Color>` |
+| achtergrondkleur aanpassen                    | `-BackgroundColor <Color>` |
+| Testen of je kan verbinden met een applicatie | `ping <adres>`             |
 
 ### Chocolatey package manager
 
@@ -46,6 +46,7 @@
 | Een document eigendom maken van een groep                               | `sudo chgrp -R <groep> <document>`        |
 | Alle leden van een groep rechten geven tot een document                 | `sudo chmod -R g+<type_recht> <document>` |
 | Een bestand lezen en aanpassen                                          | `sudo nano <bestand>`                     |
+| Jouw gebruikersnaam tonen                                               | `whoami`                                  |
 
 ### MySQL
 
@@ -175,5 +176,6 @@
 | Portainer   | `portainer.service`   |
 | Database    | `sqlserver.service`   |
 | Minetest    | `minetest.service`    |
+| Apache      | `apache.service`      |
 
 ## Checklists
