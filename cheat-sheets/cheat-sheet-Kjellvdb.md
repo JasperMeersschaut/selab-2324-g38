@@ -176,6 +176,6 @@
 | Portainer   | `portainer.service`   |
 | Database    | `sqlserver.service`   |
 | Minetest    | `minetest.service`    |
-| Apache      | `apache.service`      |
+| Webserver   | `webserver.service`   |
 
 ## Checklists
