@@ -3,13 +3,15 @@
 > Naam verslaggever: Jasper Meersschaut
 
 ## :speech_balloon: Beschrijving
-
+In deze opdracht gaan we aan de slag met Docker en Docker Compose. Docker is een soort van virtualisatie waarbij je applicaties in containers kan draaien. Docker Compose is een tool waarmee je meerdere containers kan beheren. We gaan een Vaultwarden en Portainer container opzetten. Vaultwarden is een open-source wachtwoordmanager en Portainer is een tool waarmee je Docker containers kan beheren.
 ## :thinking: Antwoorden op de vragen in de opdracht
 
 **Wat is \${USER}?**
+
 `${USER}` is een variabele die de gebruikersnaam van de huidige gebruiker bevat.
 
 **Welk commando kan je gebruiken om jouw gebruikersnaam te bepalen?**
+
 Met het commando: `echo $USER`
 
 **Welke commando's gebruik je voor vaultwarden te installeren?**
@@ -20,18 +22,23 @@ docker run -d --name vaultwarden -v /vw-data/:/data/ --restart unless-stopped -p
 ```
 
 **Wat doet het docker pull commando?**
+
 Het docker pull commando haalt een image van een container op van de Docker Hub.
 
 **Hoe kan je alle lokale images bekijken?**
+
 Met het commando: `docker images`
 
 **Hoe bekijk je alle lokaal draaiende containers?**
+
 Met het commando: `docker ps`
 
 **Hoe bekijk je alle lokale containers (inclusief de gestopte containers)?**
+
 Met het commando: `docker ps -a`
 
 **Waarom heeft Vaultwarden HTTPS nodig?**
+
 Vaultwarden heeft HTTPS nodig omdat het een webapplicatie is die gevoelige informatie bevat. HTTPS zorgt ervoor dat de communicatie tussen de client en de server versleuteld is.
 
 **Welke commando's gebruik je voor portainer te downloaden?**
@@ -44,21 +51,25 @@ docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /va
 > Nu is het mogelijk om Portainer te bereiken via <http://192.168.56.20:8000> of <https://192.168.56.20:9443>.
 
 **Inspecteer jouw containers: kan je de Portainer en Vaultwarden containers zien?**
+
 Ja, ik kan de Portainer en Vaultwarden containers zien.
 | ![Screenshot Webbrowser](./img/5-docker/PortainerVaultwardenContainers.png) |
 | :-----------------------------------------------------: |
 | Figuur 1. Portainer en Vaultwarden containers |
 
 **Kan je de Vaultwarden afsluiten en terug opstarten via Portainer?**
+
 Ja, als je op een container klikt in Portainer kan je de container stoppen en herstarten.
 | ![Screenshot Webbrowser](./img/5-docker/PortainerVaultwardenRestart.png) |
 | :-----------------------------------------------------: |
 | Figuur 2. Vaultwarden herstarten via Portainer |
 
 **Je kan dit Docker Compose bestand activeren met behulp van `docker compose up -d`. Wat doet de -d optie?**
+
 Dit staat voor detach en zorgt ervoor dat de containers in de achtergrond draaien.
 
 **Hoe kan je het Docker commando voor jouw Portainer applicatie omvormen naar een docker-compose.yml bestand?**
+
 Docker commando:
 
 ```bash
@@ -83,12 +94,16 @@ services:
 ```
 
 **Je maakt een enkel docker-compose.yml bestand met daarin beide containers in. Is dit verstandig? Waarom wel of niet?.**
+
 Dit is niet verstandig omdat je dan twee applicaties in één container hebt. Het is beter om de containers apart te houden zodat ze onafhankelijk van elkaar kunnen draaien.
+
 **Hoe verwijder je eenvoudig alle containers uit jouw docker-compose.yml bestand zonder gebruik te maken van docker stop en docker rm?**
+
 Met het commando: `docker-compose down -v`
 -v zorgt ervoor dat de volumes ook verwijderd worden.
 
 **Hoe kan je met één commando alle containers, images, networks en volumes verwijderen die niet meer in gebruik zijn?**
+
 Met het commando: `docker system prune --all --volumes --force`
 
 - --all: verwijdert alle containers, images, networks en volumes
