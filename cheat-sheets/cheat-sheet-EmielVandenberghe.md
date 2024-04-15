@@ -126,3 +126,10 @@
 | gebruikersnaam       | `admin`                  |
 | wachtwoord           | `+ksEHp=4%"vvJ4F`        |
 | portainer in browser | `https://localhost:9443` |
+
+## Vaultwarden
+
+| Task                 | Command                      |
+| :------------------- | :--------------------------- |
+| wachtwoord           | `+ksEHp=4%"vvJ4F`            |
+| portainer in browser | `https://192.168.56.20:8080` |

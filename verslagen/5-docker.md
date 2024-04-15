@@ -3,7 +3,9 @@
 > Naam verslaggever: Jasper Meersschaut
 
 ## :speech_balloon: Beschrijving
+
 In deze opdracht gaan we aan de slag met Docker en Docker Compose. Docker is een soort van virtualisatie waarbij je applicaties in containers kan draaien. Docker Compose is een tool waarmee je meerdere containers kan beheren. We gaan een Vaultwarden en Portainer container opzetten. Vaultwarden is een open-source wachtwoordmanager en Portainer is een tool waarmee je Docker containers kan beheren.
+
 ## :thinking: Antwoorden op de vragen in de opdracht
 
 **Wat is \${USER}?**
@@ -110,6 +112,10 @@ Met het commando: `docker system prune --all --volumes --force`
 - --volumes: verwijdert ook de volumes
 - --force: voert de actie uit zonder bevestiging
 
+**Wat is het verschil tussen unused images en dangling images?**
+
+Unused images zijn Docker-images die niet worden gebruikt door draaiende containers, maar ze kunnen nog steeds nuttig zijn voor toekomstig gebruik. Dangling images zijn een specifiek type van deze ongebruikte images die geen tag hebben en niet gelinkt zijn aan andere images of containers, vaak gegenereerd tijdens het bouwen of bijwerken van images. Deze verwijderen kan ruimte vrijmaken op de harde schijf.
+
 ## :memo: Evaluatiecriteria
 
 - [ ] De `docker-compose.yml` bestanden zijn te vinden op de GitHub repository van de groep.
@@ -178,6 +184,7 @@ In mijn geval is het via <http://192.168.56.20:8000>.
 | Figuur 5. Portainer |
 
 ## Mogelijke uitbreidingen
+
 - Zorg ervoor dat Vaultwarden en Portainer automatisch opstarten bij het opstarten van de VM.
 - Installeer vorige opdrachten m.b.v. Docker. Dit is mogelijk met volgende opdrachten:
   - opdracht 2 (databankserver)
@@ -188,6 +195,7 @@ In mijn geval is het via <http://192.168.56.20:8000>.
   - Wat betekent "dedicated" hier?
   - Probeer ook of andere teamleden via een LAN-netwerk kunnen inloggen op de Minetest server zodat jullie samen kunnen spelen. Wat moet je hiervoor aanpassen of instellen?
     - :exclamation: **Let op:** Het schoolnetwerk zal de verbindingen tegenhouden. Als je dit op de campus wil uittesten, maak je best even gebruik van een mobiele hotspot.
+
 ## Reflecties
 
 <!-- Wat was moeilijk? Wat was eenvoudig? Wat hebben jullie geleerd van de opdracht? Wat zouden jullie anders doen als jullie het opnieuw moesten doen?
