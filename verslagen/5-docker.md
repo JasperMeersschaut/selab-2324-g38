@@ -185,23 +185,42 @@ In mijn geval is het via <http://192.168.56.20:8000>.
 
 ## Mogelijke uitbreidingen
 
-- Zorg ervoor dat Vaultwarden en Portainer automatisch opstarten bij het opstarten van de VM.
-- Installeer vorige opdrachten m.b.v. Docker. Dit is mogelijk met volgende opdrachten:
-  - opdracht 2 (databankserver)
-  - opdracht 3 (webserver)
-  - opdracht 4 (Azure)
-    - :bulb: **Hint:** bouw de afzonderlijke componenten van Azure na in Docker containers en gebruik Docker Compose om deze te verbinden.
-- Maak een MineTest server aan: velen van jullie zullen de term "server" voor het eerst gehoord hebben bij multiplayer games. De server is het toestel waarop een match/wereld/... gehost wordt. De server zorgt er ook voor dat gamers samen kunnen spelen door hen te joinen in deze match/wereld/... . Je kan met behulp van Docker een [dedicated Minetest server](https://docs.linuxserver.io/images/docker-minetest/) opzetten. Minetest is een open source Minecraft clone en is volledig gratis te downloaden op <https://www.minetest.net/> .
-  - Wat betekent "dedicated" hier?
-  - Probeer ook of andere teamleden via een LAN-netwerk kunnen inloggen op de Minetest server zodat jullie samen kunnen spelen. Wat moet je hiervoor aanpassen of instellen?
-    - :exclamation: **Let op:** Het schoolnetwerk zal de verbindingen tegenhouden. Als je dit op de campus wil uittesten, maak je best even gebruik van een mobiele hotspot.
+### Vaultwarden en Portainer starten automatisch op bij het opstarten van de VM.
+
+### Opdracht 2 (databankserver) in docker
+
+### Opdracht 3 (webserver) in docker
+
+### opdracht 4 (Azure) in docker
+
+### Minetest
+
+Maak een nieuw docker-compose.yml bestand aan voor Minetest.
+
+```yaml
+---
+services:
+  minetest:
+    image: lscr.io/linuxserver/minetest:latest
+    container_name: minetest
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - "CLI_ARGS=--gameid devtest --port 30000" #optional
+    volumes:
+      - /home/osboxes/Docker/Minetest/.files-minetest:/config/.minetest
+    ports:
+      - 30000:30000/udp
+    restart: unless-stopped
+```
+
+Een keer deze container draait kan je Minetest spelen door minetest client te downloaden en te verbinden met de server. Via `192.168.56.20:30000`.
+
+**Wat betekent "dedicated" hier?**
+
+Dedicated betekent dat de server enkel voor Minetest gebruikt wordt.
 
 ## Reflecties
 
-<!-- Wat was moeilijk? Wat was eenvoudig? Wat hebben jullie geleerd van de opdracht? Wat zouden jullie anders doen als jullie het opnieuw moesten doen?
-
-Als jullie nog andere opmerkingen hebben over de opdracht hebben, voel je vrij om ze te delen. -->
-
-## Bronnen
-
-<!-- Maak een lijst van alle bronnen die jullie hebben gebruikt tijdens het uitvoeren van de opdracht: boeken, handleidingen, HOWTO's, blog posts, enz. -->
+Ik vond deze opdracht zeer interessant. Maar toch wel moeilijk om te begrijpen. Het is namelijk volledig nieuw en ik heb nog veel bij te leren i.v.m docker. Ik heb wel meteen gemerkt dat docker extreem handig kan zijn.
