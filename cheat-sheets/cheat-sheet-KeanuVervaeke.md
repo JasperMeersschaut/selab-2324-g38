@@ -100,3 +100,18 @@
 | WordPress user                   | admin                                                                                                                     |
 | WordPress user password          | dgLePdn86E($tFIfhE                                                                                                        |
 
+
+### Docker
+
+| Task                                      | Command                                             |
+| :---------------------------------------- | :-------------------------------------------------- |
+| Lijst van containers die runnen           | `docker ps`                                         |
+| Lijst van alle containers                 | `docker ps -a`                                      |
+| Container starten                         | `docker run <image>`                                |
+| Container stoppen                         | `docker stop <image>`                               |
+| Container verwijderen (na die gestopt is) | `docker rm <container_id>`                          |
+| Volume maken                              | `docker volume create <volume_name>`                |
+| Een volume aan een container binden       | `docker run -v <volume_name>:<pad_naar_dockerfile>` |
+| Een docker compose starten                | `docker compose up -d`                              |
+| Een docker compose stoppen                | `docker compose down`                               |
+| Docker opruimen                           | `docker system prune --all --volumes`               |
