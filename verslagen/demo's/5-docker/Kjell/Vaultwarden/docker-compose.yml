@@ -1,0 +1,12 @@
+version: "3"
+services:
+  vaultwarden:
+    container_name: vaultwarden
+    environment:
+      - ROCKET_TLS={certs="/ssl/key.crt",key="/ssl/key.pem"}
+    volumes:
+      - /home/osboxes/Docker/Vaultwarden/.files-vaultwarden:/data/
+      - /home/osboxes/Certificates:/ssl
+    ports:
+      - 8080:80
+    image: vaultwarden/server:latest

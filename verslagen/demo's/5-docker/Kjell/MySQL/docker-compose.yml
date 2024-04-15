@@ -1,0 +1,15 @@
+version: "3"
+services:
+  db:
+    image: mysql
+    container_name: sqlserver
+    restart: always
+    environment:
+      MYSQL_USER: user
+      MYSQL_ROOT_PASSWORD: letmein
+      MYSQL_PASSWORD: letmein
+      MYSQL_DATABASE: db
+    volumes:
+      - /home/osboxes/Docker/MySQL/.files-sqlserver:/var/lib/mysql
+    ports:
+      - "3306:3306"

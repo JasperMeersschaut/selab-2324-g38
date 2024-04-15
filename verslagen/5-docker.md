@@ -187,18 +187,124 @@ In mijn geval is het via <http://192.168.56.20:8000>.
 
 ### Vaultwarden en Portainer starten automatisch op bij het opstarten van de VM.
 
+We maken 2 daemon's aan in `/etc/systemd/system`:
+
+- vaultwarden.service:
+
+```bash
+[Unit]
+Description=Vaultwarden Docker Compose Service
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/osboxes/Docker/Vaultwarden/
+ExecStart=/usr/bin/docker compose up -d
+ExecStop=/usr/bin/docker compose down
+
+[Install]
+WantedBy=multi-user.target
+```
+
+- portainer.service:
+
+```bash
+[Unit]
+Description=Portainer Docker Compose Service
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/osboxes/Docker/Portainer/
+ExecStart=/usr/bin/docker compose up -d
+ExecStop=/usr/bin/docker compose down
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ### Opdracht 2 (databankserver) in docker
+
+Maak een nieuwe docker-compose.yml voor sql.
+
+```yaml
+version: "3"
+services:
+  db:
+    image: mysql
+    container_name: sqlserver
+    restart: always
+    environment:
+      MYSQL_USER: user
+      MYSQL_ROOT_PASSWORD: letmein
+      MYSQL_PASSWORD: letmein
+      MYSQL_DATABASE: db
+    volumes:
+      - /home/osboxes/Docker/MySQL/.files-sqlserver:/var/lib/mysql
+    ports:
+      - "3306:3306"
+```
 
 ### Opdracht 3 (webserver) in docker
 
+Maak een nieuwe docker-compose.yml voor de webserver.
+
+```yaml
+version: "3"
+services:
+  client:
+    image: nginx
+    container_name: webserver
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /home/osboxes/Docker/Webserver/.files-nginx:/usr/share/nginx/html
+      - /home/osboxes/Certificates2/key.pem:/root/ssl/key.pem
+      - /home/osboxes/Certificates2/cert.pem:/root/ssl/cert.pem
+```
+
 ### opdracht 4 (Azure) in docker
+
+```yaml
+version: "3"
+services:
+  db:
+    image: mysql:5.7
+    container_name: wordpressdb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: letmein
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: letmein
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    container_name: wordpress
+    restart: always
+    ports:
+      - "666:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: user
+      WORDPRESS_DB_PASSWORD: letmein
+      WORDPRESS_DB_NAME: db
+    volumes: ["./:/var/www/html"]
+volumes:
+  mysql:
+```
 
 ### Minetest
 
 Maak een nieuw docker-compose.yml bestand aan voor Minetest.
 
 ```yaml
----
 services:
   minetest:
     image: lscr.io/linuxserver/minetest:latest

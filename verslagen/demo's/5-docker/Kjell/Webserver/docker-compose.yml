@@ -1,0 +1,12 @@
+version: "3"
+services:
+  client:
+    image: nginx
+    container_name: webserver
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /home/osboxes/Docker/Webserver/.files-nginx:/usr/share/nginx/html
+      - /home/osboxes/Certificates2/key.pem:/root/ssl/key.pem
+      - /home/osboxes/Certificates2/cert.pem:/root/ssl/cert.pem
