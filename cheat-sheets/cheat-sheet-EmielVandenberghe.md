@@ -129,7 +129,7 @@
 
 ## Vaultwarden
 
-| Task                 | Command                      |
-| :------------------- | :--------------------------- |
-| wachtwoord           | `+ksEHp=4%"vvJ4F`            |
-| portainer in browser | `https://192.168.56.20:8080` |
+| Task                   | Command                      |
+| :--------------------- | :--------------------------- |
+| wachtwoord             | `+ksEHp=4%"vvJ4F`            |
+| vaultwarden in browser | `https://192.168.56.20:8080` |
