@@ -1,0 +1,8 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    ports:
+      - 4123:80
+    volumes:
+      - ~/.files-vaultwarden:/data
