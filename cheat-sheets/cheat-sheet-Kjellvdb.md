@@ -178,32 +178,4 @@
 | Minetest    | `minetest.service`    |
 | Webserver   | `webserver.service`   |
 
-### CISCO
-
-#### Adresseringsschema IPv4
-
-| Toestel | Interface | Subnetnr. | IPv4-adres | Subnetmask | IPv4-adres default gateway |
-| :------ | :-------- | :-------- | :--------- | :--------- | :------------------------- |
-| PC1     | NIC       | 0         |            |            |                            |
-| PC2     | NIC       | 0         |            |            |                            |
-| PC3     | NIC       | 1         |            |            |                            |
-| PC4     | NIC       | 1         |            |            |                            |
-| SW1     | VLAN 1    | 0         |            |            |                            |
-| SW2     | VLAN 1    | 1         |            |            |                            |
-| R1      | G0/0/0    | 0         |            |            | n.v.t.                     |
-| R1      | G0/0/1    | 1         |            |            | n.v.t.                     |
-
-#### Adresseringsschema IPv6
-
-| Toestel | Interface | Subnetnr. | IPv6-adres | IPv6-prefixlengte | IPv6-adres default gateway |
-| :------ | :-------- | :-------- | :--------- | :---------------- | :------------------------- |
-| PC1     | NIC       | 0         |            | /64               |                            |
-| PC2     | NIC       | 0         |            | /64               |                            |
-| PC3     | NIC       | 1         |            | /64               |                            |
-| PC4     | NIC       | 1         |            | /64               |                            |
-| SW1     | VLAN 1    | 0         |            | /64               |                            |
-| SW2     | VLAN 1    | 1         |            | /64               |                            |
-| R1      | G0/0/0    | 0         |            | /64               | n.v.t.                     |
-| R1      | G0/0/1    | 1         |            | /64               | n.v.t.                     |
-
 ## Checklists
