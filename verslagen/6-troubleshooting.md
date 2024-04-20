@@ -1,6 +1,6 @@
-# Verslag: SUBJECT
+# Verslag: Troublesshooting
 
-> Naam verslaggever: NAME
+> Naam verslaggever: Kjell Van Den Bossche
 
 ## Beschrijving
 
