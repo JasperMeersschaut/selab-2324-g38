@@ -93,6 +93,20 @@ docker compose -f docker/planka/docker-compose.yml restart
 
 ### Machine 4
 
+1. Verbinden met FileZilla
+   -> ssh stond niet actief, was niet running.
+
+`systemctl status ssh `
+`sudo systemctl enable ssh `
+`sudo systemctl restart ssh `
+
+-> hierna succesvolle connectie met Filezilla
+
+2. Planka niet bereikbaar
+   -> docker compose fout ingesteld
+
+ip adres ingesteld in plaats van localhost.
+
 ### Machine 5
 
 ## Reflecties
