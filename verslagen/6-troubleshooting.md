@@ -51,7 +51,7 @@ sudo systemctl enable apache2
 sudo systemctl restart apache2
 ===========================================================================
 
-============================== Databanserver ==============================
+============================== Databankserver ==============================
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 bind-address = 0.0.0.0 > bind-address = 127.0.0.1
 sudo systemctl restart mysql.service
@@ -88,6 +88,38 @@ docker compose -f docker/planka/docker-compose.yml restart
 ```
 
 ### Machine 2
+
+```
+============================== Toetsenbord =====================================
+sudo dpkg-reconfigure keyboard-configuration
+sudo reboot
+============================== Pingen =====================================
+sudo nano /etc/netplan/01-network-manager-all.yaml
+addresses: - 192.168.56.56/24 > - 192.168.56.20/24
+sudo netplan apply
+============================== Apache =====================================
+demo.html added (FileZilla)
+============================== Databankserver (mariadb) =====================================
+sudo ufw allow 3306
+
+Moet alleen lokaal toegankelijk zijn vanaf de VM zelf via het MySQL-commando voor de gebruiker admin en het wachtwoord letmein! en via de MySQL Workbench maar enkel dan via een SSH connectie.
+
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+bind-address = 0.0.0.0 > bind-address = 127.0.0.1
+sudo systemctl restart mysql.service
+
+============================== Wordpress =====================================
+
+============================== SSH =====================================
+IMAGE
+
+Lijn verwijderd in known_hosts op host.
+============================== Docker (Planka) =====================================
+sudo apt install docker-compose
+============================== Docker (Minetest) =====================================
+
+
+```
 
 ### Machine 3
 
