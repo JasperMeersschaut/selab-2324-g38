@@ -109,6 +109,119 @@ ip adres ingesteld in plaats van localhost.
 
 ### Machine 5
 
+### Gewenste eindsituatie
+
+- [x] Netwerk
+  - [x] Het toestel beschikt over internet
+  - [x] Het toestel kan via externe host gepingd worden op 192.168.56.20.
+- [x] Webserver (apache2)
+  - [x] Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20>.
+  - [x] Het is mogelijk om via de Ubuntu gebruiker bestanden naar de webserver (in map`/var/www`) te uploaden via FileZilla (of een gelijkaardige tool) vanuit de hostomgeving via 192.168.56.20, poort 22 (via SFTP). ⚠️ Je overschrijft echter niet het door ons aangeleverde `index.html` bestand.
+- [x] Databankserver (mariadb)
+  - [x] Databank `appdb` moet bereikbaar zijn via MySQL Workbench in de hostomgeving via 192.168.56.20, poort 3306 voor de gebruiker `appusr` en het wachtwoord `letmein!`.
+  - [x] Moet alleen lokaal toegankelijk zijn vanaf de VM zelf via het MySQL-commando voor de gebruiker `admin` en het wachtwoord `letmein!` en via de MySQL Workbench maar enkel dan via een SSH connectie.
+- [x] Wordpress
+  - [x] Moet bereikbaar zijn via de browser in de hostomgeving via <http://192.168.56.20:8080> voor de gebruiker `wpuser` en het wachtwoord `letmein!` en gebruikt de database `wpdb`.
+  - [x] Er moet een post aangemaakt zijn (met inhoud naar keuze)
+- [x] SSH
+  - [x] Er moet een verbinding gemaakt kunnen worden via ssh van buitenaf naar 192.168.56.20 op poort 22 voor de gebruiker `trouble` en het wachtwoord `shoot`.
+- [ ] Docker
+  - [ ] Vaultwarden, Minetest en Portainer draaien via Docker Compose, net als in opdracht 5.
+    - [ ] Vaultwarden en minetest gebruiken lokale mappen voor data
+    - [ ] Portainer gebruikt een docker volume voor zijn data
+  - [ ] Beide pagina's zijn extern bereikbaar via een beveiligde verbinding en er kan ingelogd worden via:
+    - [ ] Portainer: <https://192.168.56.20:9443>
+    - [ ] Vaultwarden: <https://192.168.56.20:4123>
+  - [ ] Bij Minetest is het mogelijk om een spel te joinen door de minetest client te gebruiken op de host via <https://192.168.56.20:30000> voor de gebruiker `trouble` en het wachtwoord `shoot`.
+  - [ ] Planka draait via een aparte docker compose service (~/docker/planka/) en is bereikbaar via <https://192.168.56.20:3000> voor de gebruiker `admin` en het wachtwoord `troubleshoot`.
+
+#### Probleem 1: Poort 22 stond niet open in de firewall
+
+| ![Screenshot Webbrowser](./img/6-troubleshooting/VM5-FirewallStatus.png) |
+| :----------------------------------------------------------------------: |
+|                          Poort 22 staat op deny                          |
+
+#### Oplossing 1: Poort 22 openen in de firewall
+
+```bash
+sudo ufw allow 22
+```
+
+#### Probleem 2: De poort van SSH stond fout ingesteld
+
+- De poort stond ingesteld op 22222 in plaats van 22.
+
+#### Oplossing 2: De poort juist instellen in de configuratie
+
+| ![Screenshot Webbrowser](./img/6-troubleshooting/VM5-PoortVanSSH.png) |
+| :-------------------------------------------------------------------: |
+|                       SSH poort ingesteld op 22                       |
+
+#### Probleem 3: Het listen adres van ssh stond niet goed ingesteld
+
+Het listen adres stond ingesteld op localhost, waardoor het niet mogelijk was om van buitenaf te verbinden.
+
+#### Oplossing 3: Het listen adres van ssh aanpassen
+
+```bash
+sudo nano /etc/ssh/sshd_config
+```
+
+| ![Screenshot Webbrowser](./img/6-troubleshooting/VM5-ListenAddress.png) |
+| :---------------------------------------------------------------------: |
+|               ListenAddress aangepast naar 192.168.56.20                |
+
+#### Probleem 4: Remote host identification has changed
+
+| ![alt text](./img/6-troubleshooting/VM5-SSHKapot.png) |
+| :---------------------------------------------------: |
+|        Remote host identification has changed         |
+
+#### Oplossing 4: De known_hosts file aanpassen
+
+- In windows kan je de known_hosts file vinden in `C:\Users\%username%\.ssh\known_hosts`
+- Verwijder de regel met het ip adres van de VM
+
+#### Probleem 5: Databank: De admin user kan bereikbaar zijn vanaf elke host
+
+- Doe `SELECT Host, User FROM mysql.user WHERE User = 'admin';`
+- Door `%` is de host overal bereikbaar
+  | ![MySQL](./img/6-troubleshooting/VM5-Database.png) |
+  | :-------------------------------------------------: |
+  | MySQL databank is bereikbaar vanaf elke host |
+
+#### Oplossing 5: De admin user enkel bereikbaar maken vanaf localhost
+
+```sql
+UPDATE mysql.user SET Host = 'localhost' WHERE User = 'admin';
+FLUSH PRIVILEGES;
+```
+
+| ![MySQL](./img/6-troubleshooting/VM5-DatabaseLocalHost.png) |
+| :---------------------------------------------------------: |
+|     MySQL databank is enkel bereikbaar vanaf localhost      |
+
+#### Probleem 6: Wordpress: De database is niet bereikbaar
+
+```mysql
+SHOW DATABASES;
+```
+
+- De Database bestond niet
+  | ![MySQL](./img/6-troubleshooting/VM5-DATABASES.png) |
+  | :-------------------------------------------------: |
+  | MySQL databank bestaat niet |
+
+#### Oplossing 6: De database aanmaken
+
+```mysql
+CREATE DATABASE wpdb;
+```
+
+| ![MySQL](./img/6-troubleshooting/VM5-WordpressBereikbaar.png) |
+| :-----------------------------------------------------------: |
+|          MySQL databank is bereikbaar voor Wordpress          |
+
 ## Reflecties
 
 Het troubleshooten verliep vrij vlot. Ik heb toegepast wat we voorgaande opdrachten hebben geleerd om zo de machine te doen werken.

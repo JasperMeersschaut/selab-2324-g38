@@ -233,3 +233,39 @@ pubkeyauthentication YES
 | -------------------- | -------------- |
 | Naam portainer       | admin          |
 | Wachtwoord portainer | (Bitwarden ww) |
+
+## Troubleshooting
+
+- [x] Netwerk
+  - [x] Het toestel beschikt over internet
+  ```bash
+  ping google.com
+  ```
+  - [x] Het toestel kan via externe host gepingd worden op 192.168.56.20.
+  ```bash
+  ping 192.168.56.20
+  ```
+- [x] Webserver (apache2)
+  - [x] Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20>.
+    > Surf naar [https://192.168.56.20](https://192.168.56.20)
+  - [x] Het is mogelijk om via de Ubuntu gebruiker bestanden naar de webserver (in map`/var/www`) te uploaden via FileZilla (of een gelijkaardige tool) vanuit de hostomgeving via 192.168.56.20, poort 22 (via SFTP). ⚠️ Je overschrijft echter niet het door ons aangeleverde `index.html` bestand.
+  > Gebruik FileZilla om bestanden te uploaden naar de webserver.
+- [ ] Databankserver (mariadb)
+  - [x] Databank `appdb` moet bereikbaar zijn via MySQL Workbench in de hostomgeving via 192.168.56.20, poort 3306 voor de gebruiker `appusr` en het wachtwoord `letmein!`.
+  > Verbind met de databank via MySQL Workbench.
+  - [ ] Moet alleen lokaal toegankelijk zijn vanaf de VM zelf via het MySQL-commando voor de gebruiker `admin` en het wachtwoord `letmein!` en via de MySQL Workbench maar enkel dan via een SSH connectie.
+  > Verbind met de databank via MySQL Workbench
+- [ ] Wordpress
+  - [ ] Moet bereikbaar zijn via de browser in de hostomgeving via <http://192.168.56.20:8080> voor de gebruiker `wpuser` en het wachtwoord `letmein!` en gebruikt de database `wpdb`.
+  - [ ] Er moet een post aangemaakt zijn (met inhoud naar keuze)
+- [x] SSH
+  - [x] Er moet een verbinding gemaakt kunnen worden via ssh van buitenaf naar 192.168.56.20 op poort 22 voor de gebruiker `trouble` en het wachtwoord `shoot`.
+- [ ] Docker
+  - [ ] Vaultwarden, Minetest en Portainer draaien via Docker Compose, net als in opdracht 5.
+    - [ ] Vaultwarden en minetest gebruiken lokale mappen voor data
+    - [ ] Portainer gebruikt een docker volume voor zijn data
+  - [ ] Beide pagina's zijn extern bereikbaar via een beveiligde verbinding en er kan ingelogd worden via:
+    - [ ] Portainer: <https://192.168.56.20:9443>
+    - [ ] Vaultwarden: <https://192.168.56.20:4123>
+  - [ ] Bij Minetest is het mogelijk om een spel te joinen door de minetest client te gebruiken op de host via <https://192.168.56.20:30000> voor de gebruiker `trouble` en het wachtwoord `shoot`.
+  - [ ] Planka draait via een aparte docker compose service (~/docker/planka/) en is bereikbaar via <https://192.168.56.20:3000> voor de gebruiker `admin` en het wachtwoord `troubleshoot`.
