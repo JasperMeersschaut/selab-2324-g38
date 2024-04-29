@@ -89,36 +89,81 @@ docker compose -f docker/planka/docker-compose.yml restart
 
 ### Machine 2
 
+#### Databankserver (mariadb)
+
+- 1. De firewall liet geen verkeer toe op poort 3306.
+     | ![Status van de firewall.](./img/6-troubleshooting/VM2-DBPoortFirewall.png) |
+     | :-------------------------------------------------------------------: |
+     | Poort 3306 staat op DENY |
+
+Oplossing:
+Verkeer toelaten op poort 3306.
+
+```bash
+sudo ufw allow 3306
+```
+
+2. Het bind adres stond ingesteld op `0.0.0.0`.
+
+Oplossing:
+Configuratiebestand mysql openen met nano.
+
+```bash
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+
+Bind adres aanpassen.
+`bind-address = 0.0.0.0` => `bind-address = 127.0.0.1`
+MySQL herstarten om de veranderingen door te voeren.
+
+```bash
+sudo systemctl restart mysql.service
+```
+
+#### Wordpress
+
+Er stonden enkele fouten in het configuratiebestand.
+| ![Fouten in de configuratie van wordpress](./img/6-troubleshooting/VM2-wpConfigFouten.png) |
+| :-------------------------------------------------------------------: |
+| Configuratiefouten wordpress |
+
+Oplossing:
+
+Configuratiebestand openen en aanpassen met nano volgens screenshot.
+
+```bash
+sudo nano /var/www/wordpress/wp-config.php
+```
+
+| ![Juiste configuratie wordpress](./img/6-troubleshooting/VM2-wpConfigOpgelost.png) |
+| :--------------------------------------------------------------------------------: |
+|                       Configuratiefouten wordpress opgelost                        |
+
+Apache herstarten om de veranderingen door te voeren:
+
+```bash
+sudo systemctl restart apache2
+```
+
+#### SSH
+
+Remote host identification changed:
+| ![Remote host identification has changed](./img/6-troubleshooting/VM2-RemoteHostIdentificationChanged.png) |
+| :-------------------------------------------------------------------: |
+| Remote host identification has changed. |
+Oplossing:
+Regel verwijderen in `C:\Users\%username%\.ssh\known_hosts` (Windows) met het IP-adres van de VM.
+
 ```
 ============================== Toetsenbord =====================================
 sudo dpkg-reconfigure keyboard-configuration
 sudo reboot
-============================== Pingen =====================================
+============================== Pingen ==========================================
 sudo nano /etc/netplan/01-network-manager-all.yaml
 addresses: - 192.168.56.56/24 > - 192.168.56.20/24
 sudo netplan apply
-============================== Apache =====================================
+============================== Apache ==========================================
 demo.html added (FileZilla)
-============================== Databankserver (mariadb) =====================================
-sudo ufw allow 3306
-
-Moet alleen lokaal toegankelijk zijn vanaf de VM zelf via het MySQL-commando voor de gebruiker admin en het wachtwoord letmein! en via de MySQL Workbench maar enkel dan via een SSH connectie.
-
-sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
-bind-address = 0.0.0.0 > bind-address = 127.0.0.1
-sudo systemctl restart mysql.service
-
-============================== Wordpress =====================================
-
-============================== SSH =====================================
-IMAGE
-
-Lijn verwijderd in known_hosts op host.
-============================== Docker (Planka) =====================================
-sudo apt install docker-compose
-============================== Docker (Minetest) =====================================
-
-
 ```
 
 ### Machine 3
@@ -204,7 +249,7 @@ sudo nano /etc/ssh/sshd_config
 - In windows kan je de known_hosts file vinden in `C:\Users\%username%\.ssh\known_hosts`
 - Verwijder de regel met het ip adres van de VM
 
-> Dit was waarsschijnlijk geen probleem van de opdracht maar van mezelf door het andere key was van de vm maar hetzelfde ip adres. Maar ik heb het er toch bijgezet.
+> Dit was waarsschijnlijk geen probleem van de opdracht maar van mezelf doordat het een andere key was van de vm maar hetzelfde ip adres. Maar ik heb het er toch bijgezet.
 
 #### Probleem 4: Databank: De admin user kan bereikbaar zijn vanaf elke host
 
