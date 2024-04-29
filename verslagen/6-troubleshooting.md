@@ -102,7 +102,19 @@ docker compose -f docker/planka/docker-compose.yml restart
 
 -> hierna succesvolle connectie met Filezilla
 
-2. Planka niet bereikbaar
+2. Error establishing connection to database bij Wordpress
+   -> zoek folder `sudo` find / -name wp-config.php`-> zet name user, passwd en host goed
+-> wijzigingen doorvoeren met` sudo systemctl restart apache2`dan had ik nog steeds een error, nog steeds dezelfde.
+Gecheckt of de database wel echt bereikbaar was vanop de server waarop wordpress wordt gehost.
+-> met` mysql -u wpuser -p -h 192.168.56.20 wpdb `hier kreeg ik een error.
+dan in mysql workbench via de admin de priveleges aangepast
+met:` GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, INDEX, CREATE TEMPORARY TABLES, LOCK TABLES ON wpdb.\* TO 'wpuser'@'192.168.56.20'; `
+`FLUSH PRIVELEGES `
+
+3. Minetest niet beschikbaar
+   -> fout in de docker compose op line 19
+
+4. Planka niet bereikbaar
    -> docker compose fout ingesteld
 
 ip adres ingesteld in plaats van localhost.
