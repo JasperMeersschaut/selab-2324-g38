@@ -219,6 +219,11 @@ Oplossing: In docker-conmpose file aangepast (regel 39 en 42).
 5. Firewall
    -Ports 80 en 443 stonden niet open.
 
+6. Minetest
+   -Fout op lijn 19 docker-compose.
+
+Oplossing: Waarden PUID en PGID op 1000 zetten.
+
 Oplossing: ```sudo ufw allow 80 en sudo ufw allow 443```
 
 ### Machine 4
