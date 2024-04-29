@@ -25,6 +25,9 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
   - De databank is bereikbaar voor elke machine via TCP en SSH. Om TCP connecties te blokkeren pas je in het `/etc/mysql/mysql.conf.d/mysqld.cnf`-bestand het `bind-address` aan van `0.0.0.0` naar `127.0.0.1`. Daarna restart je de sql-service met `sudo systemctl restart mysql.service`.
 - Wordpress:
   - Wordpress kan geen connectie maken met de database omdat `wpuser` nog niet is aangemaakt. Doe dit door volgende commando's uit te voeren:
+  ```bash
+    mysql -u admin -p
+  ```
   ```mysql
   create user 'wpuser'@'%' identified by 'letmein!';
   grant all privileges on *.* to 'wpuser'@'%';
@@ -178,10 +181,10 @@ demo.html added (FileZilla)
 
 1. Netwerk
    -Kon niet pingen naar 192.168.56.20 vanuit eigen machine.
-Oplossing: netwerk configuratie file aanpassen:
-| ![Netwerk config file.](./img/6-troubleshooting/VM3-Network-Manager) |
-| :------------------------------------------------------------------: |
-  | Aanpassing config file. |
+   Oplossing: netwerk configuratie file aanpassen:
+   | ![Netwerk config file.](./img/6-troubleshooting/VM3-Network-Manager.png) |
+   | :----------------------------------------------------------------------: |
+   | Aanpassing config file. |
 
 ### Machine 4
 
@@ -308,7 +311,7 @@ CREATE DATABASE wpdb;
 
 #### Probleem 6: Planka werkt niet
 
-#### Oplssing 6.1: De key uit commentaar halen en de admin name en password aanpassen
+#### Oplossing 6.1: De key uit commentaar halen en de admin name en password aanpassen
 
 ```bash
 sudo nano docker/planka/docker-compose.yml
