@@ -91,13 +91,13 @@ docker compose -f docker/planka/docker-compose.yml restart
 
 #### Databankserver (mariadb)
 
-##### 1. De firewall liet geen verkeer toe op poort 3306.
+#### 1. De firewall liet geen verkeer toe op poort 3306.
 
 | ![Status van de firewall.](./img/6-troubleshooting/VM2-DBPoortFirewall.png) |
 | :-------------------------------------------------------------------------: |
 |                          Poort 3306 staat op DENY                           |
 
-##### Oplossing:
+#### Oplossing:
 
 Verkeer toelaten op poort 3306.
 
@@ -105,9 +105,9 @@ Verkeer toelaten op poort 3306.
 sudo ufw allow 3306
 ```
 
-##### 2. Het bind adres stond ingesteld op `0.0.0.0`.
+#### 2. Het bind adres stond ingesteld op `0.0.0.0`.
 
-##### Oplossing:
+#### Oplossing:
 
 Configuratiebestand mysql openen met nano.
 
@@ -126,13 +126,13 @@ sudo systemctl restart mysql.service
 
 #### Wordpress
 
-##### Er stonden enkele fouten in het configuratiebestand.
+#### Er stonden enkele fouten in het configuratiebestand.
 
 | ![Fouten in de configuratie van wordpress](./img/6-troubleshooting/VM2-wpConfigFouten.png) |
 | :----------------------------------------------------------------------------------------: |
 |                                Configuratiefouten wordpress                                |
 
-##### Oplossing:
+#### Oplossing:
 
 Configuratiebestand openen en aanpassen met nano volgens screenshot.
 
@@ -152,13 +152,13 @@ sudo systemctl restart apache2
 
 #### SSH
 
-##### Remote host identification changed:
+#### Remote host identification changed:
 
 | ![Remote host identification has changed](./img/6-troubleshooting/VM2-RemoteHostIdentificationChanged.png) |
 | :--------------------------------------------------------------------------------------------------------: |
 |                                  Remote host identification has changed.                                   |
 
-##### Oplossing:
+#### Oplossing:
 
 Regel verwijderen in `C:\Users\%username%\.ssh\known_hosts` (Windows) met het IP-adres van de VM.
 
