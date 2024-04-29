@@ -176,6 +176,13 @@ demo.html added (FileZilla)
 
 ### Machine 3
 
+1. Netwerk
+   -Kon niet pingen naar 192.168.56.20 vanuit eigen machine.
+Oplossing: netwerk configuratie file aanpassen:
+| ![Netwerk config file.](./img/6-troubleshooting/VM3-Network-Manager) |
+| :------------------------------------------------------------------: |
+  | Aanpassing config file. |
+
 ### Machine 4
 
 1. Verbinden met FileZilla
