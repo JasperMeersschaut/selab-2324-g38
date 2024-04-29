@@ -181,10 +181,45 @@ demo.html added (FileZilla)
 
 1. Netwerk
    -Kon niet pingen naar 192.168.56.20 vanuit eigen machine.
-   Oplossing: netwerk configuratie file aanpassen:
-   | ![Netwerk config file.](./img/6-troubleshooting/VM3-Network-Manager.png) |
-   | :----------------------------------------------------------------------: |
-   | Aanpassing config file. |
+Oplossing: netwerk configuratie file aanpassen:
+
+ | ![Netwerk config file.](./img/6-troubleshooting/VM3-Network.png) |
+ | :---------------------------------------------------------------------: |
+ | Aanpassing config file. |
+
+2. Wordpress
+   -Kon geen verbinding maken met de database.
+Oplossing:
+Wpuser aangemaakt met volgende code:
+  ```mysql
+  create user 'wpuser'@'%' identified by 'letmein!';
+  grant all privileges on *.* to 'wpuser'@'%';
+  flush privileges;
+  exit;
+  ```
+
+3. Vaultwarden
+   -Werd opgengesteld op poort 80, moet 4123 zijn en in de environment wordt bij de `ROCKET_TLS` een variabele `folder_vaultwarden` gebruikt bij het pad, deze variabele bestaat niet en om het pad te vervolledigen vervang je dit door 
+    `/opt`.  Volumes stonden als /home/trouble/docker/portainer/data:/data en /home/trouble/docker/vaultwarden/keys:/opt/keys
+
+
+Oplossing: In docker-compose file aangepast (regel 6, 8, 9en 12).
+``` 80:80 -> 4123:80  ```
+``` /home/trouble/docker/portainer/data:/data  -> /home/trouble/docker/vaultwarden/data:/data  ```
+``` /home/trouble/docker/portainer/keys:/opt/keys  -> /home/trouble/docker/vaultwarden/keys:/opt/keys  ```
+``` ROCKET_TLS={certs="${folder_vaultwarden}/keys/vaultwarden.crt",key="${folder_vaultwarden}/keys/vaultwarden.key"} -> ROCKET_TLS={certs="/opt/keys/vaultwarden.crt",key="/opt/keys/vaultwarden.key"} ```
+
+4. Portainer
+   -Laatste regel bij volumes was "vaultwarden_data:" en moet "portainer_data:" zijn en volume staat ook verkeerd ingesteld.
+
+Oplossing: In docker-conmpose file aangepast (regel 39 en 42).
+``` /data:portainer_data -> portainer_data:/data ```
+``` vaultwarden_data -> portainer_data ```
+
+5. Firewall
+   -Ports 80 en 443 stonden niet open.
+
+Oplossing: ```sudo ufw allow 80 en sudo ufw allow 443```
 
 ### Machine 4
 
