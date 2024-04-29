@@ -91,10 +91,10 @@ docker compose -f docker/planka/docker-compose.yml restart
 
 #### Databankserver (mariadb)
 
-- 1. De firewall liet geen verkeer toe op poort 3306.
-     | ![Status van de firewall.](./img/6-troubleshooting/VM2-DBPoortFirewall.png) |
-     | :-------------------------------------------------------------------: |
-     | Poort 3306 staat op DENY |
+1. De firewall liet geen verkeer toe op poort 3306.
+   | ![Status van de firewall.](./img/6-troubleshooting/VM2-DBPoortFirewall.png) |
+   | :-------------------------------------------------------------------: |
+   | Poort 3306 staat op DENY |
 
 Oplossing:
 Verkeer toelaten op poort 3306.
@@ -151,6 +151,7 @@ Remote host identification changed:
 | ![Remote host identification has changed](./img/6-troubleshooting/VM2-RemoteHostIdentificationChanged.png) |
 | :-------------------------------------------------------------------: |
 | Remote host identification has changed. |
+
 Oplossing:
 Regel verwijderen in `C:\Users\%username%\.ssh\known_hosts` (Windows) met het IP-adres van de VM.
 
@@ -158,11 +159,11 @@ Regel verwijderen in `C:\Users\%username%\.ssh\known_hosts` (Windows) met het IP
 ============================== Toetsenbord =====================================
 sudo dpkg-reconfigure keyboard-configuration
 sudo reboot
-============================== Pingen ==========================================
+============================== Pingen =====================================
 sudo nano /etc/netplan/01-network-manager-all.yaml
 addresses: - 192.168.56.56/24 > - 192.168.56.20/24
 sudo netplan apply
-============================== Apache ==========================================
+============================== Apache =====================================
 demo.html added (FileZilla)
 ```
 
@@ -249,7 +250,7 @@ sudo nano /etc/ssh/sshd_config
 - In windows kan je de known_hosts file vinden in `C:\Users\%username%\.ssh\known_hosts`
 - Verwijder de regel met het ip adres van de VM
 
-> Dit was waarsschijnlijk geen probleem van de opdracht maar van mezelf doordat het een andere key was van de vm maar hetzelfde ip adres. Maar ik heb het er toch bijgezet.
+> Dit was waarsschijnlijk geen probleem van de opdracht maar van mezelf door het andere key was van de vm maar hetzelfde ip adres. Maar ik heb het er toch bijgezet.
 
 #### Probleem 4: Databank: De admin user kan bereikbaar zijn vanaf elke host
 
