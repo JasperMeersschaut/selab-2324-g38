@@ -40,23 +40,23 @@ Beschrijf de opdracht in eigen woorden. Wat werd er van jullie verwacht? Wat was
 
 | Van/naar | PC1    | PC2    | SW1    | R1 (G0/0/0) | R2 (G0/0/1) | SW2    | PC3    | PC4    |
 | -------- | ------ | ------ | ------ | ----------- | ----------- | ------ | ------ | ------ |
-| PC1      | n.v.t. |        |        |             |             |        |        |        |
-| PC2      |        | n.v.t. |        |             |             |        |        |        |
-| SW1      |        |        | n.v.t. |             |             |        |        |        |
-| SW2      |        |        |        |             |             | n.v.t. |        |        |
-| PC3      |        |        |        |             |             |        | n.v.t. |        |
-| PC4      |        |        |        |             |             |        |        | n.v.t. |
+| PC1      | n.v.t. |   ja   |   ja   |     nee     |     nee     |   nee  |   nee  |   nee  |
+| PC2      |   ja   | n.v.t. |   ja   |     nee     |     nee     |   nee  |   nee  |   nee  |
+| SW1      |   ja   |   ja   | n.v.t. |     nee     |     nee     |   nee  |   nee  |   nee  |
+| SW2      |   nee  |   nee  |  nee   |     nee     |     nee     | n.v.t. |   ja   |   ja   |
+| PC3      |   nee  |   nee  |        |     nee     |     nee     |   ja   | n.v.t. |   ja   |
+| PC4      |   nee  |   nee  |        |     nee     |     nee     |   ja   |   ja   | n.v.t. |
 
 #### IPv6
 
 | Van/naar | PC1    | PC2    | SW1    | R1 (G0/0/0) | R2 (G0/0/1) | SW2    | PC3    | PC4    |
 | -------- | ------ | ------ | ------ | ----------- | ----------- | ------ | ------ | ------ |
-| PC1      | n.v.t. |        |        |             |             |        |        |        |
-| PC2      |        | n.v.t. |        |             |             |        |        |        |
-| SW1      |        |        | n.v.t. |             |             |        |        |        |
-| SW2      |        |        |        |             |             | n.v.t. |        |        |
-| PC3      |        |        |        |             |             |        | n.v.t. |        |
-| PC4      |        |        |        |             |             |        |        | n.v.t. |
+| PC1      | n.v.t. |   ja   |   ja   |     nee     |     nee     |   nee  |   nee  |   nee  |
+| PC2      |   ja   | n.v.t. |   ja   |     nee     |     nee     |   nee  |   nee  |   nee  |
+| SW1      |   ja   |   ja   | n.v.t. |     nee     |     nee     |   nee  |   nee  |   nee  |
+| SW2      |   nee  |   nee  |  nee   |     nee     |     nee     | n.v.t. |   ja   |   ja   |
+| PC3      |   nee  |   nee  |        |     nee     |     nee     |   ja   | n.v.t. |   ja   |
+| PC4      |   nee  |   nee  |        |     nee     |     nee     |   ja   |   ja   | n.v.t. |
 
 ### Configuratie router
 
