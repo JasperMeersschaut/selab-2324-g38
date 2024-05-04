@@ -120,24 +120,27 @@
 
 ### Cisco Packet Tracer 
 
-| Task                                                   | Command                                             |
-| :----------------------------------------------------- | :-------------------------------------------------- |
-| Toegang krijgen tot privilege mode                     | `enable`                                            |
-| Configuratiemodus openen                               | `configure terminal`                                |
-| Een machine een naam geven                             | `hostname <naam>`                                   |
-| DNS-lookups uitschakelen                               | `no ip domain-lookup`                               |
-| Een wachtwoord instellen voor de privileged EXEC-modus | `enable secret <wachtwoord>`                        |
-| Een wachtwoord instellen voor toegang tot de console   | `password <wachtwoord>`                             |
-| Ervoor zorgen dat de wachtwoorden worden versleuteld   | `service password-encryption`                       |
-| Een message of the day banner instellen                | `banner motd #message of the day#`                  |
-| SVI-configuratiemodus openen                           | `interface vlan <vlan_nummer>`                      |
-| Het IPv4-adres en subnetmasker instellen voor de SVI   | `ip address <IPv4_adres> <subnetmasker>`            |
-| Het IPv6-adres instellen voor de SVI                   | `ipv6 address <IPv6_adres/64>`                      |
-| De SVI (Switch Virtual Interface) inschakelen          | `no shutdown`                                       |
-| Ipv4 default-gateway instellen                         | `ip default-gateway <IPv4_gateway_adres>`           |
-| De configuratie tonen                                  | `show running-config`                               |
-| De IOS-versie tonen                                    | `show version include IOS`                          |
-| Een overzicht van interfaces tonen                     | `show ip/ipv6 interface brief`                      |
-| Configuratiemodus verlaten                             | `exit`                                              |
-| Wijzigingen opslaan                                    | `copy running-config startup-config`                |
+| Task                                                        | Command                                             |
+| :---------------------------------------------------------- | :-------------------------------------------------- |
+| Toegang krijgen tot privilege mode                          | `enable`                                            |
+| Configuratiemodus openen                                    | `configure terminal`                                |
+| Een machine een naam geven                                  | `hostname <naam>`                                   |
+| DNS-lookups uitschakelen                                    | `no ip domain-lookup`                               |
+| Een wachtwoord instellen voor de privileged EXEC-modus      | `enable secret <wachtwoord>`                        |
+| Een wachtwoord instellen voor toegang tot de console        | `password <wachtwoord>`                             |
+| Ervoor zorgen dat de wachtwoorden worden versleuteld        | `service password-encryption`                       |
+| Een message of the day banner instellen                     | `banner motd #message of the day#`                  |
+| SVI-configuratiemodus openen                                | `interface vlan <vlan_nummer>`                      |
+| Het IPv4-adres en subnetmasker instellen voor de SVI        | `ip address <IPv4_adres> <subnetmasker>`            |
+| Het IPv6-adres instellen voor de SVI                        | `ipv6 address <IPv6_adres/64>`                      |
+| De SVI (Switch Virtual Interface) inschakelen               | `no shutdown`                                       |
+| Ipv4 default-gateway instellen                              | `ip default-gateway <IPv4_gateway_adres>`           |
+| De configuratie tonen                                       | `show running-config`                               |
+| De IOS-versie tonen                                         | `show version include IOS`                          |
+| Een overzicht van interfaces tonen                          | `show ip/ipv6 interface brief`                      |
+| Toon de routeringstabel                                     | `show ip/ipv6 route`                                |
+| Toon ip-adressen van de interfaces                          | `show ip/ipv6 interface brief`                      |
+| Toon welke interfaces up of down zijn                       | `show interfaces`                                   |
+| Configuratiemodus verlaten                                  | `exit`                                              |
+| Wijzigingen opslaan                                         | `copy running-config startup-config`                |
 
