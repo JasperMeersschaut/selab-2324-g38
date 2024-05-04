@@ -1,10 +1,10 @@
 # Verslag: SUBJECT
 
-> Naam verslaggever: NAME
+> Naam verslaggever: Keanu Vervaeke
 
 ## Beschrijving
 
-Beschrijf de opdracht in eigen woorden. Wat werd er van jullie verwacht? Wat was het doel van de opdracht?
+Het opzetten van een netwerk in packet tracer en ook zelf de ip adressen toewijzen. Het netwerk werd in 2 subnets opgesplitst en met de configuratie van alle toestellen in het netwerk moet er een connectie mogelijk zijn tussen alle toestellen.
 
 ## Antwoorden op de vragen in de opdracht
 
@@ -64,25 +64,25 @@ Beschrijf de opdracht in eigen woorden. Wat werd er van jullie verwacht? Wat was
 
 | Van/naar | PC1    | PC2    | SW1    | R1 (G0/0/0) | R2 (G0/0/1) | SW2    | PC3    | PC4    |
 | -------- | ------ | ------ | ------ | ----------- | ----------- | ------ | ------ | ------ |
-| PC1      | n.v.t. |        |        |             |             |        |        |        |
-| PC2      |        | n.v.t. |        |             |             |        |        |        |
-| SW1      |        |        | n.v.t. |             |             |        |        |        |
-| R1       |        |        |        | n.v.t.      | n.v.t.      |        |        |        |
-| SW2      |        |        |        |             |             | n.v.t. |        |        |
-| PC3      |        |        |        |             |             |        | n.v.t. |        |
-| PC4      |        |        |        |             |             |        |        | n.v.t. |
+| PC1      | n.v.t. |   ja   |  ja    |     ja      |     ja      |   ja   |   ja   |   ja   |
+| PC2      |   ja   | n.v.t. |  ja    |     ja      |     ja      |   ja   |   ja   |   ja   |
+| SW1      |   ja   |   ja   | n.v.t. |     ja      |     ja      |   ja   |   ja   |   ja   |
+| R1       |   ja   |   ja   |  ja    | n.v.t.      | n.v.t.      |   ja   |   ja   |   ja   |
+| SW2      |   ja   |   ja   |  ja    |     ja      |     ja      | n.v.t. |   ja   |   ja   |
+| PC3      |   ja   |   ja   |  ja    |     ja      |     ja      |   ja   | n.v.t. |   ja   |
+| PC4      |   ja   |   ja   |  ja    |     ja      |     ja      |   ja   |   ja   | n.v.t. |
 
 #### IPv6
 
 | Van/naar | PC1    | PC2    | SW1    | R1 (G0/0/0) | R2 (G0/0/1) | SW2    | PC3    | PC4    |
 | -------- | ------ | ------ | ------ | ----------- | ----------- | ------ | ------ | ------ |
-| PC1      | n.v.t. |        |        |             |             |        |        |        |
-| PC2      |        | n.v.t. |        |             |             |        |        |        |
-| SW1      |        |        | n.v.t. |             |             |        |        |        |
-| R1       |        |        |        | n.v.t.      | n.v.t.      |        |        |        |
-| SW2      |        |        |        |             |             | n.v.t. |        |        |
-| PC3      |        |        |        |             |             |        | n.v.t. |        |
-| PC4      |        |        |        |             |             |        |        | n.v.t. |
+| PC1      | n.v.t. |   ja   |  ja    |     ja      |     ja      |   ja   |   ja   |   ja   |
+| PC2      |   ja   | n.v.t. |  ja    |     ja      |     ja      |   ja   |   ja   |   ja   |
+| SW1      |   ja   |   ja   | n.v.t. |     ja      |     ja      |   ja   |   ja   |   ja   |
+| R1       |   ja   |   ja   |  ja    | n.v.t.      | n.v.t.      |   ja   |   ja   |   ja   |
+| SW2      |   ja   |   ja   |  ja    |     ja      |     ja      | n.v.t. |   ja   |   ja   |
+| PC3      |   ja   |   ja   |  ja    |     ja      |     ja      |   ja   | n.v.t. |   ja   |
+| PC4      |   ja   |   ja   |  ja    |     ja      |     ja      |   ja   |   ja   | n.v.t. |
 
 ### Instellen SSH-toegang
 
@@ -93,31 +93,25 @@ Beschrijf de opdracht in eigen woorden. Wat werd er van jullie verwacht? Wat was
 
 ## Evaluatiecriteria
 
-- [ ] Je hebt een correct adresseringsschema voor IPv4 uitgewerkt en kan dit toelichten.
-- [ ] Je hebt een correct adresseringsschema voor IPv6 uitgewerkt en kan dit toelichten.
-- [ ] PC1 kan pingen naar SW1, R1, SW2 en PC4 over IPv4.
-- [ ] PC1 kan pingen naar PC4 over IPv6.
-- [ ] De begeleider selecteert willekeurig een van volgende toestellen: SW1, R1, SW2. Je kan op dit toestel het volgende demonstreren:
-  - [ ] Je kan inloggen via de consolekabel.
-  - [ ] Er is een wachtwoord ingesteld voor console en privileged EXEC mode.
-  - [ ] Er is een MOTD ingesteld.
-  - [ ] Wachtwoorden staan geëncrypteerd in de running config.
-  - [ ] Er zijn geen ongewenste DNS lookups.
-  - [ ] De startup config is weggeschreven.
-  - [ ] Je kan via IPv4 pingen naar zowel SW1, R1, SW2.
+- [x] Je hebt een correct adresseringsschema voor IPv4 uitgewerkt en kan dit toelichten.
+- [x] Je hebt een correct adresseringsschema voor IPv6 uitgewerkt en kan dit toelichten.
+- [x] PC1 kan pingen naar SW1, R1, SW2 en PC4 over IPv4.
+- [x] PC1 kan pingen naar PC4 over IPv6.
+- [x] De begeleider selecteert willekeurig een van volgende toestellen: SW1, R1, SW2. Je kan op dit toestel het volgende demonstreren:
+  - [x] Je kan inloggen via de consolekabel.
+  - [x] Er is een wachtwoord ingesteld voor console en privileged EXEC mode.
+  - [x] Er is een MOTD ingesteld.
+  - [x] Wachtwoorden staan geëncrypteerd in de running config.
+  - [x  Er zijn geen ongewenste DNS lookups.
+  - [x] De startup config is weggeschreven.
+  - [x] Je kan via IPv4 pingen naar zowel SW1, R1, SW2.
 - [ ] Je kan vanuit PC1 een SSH-verbinding openen naar SW1 en R1 via IPv4.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
 ## Problemen en oplossingen
 
-Beschrijf hieronder eventuele problemen die jullie zijn tegengekomen tijdens het uitvoeren van de opdracht, met een korte beschrijving van wat er mis ging en hoe jullie het hebben opgelost (als het jullie gelukt is om het op te lossen). Als het niet gelukt is om het op te lossen, beschrijf dan hoe ver jullie zijn gekomen en wat jullie tegenhield om verder te gaan. Voeg eventuele foutmeldingen, screenshots, enz. toe.
-
-Als jullie geen problemen zijn tegengekomen, schrijf dan "geen problemen ondervonden".
-
-### Probleem 1 - Korte beschrijving van het probleem
-
-Beschrijf hier het probleem uitgebreid met screenshots, code snippets, enz. en de oplossing die jullie al dan niet hebben gevonden.
+Geen problemen ondervonden.
 
 ## Voorbereiding demo
 
@@ -125,10 +119,4 @@ Beschrijf hier hoe je elk evaluatiecriterium zal demonstreren. Geef ook aan welk
 
 ## Reflecties
 
-Wat was moeilijk? Wat was eenvoudig? Wat hebben jullie geleerd van de opdracht? Wat zouden jullie anders doen als jullie het opnieuw moesten doen?
-
-Als jullie nog andere opmerkingen hebben over de opdracht hebben, voel je vrij om ze te delen.
-
-## Bronnen
-
-Maak een lijst van alle bronnen die jullie hebben gebruikt tijdens het uitvoeren van de opdracht: boeken, handleidingen, HOWTO's, blog posts, enz.
+De opdracht was vrij voor de hand liggend, maar toch wel redelijk wat werk. Voor mij werkte alles van de eerste keer, geen problemen ondervonden.
