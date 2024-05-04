@@ -102,7 +102,7 @@ Het opzetten van een netwerk in packet tracer en ook zelf de ip adressen toewijz
   - [x] Er is een wachtwoord ingesteld voor console en privileged EXEC mode.
   - [x] Er is een MOTD ingesteld.
   - [x] Wachtwoorden staan geëncrypteerd in de running config.
-  - [x  Er zijn geen ongewenste DNS lookups.
+  - [x] Er zijn geen ongewenste DNS lookups.
   - [x] De startup config is weggeschreven.
   - [x] Je kan via IPv4 pingen naar zowel SW1, R1, SW2.
 - [ ] Je kan vanuit PC1 een SSH-verbinding openen naar SW1 en R1 via IPv4.
