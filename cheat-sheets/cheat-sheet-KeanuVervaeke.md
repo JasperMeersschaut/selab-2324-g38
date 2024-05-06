@@ -141,6 +141,9 @@
 | Toon de routeringstabel                                     | `show ip/ipv6 route`                                |
 | Toon ip-adressen van de interfaces                          | `show ip/ipv6 interface brief`                      |
 | Toon welke interfaces up of down zijn                       | `show interfaces`                                   |
+| Toon ssh details                                            | `show ip ssh`                                       |
+| Start een ssh verbinding                                    | `ssh - l <user> <ip-adres>`                         |
+| Ssh verbindingen tonen                                      | `show ssh`                                          |
 | Configuratiemodus verlaten                                  | `exit`                                              |
 | Wijzigingen opslaan                                         | `copy running-config startup-config`                |
 
