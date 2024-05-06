@@ -99,7 +99,7 @@
 ### Azure-WordPress machinenamen, accounts en wachtwoorden
 
 | Variabele     | Inhoud                                                      |
-| ------------- | ----------------------------------------------------------- |
+| :------------ | :---------------------------------------------------------- |
 | Website       | http://wordpress.kvdbwordpress.tech/                        |
 | Website       | https://kvdb-wordpressapp.francecentral.cloudapp.azure.com/ |
 | Resourcegroep | `SELabs-Wordpress`                                          |
@@ -112,7 +112,7 @@
 #### Databankserver
 
 | Variabele                           | Inhoud                                      |
-| ----------------------------------- | ------------------------------------------- |
+| :---------------------------------- | :------------------------------------------ |
 | Naam databankserver                 | `kvdb-wordpressdb`                          |
 | DNS databankserver                  | `kvdb-wordpressdb.mysql.database.azure.com` |
 | Naam beheerder databankserver       | `wordpressdb`                               |
@@ -121,7 +121,7 @@
 #### Applicatieserver
 
 | Variabele                       | Inhoud                                               |
-| ------------------------------- | ---------------------------------------------------- |
+| :------------------------------ | :--------------------------------------------------- |
 | Naam applicatieserver (Ubuntu)  | `kvdb-wordpressapp`                                  |
 | DNS applicatieserver            | `kvdb-wordpressapp.francecentral.cloudapp.azure.com` |
 | Gebruikersnaam applicatieserver | `wordpressapp`                                       |
@@ -130,7 +130,7 @@
 #### WordPress
 
 | Variabele                    | Inhoud               |
-| ---------------------------- | -------------------- |
+| :--------------------------- | :------------------- |
 | WordPress db user            | `wordpress`          |
 | WordPress db user wachtwoord | `wordpresspwd`       |
 | WordPress user               | `admin`              |
@@ -157,7 +157,7 @@
 #### Gegevens
 
 | Variabele                | Inhoud                                  |
-| ------------------------ | --------------------------------------- |
+| :----------------------- | :-------------------------------------- |
 | Vaultwarden email        | `Kjell.vandenbossche@student.hogent.be` |
 | Vaultwarden wachtwoord   | `Srro@H%E@1iKllIZUj`                    |
 | Portainer gebruikersnaam | `admin`                                 |
@@ -171,11 +171,37 @@
 #### Systemd namen
 
 | Variabele   | Inhoud                |
-| ----------- | --------------------- |
+| :---------- | :-------------------- |
 | Vaultwarden | `vaultwarden.service` |
 | Portainer   | `portainer.service`   |
 | Database    | `sqlserver.service`   |
 | Minetest    | `minetest.service`    |
 | Webserver   | `webserver.service`   |
 
-## Checklists
+### Cisco Packet Tracer
+
+| Task                                           | Command                                   |
+| :--------------------------------------------- | :---------------------------------------- |
+| Naar priviledged EXEC mode (#)                 | `enable`                                  |
+| Naar configuration mode (config)               | `configure terminal`                      |
+| Een niveau lager gaan                          | `exit`                                    |
+| Naam toestel wijzigen                          | `hostname xxx`                            |
+| Ongewenste DNS-lookups uitschakelen            | `no ip domain-lookup`                     |
+| Wachtwoord instellen voor privileged EXEC mode | `enable secret xxx`                       |
+| Wachtwoord instellen voor toegang tot console  | `password xxx`                            |
+| Wachtwoorden versleutelen                      | `service password-encryption`             |
+| Message of the day banner instellen            | `banner motd #message of the day#`        |
+| SVI-instellen                                  | `interface vlan x`                        |
+| Running config kopieëren naar Startup config   | `copy running-config startup-config`      |
+| IPv4-adres en subnetmask instellen             | `ip address <IPv4_adres> <subnetmask>`    |
+| IPv6-adres en prefix instellen                 | `ipv6 address <IPv6_adres/prefix_lengte>` |
+| SVI inschakelen                                | `no shutdown`                             |
+| IPv4 default-gateway instellen                 | `ip default-gateway <IPv4_gateway_adres>` |
+| Configuratie tonen                             | `show running-config`                     |
+| De IOS-versie tonen                            | `show version include IOS`                |
+| Overzicht van IPv4 en IPv6 tonen               | `show ip/ipv6 interface brief`            |
+| Routeringstabel tonen                          | `show ip/ipv6 route`                      |
+| Up en down interfaces tonen                    | `show interfaces`                         |
+| SSH details tonen                              | `show ip ssh`                             |
+| SSH verbinding starten                         | `ssh - l <user> <ip-adres>`               |
+| SSH verbindingen tonen                         | `show ssh`                                |
