@@ -1,3 +1,59 @@
+# System Engineering Lab
+
+This repository contains assignments and practical exercises from the *System Engineering Lab* course of **HoGent**. Each task was designed to teach essential concepts and tools related to system engineering, including Linux, virtual machines, website hosting, and more.
+
+> Tutor for this course: [**Thomas Aelbrecht**](https://github.com/thomasaelbrecht)
+
+## 📚 Course Overview
+
+The *System Engineering Lab* focused on practical, hands-on learning of system engineering principles. Each week, we tackled a new topic, learning by doing and applying concepts in real-world scenarios.
+
+### Weekly Topics:
+1. **Package Manager and Markdown**  
+   - Using package managers to install software. Writing documentation in Markdown.
+2. **Database server**  
+   - Setting up and managing a database server in a virtual machine.
+3. **Hosting a Website**  
+   - Configuring and deploying a web server on a local server.
+4. **WordPress on Azure**  
+   - Setting up a WordPress blog in the Microsoft Azure cloud environment.
+5. **Docker and Docker Compose**  
+   - Using Docker and Docker Compose to manage containers.
+6. **Troubleshooting**  
+   - Identifying and resolving issues in a virtual machine environment.
+7. **Cisco Packet Tracer**  
+   - Setting up and configuring a network in Cisco Packet Tracer.
+
+## 🚀 Features
+
+- Step-by-step solutions for each weekly task.
+- Sample scripts and configurations for Linux systems.
+- Documentation for hosting and managing a personal website.
+- Instructions for setting up WordPress on Azure.
+- Docker and Docker Compose configurations.
+- Troubleshooting guides for common issues.
+- Network configuration examples using Cisco Packet Tracer.
+
+## 🛠️ Technologies Used
+
+- **Linux**: Ubuntu/Debian distributions.
+- **VirtualBox/VMware**: For virtual machine management.
+- **Web Servers**: Apache, Nginx.
+- **Scripting**: Bash, PowerShell.
+- **Cloud Services**: Microsoft Azure.
+- **Containers**: Docker, Docker Compose.
+- **Database Servers**: MySQL.
+- **Networking**: Cisco Packet Tracer.
+- **Version Control**: Git, GitHub.
+
+## 📂 Repository Structure
+- `opdrachten/` contains all assignments.
+- `cheat-sheets/` contains the cheat sheets and checklists per student. This also includes a guide to debugging problems during assignments.
+- `opvolging/` contains the reports of the follow-up meetings (filled in by the instructor).
+- `verslagen/` contains the reports of the assignments (created by you).
+
+---
+
 # System Engineering Lab - Opdrachten
 
 Deze repository bevat de opdrachten voor het vak System Engineering Lab, dat deel uitmaakt van de [Bachelor Toegepaste Informatica](https://www.hogent.be/opleidingen/bachelors/toegepaste-informatica/) aan [HOGENT](https://www.hogent.be/).
